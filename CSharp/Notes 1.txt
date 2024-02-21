@@ -1,0 +1,68 @@
+Dot Net Framework : is a software component that runs on windows operating system
+-provides a set of tools and libraries to enable faster and easier application developments
+
+It is a Microsoft Web Services Strategy to connect information, people, systems and devices thru software
+
+It is a platform that provides a standardised set of services
+   Data Access (ADO.Net)
+   User Interfaces (WPF, WinForms)
+   Web Applications (ASP.Net,Silverlight)
+   Network Communications (WCF/WWF)
+
+Consists of major components viz:
+   - Common Language Specification (CLS) 
+        Common Type Specification (CTS)
+   - Framework class library  (FCL) > 7000 odd classes to enable applications to read/write files, access databases, process xml, display graphics, distributed web services etc.. 
+   - Common Language Runtime  (CLR)
+   - Dotnet Tools
+
+
+Kinds of Application
+1. Desktop - deployed in each machine
+      Console, Windows application
+
+2. Web - Internet based, accessed thru browsers
+      ASP.Net.MVC Core
+
+3. Mobile - Mobile enabled
+      Xamarin
+
+
+Points to Remember:
+
+- IL(Intermediate Lang.) is also called as MSIL, CIL, Managed Code)
+- Dot Net Application on execution contains 2 steps
+    - compilation (conversion of source code to IL). This creates an Assembly 
+    - Execution on JIT Compilation  (conversion of IL to specific native code - Machine /OS dependent)
+
+- Native code is not stored anywhere. Once program execution is over, it is discarded. Created again when we execute the program again
+
+The IL is known as an Assembly
+
+- Assemblies in Dotnet are of 2 types based on the type application we create
+   .exe  (console application, windows application)
+   .dll   (library applications, web application)
+
+Assemblies :
+ - Any .net applications on compilation gives assembly files(.exe, .dll)
+ - Assemblies are fundamental Units of deployment, version control, reuse and security for a .net application
+ - They contain - PE Header(portable header), CLR Header, IL and Manifest files
+ - Manifest files contain metadata
+ - Assemblies can be either private or shared 
+ - Shared Assemblies are placed in GAC (Global Assembly Cache)
+
+ - We can peek into an assemblies manifest and IL files using tools like
+     ILDASM - IL Dis assembler (export the IL to a text file)
+     ILASM - IL Assembler (to reconstruct an assembly from the text file)
+
+GAC
+ Machine wide central repository of assemblies
+ They should have strong names
+ A strong name consists of simple text name, version number, culture information(if provided), a public key and a digital signature
+  Use gacutil /i for installing the signed assembly into GAC
+  Use gacutil /u for uninstalling the assembly from the GAC
+
+
+ 
+
+
