@@ -1,0 +1,26 @@
+Git Steps:
+
+1. Create a working directory/folder under a Partition like D:/E:/ etc 
+2. Move to the working folder using command prompt
+3. Now create a git folder - Local Repo, by typing git init
+4. observe the .git folder getting created with lots of sub folders and files (enable hidden items view to see the folder)
+5. Now Create a Remote Repo at www.github.com
+6. Sync both the local and remote repo by using the command
+       git remote add <alias name> <remote address >
+7. Next we need to track all the files/folders that we may have to send to the remote repo
+      - git status ( gives the current status of the local Repo)
+      - git add <file1, file 2> or all files (git add .)
+8. Next we have to commit the tracked info by using
+       - git commit -m "<meaningful message>"
+9. The above enables complete staging with a commit-ish ID 
+10. Now to move the committed info to the remote use
+      - git push <alias name of the remote> <branch name>  
+      git push origin master
+11. Now observe the changes in the remote repo
+12. Next you may want to edit the info (use edit option in the remote )
+13. Commit the changes with a message
+14. Now to get the latest info, we need to pull the details from the remote repo by using
+        git pull origin master
+15. See the changes in the local Repo
+
+

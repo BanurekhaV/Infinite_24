@@ -1,0 +1,121 @@
+Assembly Language : A low level programming lang. intending to communicate with the hardware component directly
+
+Assembler: A program that translates the commands into machine code (electrical signals)
+Components of an Assembly Lang:
+   - Syntax : forms the basic structure
+   - Label  : Is a word, number or a symbol, which uses reference points to locate the instructions
+   - Command  : an order to be performed
+   - Operand  : Components that help in manipulation
+   - Directive : Instructions to the assembler to change settings/perform some actions
+   - Macro :   Are statements that function as a short representation of a sequence of instructions
+   - Mnemonics : Represents the abbreviation of a description of the cation that is being performed
+
+Example :
+     MOV v, 4  - register 4 into v
+     MOV s, 5
+     ADD v,s,r  -- adds the value of v and s and stores it into r
+
+Machine Lang:
+ As per ASCII - every character occupies 1 byte
+  1 byte = 8 bits
+ 1 bit = representation of either 1 or 0
+
+High Level prog Lang : Sequence of statements or commands given to achieve desired output
+
+C and C++
+Java
+C#
+Pascal
+Basic
+
+Functional Programming Lang : it Focuses on the output of mathematical functions and evaluations
+ Scala
+ Python
+ Elixir
+ F#
+ Haskell
+ Erlnag
+
+OOP programming Lang : This treats a program as a group of objects composed of data and methods
+ Java
+ C#
+ Python
+ C++
+ Ruby
+
+Scripting Lang : To automate repeated tasks, manage web dynamics(content), support process in larger application
+  PHP
+  Javascripts
+  Bash
+  Perl
+  Node.js
+
+Logic programming Lang : Instead of telling computer what to do, they express a series of fact, rules to make decisions
+  Prolog
+  Datalog
+  Absys
+  Alma-0
+
+Front End Lang : User Interface/Interactions, and the experience of the s/w
+  HTML
+  CSS
+  React
+  Javascripts
+
+BackEnd prog Lang : Deals with storing and manipulation of data on the server side. They do not interact with the user.
+   Javascript
+   Ruby
+   Java
+   PHP
+   Python
+
+Application Program Flow :
+ Flow Charts
+ Pseudocode 
+ Algorithm
+ 
+
+Git and Git Hub :
+Git is a open source version control system that enables the upkeep of various versions of the existing software/os/projects etc.
+  -Management of changes to the documents,computer programs,large web sites, and other collection of information
+
+The place where these versions of s/w are available is known as Git Hub
+ - Is a collection of repositories neatly documented and stores as snapshots with proper version names
+
+Version Control System Tools :
+  Git
+  CVS
+  Subversion
+  mercurial
+
+Centralized Version Control System (CVCS)  vs.  Distributed Version Control System (DVCS)
+
+ CVCS       						  DVCS
+1. Easier                                               Advantageous
+2. Online						OffLine
+3. Slower						Faster
+4. Working with branches is a bit difficult             Easier to work on branches
+5. No additional Space required                         Additional Space is required
+6. Merge Conflicts are more				Merge conflicts are less
+
+Linux kernel maintenance and changes to the software were passed as patches and archived files. In 2002, Linux project began to use a proprietary DVCS called as BitKeeper
+
+Linus Torvalds developed a tool based on the Bitkeeper with the following goals
+  Speed
+  Simple Design
+  Strong suport for parallel branches
+  Fully Distributed
+  Able to handle large projects(data size)
+
+Git is a DVCS that supports distributed non-linear workflows by providing data assurance for developing quality softwares
+
+
+
+
+
+
+
+
+
+
+
