@@ -5,3 +5,10 @@ C:\Banu\Infinite\B3\CSharp\FirstConsoleApp1\FirstConsoleApp1\obj\Debug\FirstCons
 C:\Banu\Infinite\B3\CSharp\FirstConsoleApp1\FirstConsoleApp1\obj\Debug\FirstConsoleApp1.csproj.CoreCompileInputs.cache
 C:\Banu\Infinite\B3\CSharp\FirstConsoleApp1\FirstConsoleApp1\obj\Debug\FirstConsoleApp1.exe
 C:\Banu\Infinite\B3\CSharp\FirstConsoleApp1\FirstConsoleApp1\obj\Debug\FirstConsoleApp1.pdb
+C:\Banu\Infinite\B3\CSharp\Day1\FirstConsoleApp1\FirstConsoleApp1\bin\Debug\FirstConsoleApp1.exe.config
+C:\Banu\Infinite\B3\CSharp\Day1\FirstConsoleApp1\FirstConsoleApp1\bin\Debug\FirstConsoleApp1.exe
+C:\Banu\Infinite\B3\CSharp\Day1\FirstConsoleApp1\FirstConsoleApp1\bin\Debug\FirstConsoleApp1.pdb
+C:\Banu\Infinite\B3\CSharp\Day1\FirstConsoleApp1\FirstConsoleApp1\obj\Debug\FirstConsoleApp1.csproj.AssemblyReference.cache
+C:\Banu\Infinite\B3\CSharp\Day1\FirstConsoleApp1\FirstConsoleApp1\obj\Debug\FirstConsoleApp1.csproj.CoreCompileInputs.cache
+C:\Banu\Infinite\B3\CSharp\Day1\FirstConsoleApp1\FirstConsoleApp1\obj\Debug\FirstConsoleApp1.exe
+C:\Banu\Infinite\B3\CSharp\Day1\FirstConsoleApp1\FirstConsoleApp1\obj\Debug\FirstConsoleApp1.pdb
