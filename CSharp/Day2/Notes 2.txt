@@ -1,0 +1,54 @@
+Visual Studio : IDE (Integrated Development Environment)
+                Intellisense Support (using Reflection)
+
+CSharp : Is a modern, general purpose object oreinted programming language by Microsoft
+         Anders Hejlsberg and his team developed C# during Dot Net Framework Development
+
+Namespaces : A Logical way to organize our programs
+             It is a clolection of Classes,Interfaces,Events,Delegates,Structures,Enums, and also other Namespaces
+             Helps in avoiding name clashes
+
+Data Types : Are basically either
+           a) Value Types - Types that have data directly (All primitive/systemic/fundamental datatypes- char,int,float,double,long,byte etc..)
+
+  Ex: character c='a'( a variable c of character type holds a value 'a')
+
+    Value Types are derived from System.ValueType
+    Value type variables store the data
+    Value types are allocated in stack memory
+
+           b) Reference Types - Types that donot have data directly, instead have the reference to the location where data is (All objects of classes,interfaces,delegates,arrays etc.)
+           - They are allocated in heap memory
+           
+   Ex :  string str; str="Hello";
+
+Literals in C# :
+  String - set of characters - Hello World
+  Real - numbers with precision - 10.5
+  Integer - numbers  - 1234
+  Null   -- Unknown  or missing info  -  '/0'
+  Boolean - true or false 
+  Character - any one character - 'a' or '1'
+
+Data/Type Conversions:
+
+  Implicit Conversions : are conversions that are type safe
+                         handled by the compiler automatically
+                         smaller type to larger type 
+    Example : integer data to float data
+                         
+
+  Explicit Conversions : are conversions done by users using predefind functions on conversion operators(cast)
+                ToInt16(), ToInt32(), ToChar(), ToString(), etc...
+                Parse(), tyrParse()
+                cast- (datatype)
+
+Basics
+Namespaces
+Data Types
+Data Conversions and Typecasts
+Nullables
+
+
+
+
