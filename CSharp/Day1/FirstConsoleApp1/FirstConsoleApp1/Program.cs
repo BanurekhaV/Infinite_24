@@ -90,7 +90,7 @@ namespace FirstConsoleApp1
         public void Nullable_Eg()
         {
             string str = null;
-            int ? num1 = null;
+            int ? num1 = 80;
             int num2;
 
             if (num1 == null)
@@ -101,6 +101,12 @@ namespace FirstConsoleApp1
                 num2 = Convert.ToInt32(num1); //or as below
                                               //  num2 = (int)num1;
 
+            Console.WriteLine(num2);
+
+            //the above 8 lines of code can be replaced in asingle line 
+            //using null coalescing operator (??)
+            Console.WriteLine("-------------------");
+            num2 = num1 ?? 0;
             Console.WriteLine(num2);
         }
     }
