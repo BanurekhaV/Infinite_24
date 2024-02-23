@@ -86,16 +86,46 @@ namespace Dotnet_Day3
 
         }
     }
-    class Program
+    class Program_Arrays
     {
         static void Main(string[] args)
         {
             Arrays_Eg arreg = new Arrays_Eg();
-          //  arreg.SingleDimension();
-          //  Console.WriteLine("-------------------");
-          //  arreg.TwoDimension();
-            Console.WriteLine("------Jagged Array ------");
-            arreg.JaggedArray();
+            //  arreg.SingleDimension();
+            //  Console.WriteLine("-------------------");
+            //  arreg.TwoDimension();
+            // Console.WriteLine("------Jagged Array ------");
+            //  arreg.JaggedArray();
+            // Strings_Eg.String_Ops();
+            MethodsnParameters mp = new MethodsnParameters();
+            //int number = 10;
+            //mp.CallByValue(number); //caller function
+            //Console.WriteLine($"The Value of number is {number}");
+            //mp.CallByRef(ref number);
+            //Console.WriteLine($"The Value of number is {number}");
+
+            int total = 0, prod, difference, division;
+           total= mp.Calculate_Function(15, 10, out difference, out prod, out division);
+           Console.WriteLine($"Sum of 15 and 10 is {total}, Product is {prod}, Difference is {difference} and the Division is {division}");
+            Console.WriteLine("******Params Example********");
+            total= mp.AddElements(); //calling the function with zero arguments
+            Console.WriteLine("The Total is {0}",total);
+            Console.WriteLine("----------");
+            total = mp.AddElements(5);  //calling the function with one argument
+            Console.WriteLine("The Total is {0}", total);
+            Console.WriteLine("----------");
+            total = mp.AddElements(2, 3, 5, 8, 1, 3);
+            Console.WriteLine("The Total is {0}", total);
+
+            Console.WriteLine("--------Second Params Example Output------");
+            mp.Params_method2();
+
+            int[] testarray = new int[] { 10, 20, 30 };
+            mp.Params_method2(testarray);
+            mp.Params_method2(2, 4, 6, 8, 10, 12, 14, 16, 18, 20);
+
+            mp.Params_3(1, 2.5f);
+            mp.Params_3(5, 5.5f, 12.25, 20.56, 34.8);
             Console.ReadKey();
         }
     }
