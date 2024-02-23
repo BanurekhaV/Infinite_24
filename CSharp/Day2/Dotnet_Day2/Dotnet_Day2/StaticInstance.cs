@@ -18,7 +18,8 @@ namespace Dotnet_Day2
 
         public int AddNos(int a, int b) //Instance Method
         {
-            return a + b;
+            Console.WriteLine(a + b);
+            return a + b;            
         }
 
         public static void EvenNos_Generation(int num)  //static Method
