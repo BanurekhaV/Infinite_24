@@ -39,3 +39,47 @@ Destructors : is also a special function of the class
               It does not have any return type
 
 Destructors are actually not needed to be specified inside the class, since the CLR manages automatic garbage collection and disposes off any unreferenced memory. 
+
+
+Enumerations : is a set of named constants
+               it is a user defined value type
+               the default type of enumeration list elements is int
+               the items in the enumeration list are called enumerators
+               they can be initialiosed to override the default value
+
+Implicit data types
+               var   : is an implicitly typed variable
+                       must assign a value at the time of declaration
+                       will convert to the data type of the value assigned
+                       once assigned cannot change the data type (may be with explicit conversion)
+                       compiler based
+
+               dynamic : is an object type
+                         the actual type of a dynamic variable is known at the runtime
+                         runtime based
+
+Abstraction ----- Encapsulation
+
+Encapsulation : is a process of enclosing one or more items within a physical or logical package.
+                In OOP methodology, encapsulation prevents access to implementation details using access specifiers/modifiers
+
+Access Specifier : defines the scope and visibility of a class member.
+
+All classes in C# are internal by default
+All class members in C# are private by default (you can change the access to public or internal or protected or protected internal)
+
+                   c# supports 
+                   1. private  : Accessible only in the class where it is declared. No access anywhere else
+                   2. public   : All classes within the assembly or outside the assembly with or without derivation can access public  				members 
+                                We just need an object of the class to access the public members
+                            
+                   3. protected : Are accessible to the class where it is declared and all its derived classes
+                                  The derived classes can be in the same assembly as that of the parent or in other assembly
+                   4. internal  :  Acts exactly like public, but allows access to either derived or non derived classes of the same 				  assembly
+                   5. internal protected or protected internal : Internal to all the derived and non derived classes of the assembly
+                                                                 Protected to all the derived classes of other assembly
+
+
+ReadOnly and Constant : 
+
+   
