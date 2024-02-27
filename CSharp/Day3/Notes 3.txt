@@ -1,0 +1,12 @@
+Methods and Parameters : Methods in c# have parameters of the following type :
+
+  - Value   -- passing the data to a function 
+  - Reference -- passing the address of the data to a function
+  - Out   -- out is a technique of being able to get multiple values from a function as output
+  - Parameter Array -- helps in giving variable number of arguments/parameters seperated by a comma to a function
+                       We can pass zero argument, 1 or more 
+                       We use a keyword called 'params' to achieve the above
+                       We can have only one params for a function
+                       Params should be the last in the argument list
+ 
+

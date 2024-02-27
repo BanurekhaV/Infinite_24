@@ -1,0 +1,41 @@
+WYSIWYG : 
+
+OOP : Way of building applications/way of desiging an application
+
+- Encapsulation : Unit of Information (data + methods/behaviours)
+- Abstraction : Giving Required data and hiding not required data
+- Inheritance : Possiblilities of extension of behaviour
+                   single
+                   multi level
+- Polymorphism : Many Forms 
+                  overloading
+                  overriding
+
+- all information resides inside a class
+
+Class : is a user defined data type that encompases all the information required.
+
+  Class is internal by default, but all the members of the class are Private by default
+  
+        
+Object : Instance of a class with which we can use the information that is available inside the class
+
+Static members are available as a single copy for the entire class. 
+               Can be modified
+               Maintained and managed by the CLR
+
+Constructors : Are special functions of a class
+               They are meant to allocate memory and initialize the members of the class
+               They have the same name as that of the class
+               They do not have any return types
+               They can be overloaded (parameterized constructors)
+               They have to be either public or internal
+When a class does not have a constructor defined, then the framework supplies a default constructor
+
+Destructors : is also a special function of the class
+              It is meant for deallocation of the memory
+              It also has the same name as that of the class prefixed with a '~'
+              It cannot be overloaded
+              It does not have any return type
+
+Destructors are actually not needed to be specified inside the class, since the CLR manages automatic garbage collection and disposes off any unreferenced memory. 
