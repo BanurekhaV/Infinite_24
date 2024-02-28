@@ -27,7 +27,7 @@ namespace Dotnet_Day5
 
         static void Main(string[] args)
         {
-            Program program = new Program(100, 200);
+           Program program = new Program(100, 200);
 
             Program program2 = new Program(500, 1000);
 

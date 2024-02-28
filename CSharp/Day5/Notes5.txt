@@ -17,6 +17,23 @@ Constants :
     It is fixed for the entire class, comparable to static members
     The difference is, values in static members can be changed, but constants cannot be changed.
 
+Inheritence:
+  
+    A class can derive from only one another class (No Multiple Inheritance)
+    A Class can implement many interfaces
+    The order of construction of objects is always from the base class to the derived class, and the destruction is opposite
+
+Base Class Initialization thru the constructor of the child class id needed 
+   when the parent/base class has only parameterized contructor
+
+-base is a keyword to refer to a parent class
+
+
+NameHiding and Method Hiding :
+
+
+
+
 
 
     
