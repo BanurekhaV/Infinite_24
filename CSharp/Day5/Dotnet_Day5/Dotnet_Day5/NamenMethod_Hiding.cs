@@ -29,6 +29,7 @@ namespace Dotnet_Day5
             Console.WriteLine(base.data + " " +data);
         }
 
+        //method hiding
         public new void Methodhide(string s)
         {
             Console.WriteLine("This is a message from Child Class {0} ", s);

@@ -33,6 +33,13 @@ NameHiding and Method Hiding :
 
 
 
+Overriding : Is a concept where a child class gets to have different implementation for a method when compared to the Parent class
+  - The Parent/Base class has to mark the function as 'virtual'
+  - The Derived/Child class has to implement using 'override' keyword
+  - The child class cannot change the function signature
+      (Access Specifier/Modifier, Return Type, Name of the Function and the Parameters/Argumenets to the function)
+
+
 
 
 

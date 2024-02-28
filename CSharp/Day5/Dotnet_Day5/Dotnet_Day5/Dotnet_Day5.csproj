@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Dotnet_Day5.NamenMethod_Hiding</StartupObject>
+    <StartupObject>Dotnet_Day5.Override_Eg</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -49,6 +49,7 @@
     <Compile Include="Inheritance_Eg.cs" />
     <Compile Include="MultiLevel_Inheritance.cs" />
     <Compile Include="NamenMethod_Hiding.cs" />
+    <Compile Include="Override_Eg.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
