@@ -1,0 +1,23 @@
+sizeof() -- size of an type
+
+typeof()  -- determines the data type
+
+Readonly and constants
+
+readonly variables in C#:
+  It is declared using the keyword readonly
+  The values of readonly variables cannot be modified, once it is initialized
+  You can initialize the values for the readonly variable either at the time of declaration or in the constructor
+  It behaves like a non-static variable , that is every object maintains a seperate copy, the only difference being that the readonly cannot be modifed, while the non-static variable can be
+
+
+Constants : 
+    Have to be initialized at the time of declaration itself
+    The values cannot be modified.
+    It is fixed for the entire class, comparable to static members
+    The difference is, values in static members can be changed, but constants cannot be changed.
+
+
+
+    
+  

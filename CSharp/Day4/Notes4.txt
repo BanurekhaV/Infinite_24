@@ -1,4 +1,4 @@
-WYSIWYG : 
+WYSIWYG : What you See is What You Get
 
 OOP : Way of building applications/way of desiging an application
 
