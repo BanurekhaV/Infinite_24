@@ -49,20 +49,20 @@ namespace Dotnet_Day5
         public static void Main()
         {
              Rectangle rect = new Rectangle();
-             rect.GetLengthnBreadth();
+             rect.GetLengthnBreadth();  //go to line 22
              Console.WriteLine("Area of Rectangle is :{0}", rect.Area());
              Console.WriteLine("--------------");
 
              Circle c = new Circle();
-             c.GetRadius();
+             c.GetRadius(); // go to line 41
              Console.WriteLine("Area of Circle is :{0}", c.Area());
-            
-           
-            //Shapes s = new Shapes();
-            //Console.WriteLine(s.Area());
-            //s = new Rectangle();   //co variance
-            
-            //Console.WriteLine(s.Area());
+
+           // Dynamic polymorphic behaviour of the object 's' using co-variance
+            Shapes s = new Shapes();
+            Console.WriteLine(s.Area());  //14
+            s = new Rectangle();   //co variance
+
+            Console.WriteLine(s.Area());  //32
 
             Console.Read();
         }

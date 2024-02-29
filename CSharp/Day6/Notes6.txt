@@ -1,0 +1,38 @@
+Polymorphism : 
+
+   Overriding : Function signature should be same 
+                It is always seen across base and derived 
+                Implements Dynamic polymorphism (using co-variance)
+   Overloading : 
+       function/method : when we write 1 or more functions with the same name but differ in either the no.of arguments/parameters or the data type of the arguments (function signature should be different)
+         Overloading is always seen in the same class 
+         implements Static Polymorphism
+
+   Operator Overloading: int a=6, int b=3;  a + b; (9)
+              Program p= new program();
+               Program p2= new Program();
+               p + p2;   throws an error not knowing how to add 2 objects
+    
+ Runtime Polymorphism/Late Binding/Dynamic Binding : Function calls are resolved at the runtime
+
+ Static Polymorphism/Early Binding/Static Binding : Function calls are resolved at the compilation time
+
+Properties :  they are named members of class, structures, interfaces
+	      are extensions of fields
+              they are accessed thru accessors(get,set), using which we can read or write the private fields
+              they have to be public
+              since they are the extensions of fields, their data type should match the field
+              We can restrict writing values to the field by not giving the set{} accessor     
+              
+  
+Manual Properties Implementation : Refer eg of Dotnet_Day6.Properties_Eg.cs (Declaring all fields of the class and then writing the properties for the same)         
+Automatic Properties Implementation : We only write properties directly without fields.
+              The fields would be created automatically underlyingly by the compile/runtime
+
+
+Indexers : allows an object to be indexed such as an array. When we define indexer for a class, it behaves similar to a virtual array.
+         We can access the instance of the class using the array access operator([])
+         Indexers are similar to that of the property, except that properties gets or sets a specific data member, whereas the indexer gets or sets a particular value from the object
+        Unlike Properties, Indexers do not have any name, instead are used with the 'this' keyword.
+
+Interfaces

@@ -8,9 +8,10 @@ namespace Dotnet_Day4
 {
     class Employee
     {
-        int EmpId;
-        string EmpName;
-        double EmpSalary;
+        int EmpId;  //4
+        string EmpName;  //30
+        double EmpSalary;  //16
+        StructnEnumerations stenum;  //20
 
         internal Employee()   //private constructor, cannot be called outside the class
         {

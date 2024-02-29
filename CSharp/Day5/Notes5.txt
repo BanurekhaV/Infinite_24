@@ -28,14 +28,25 @@ Base Class Initialization thru the constructor of the child class id needed
 
 -base is a keyword to refer to a parent class
 
+Inheritance : represents 'is a'  relationship (Eg. Rectangle is a Shape)
 
-NameHiding and Method Hiding :
+class Shape{     }
 
+class Rectangle:Shape{   }
+
+Composition/Aggregation : represents 'has a' releationship (Eg :Car has an Engine)
+
+class Engine{....}
+
+class Car{
+Engine engine;.....}
+
+NameHiding and Method Hiding : Is a concept that aids in redefining functionalities of the base class or redeclare the members of the base class. 
 
 
 Overriding : Is a concept where a child class gets to have different implementation for a method when compared to the Parent class
   - The Parent/Base class has to mark the function as 'virtual'
-  - The Derived/Child class has to implement using 'override' keyword
+  - The Derived/Child class can implement using 'override' keyword
   - The child class cannot change the function signature
       (Access Specifier/Modifier, Return Type, Name of the Function and the Parameters/Argumenets to the function)
 
