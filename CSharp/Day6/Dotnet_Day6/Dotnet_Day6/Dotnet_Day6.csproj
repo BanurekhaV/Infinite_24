@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Dotnet_Day6.Indexers_Eg</StartupObject>
+    <StartupObject>Dotnet_Day6.Explicit_Interface_Implementation</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -46,7 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Explicit_Interface_Implementation.cs" />
+    <Compile Include="ICustomer.cs" />
     <Compile Include="Indexers_Eg.cs" />
+    <Compile Include="Indexers_Eg2.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties_Eg.cs" />

@@ -35,4 +35,30 @@ Indexers : allows an object to be indexed such as an array. When we define index
          Indexers are similar to that of the property, except that properties gets or sets a specific data member, whereas the indexer gets or sets a particular value from the object
         Unlike Properties, Indexers do not have any name, instead are used with the 'this' keyword.
 
-Interfaces
+Interfaces : are reference types, like classes. They can contain Properties, Methods,Delegates,Events (but only declarations and not implementation)
+ -Interface members are public by default
+ -The Class that inherits from an Interface will have to provide implementation to all the members. Also if a class implements an interface that has its own parent interface, then the class will alos have to provide definitions to all the interface methods (chain implementation)
+ -A class can inherit from multiple interfaces
+ -One Interface can inherit from other interface/s
+ -Interfaces do not allow explicit modifiers
+ -We cannot create an instance of an interface, but a refernce object can be made to point to the implementing class
+
+Advantages of Interface:
+  - used to achieve loose coupling
+  - used to achieve total abstraction
+  - used to achieve component-based programming
+  - used to achieve plug and play architecture
+ 
+Explicit Interface Implementation :
+
+  When a class inherits from 2 interfaces, and both the interface have same method/s, then the class can give explicit implementation to both the methods
+ When a class explicitly implements interface members, then the member cannot be accessed thru the class object, but only thru interface reference variable(refer to options in the demo)
+ Public access modifier is not allowed
+ To make one of the method default, then implement that method normally without any interface reference. This can invoked using a class object.
+
+Types of classes: 
+   1. static classes: cannot be instantiated and cannot be inherited. All members have to be static only. Can use the static class and all its member with the class name
+   2. abstract classes :
+   3. sealed classes : Can be instantiated, but cannot be inherited. It is the final class or concrete class that does not allow extensions and overriding
+   4. partial classes : Can be defined in multiples files. Multiple developers can work simultaneously
+

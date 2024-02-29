@@ -31,4 +31,12 @@ namespace Dotnet_Day6
             Console.Read();
         }
     }
+
+    public partial class orderform
+    {
+        public void orderprinting()
+        {
+
+        }
+    }
 }
