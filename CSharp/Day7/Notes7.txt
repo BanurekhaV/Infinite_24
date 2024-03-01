@@ -1,0 +1,84 @@
+Difference between  
+
+
+Interface                     vs                		            Abstract class 
+
+- A class can implement many interfaces	  		             A class can inherir only one abstract class  
+- An interface cannot provide any code until it is is default        An abstract class can provide complete,abstract,virtual,default code
+-  Access modifiers are not allowed 				     Allowed
+-  Needs more time to find actual method in the corresponding classes Fast
+- Cannot declare fields 					      Can have fields,constants etc
+
+
+Anonymous Types : are types that can bundle many other types into one without any specific name. This can be given to an implicitly types variable (var).
+
+
+Exceptions: An unwanted or unexpected event that occurs during runtime. This disrupts the normal flow of the program. It indicates that something is wrong in thge code. When not handles exposes the code. 
+
+We need to handle the exception 
+ try block : is a block that can identify a possible exception. Any code that we anticipate exceptions have to be included with the try block.
+A try block has to be followed with catch block
+A try block can be followed by one or more catch blocks.
+There cannot be any other executional code between a try and a catch block
+
+catch block : a piece of code that catches the thrown exception and provides handler
+
+finally block : is used to execute a set of statements whether an exception occurs or not. Used for cleaning up process
+
+throw : when an exception object has to be created and given to the program to handle, then we use the throw clause.
+
+
+C# exceptions are represented by classes. The exception classes are directly or indirectly derived from System.Exception class
+
+Some classes are derived from System.ApplicationException and others from System.SystemException
+
+All system or predefined exception classes are in systemexception, which is the base class for all predefined exception classes. Whereas the application exception(user defined) classes have to be deriving from ApplicationException class
+
+User Defined/Application specific Exceptions :
+  We create class/es that derive from ApplicationException class
+  We have to decide where and when to throw the created exception 
+  We have to throw the exception
+  We have to catch the exception and handle it
+
+Exceptions provide a consistent mechanism for identifying and responding to error consitions. 
+Effect handling of Exceptions make the code more robust and easier to debug.
+
+ what went wrong
+ where did it go wrong
+ why did it go wrong
+
+Equality Operators :
+
+Equals() : Checks if 2 object references are equal
+==  : checks if 2 operands are equal or not
+
+Both the above compare the values of the built-in value type variables and return true if both are having same value, else false
+
+CompareTo : This method acts upon 2 values(string or numbers). It return an int (either -1,1,0)
+ -1 : when the first value is smaller than the second
+  1 : when the first value is bigger
+  0 : when both are equal
+
+
+Collections : Are a specialized set of classes that help in data storage and retrieval
+They do not have any size limitations
+Some collections alos do not have type limitations
+They can allocate memory dynamically
+
+
+Some common collection classes :
+ ArrayList  -  is similar to arrays, but can store various types and does not have size
+ SortedList  - 
+ Stacks
+ Queue
+ HashTable  etc.. : Uses key value pairs to store data
+                    Keys have to be unique
+                    Keys cannot be null, values can be
+                    Keys cannot be duplicated, values can be
+   
+
+
+ReferenceEquals()
+
+
+

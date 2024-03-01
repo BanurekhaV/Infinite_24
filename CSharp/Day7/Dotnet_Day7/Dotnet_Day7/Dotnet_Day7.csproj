@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Dotnet_Day7.Operator_Overload</StartupObject>
+    <StartupObject>Dotnet_Day7.Collections</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -46,9 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Collections.cs" />
+    <Compile Include="Equality_Operators.cs" />
+    <Compile Include="Exception_Eg.cs" />
     <Compile Include="Operator_Overload.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserDefined_Exception.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

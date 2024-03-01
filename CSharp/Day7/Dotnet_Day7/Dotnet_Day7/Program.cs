@@ -46,6 +46,14 @@ namespace Dotnet_Day7
             Shapes s = new Square(4);
             Console.WriteLine("Area of Square : " + s.Area());
             s.DrawShape();
+
+            //anonymous type
+
+            var myanonymous = new {data1 = "CSharp",
+            data2 = 2,
+            datat3 = true};
+            Console.WriteLine(myanonymous);
+            Console.WriteLine(myanonymous.GetType().ToString());
             Console.Read();               
             
         }
