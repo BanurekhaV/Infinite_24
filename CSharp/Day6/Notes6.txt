@@ -58,7 +58,14 @@ Explicit Interface Implementation :
 
 Types of classes: 
    1. static classes: cannot be instantiated and cannot be inherited. All members have to be static only. Can use the static class and all its member with the class name
-   2. abstract classes :
+   2. abstract classes : cannot be instantiated, but can be inherited.
+                         is a class that has atleast 1 abstract method
+                         can have both abstract as well as non abstract methods, and also virtual methods
+                       The derived classes have to implement the abstract method using 'override'
    3. sealed classes : Can be instantiated, but cannot be inherited. It is the final class or concrete class that does not allow extensions and overriding
    4. partial classes : Can be defined in multiples files. Multiple developers can work simultaneously
+
+
+
+
 
