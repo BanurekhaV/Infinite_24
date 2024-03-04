@@ -60,6 +60,8 @@ CompareTo : This method acts upon 2 values(string or numbers). It return an int 
   0 : when both are equal
 
 
+ReferenceEquals(): checks the reference values and returns true if matching else false
+
 Collections : Are a specialized set of classes that help in data storage and retrieval
 They do not have any size limitations
 Some collections alos do not have type limitations
@@ -78,7 +80,7 @@ Some common collection classes :
    
 
 
-ReferenceEquals()
+
 
 
 

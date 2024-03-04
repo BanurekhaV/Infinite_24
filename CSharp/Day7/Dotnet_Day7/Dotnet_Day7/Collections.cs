@@ -8,7 +8,10 @@ namespace Dotnet_Day7
         static void Main()
         {
             // ArrayList_Function();
-            HashTableFunction();
+            // HashTableFunction();
+            // SortedListFn();
+            //Stackfn();
+            QueFn();
             Console.Read();
         }
 
@@ -70,6 +73,7 @@ namespace Dotnet_Day7
             ht.Add("E010", "Simran");
             ht.Add("E002", null);
             ht.Add("E005", "Vikash");
+            ht.Add("5", "Banurekha");
 
             foreach(var item in ht.Keys)
             {
@@ -80,7 +84,75 @@ namespace Dotnet_Day7
             {
                 Console.WriteLine(item);
             }
+            Console.WriteLine("=====Key and Values=====");
+            foreach(DictionaryEntry de in ht)
+            {
+                Console.Write(de.Key);
+                Console.Write(de.Value);
+                Console.WriteLine();
+            }
 
+            Console.WriteLine("Search in Hash Table");
+            Console.WriteLine("Enter a key to search :");
+            string eid = Console.ReadLine();
+            if(ht.ContainsKey(eid))
+            {
+                Console.WriteLine(eid + "=" + ht[eid]);
+            }   
+            else
+                Console.WriteLine(eid + "does not exists");
         }
+
+        public static void SortedListFn()
+        {
+            SortedList sl = new SortedList();
+            sl.Add("ora", "Oracle");
+            sl.Add("vb", "Visual Basic");
+            sl.Add("cs", "CSharp");
+            sl.Add("asp", "Asp.Net");
+
+            foreach(DictionaryEntry de in sl)
+            {
+                Console.Write(de.Key);
+                Console.Write(de.Value);
+                Console.WriteLine();
+            }
+        }
+
+        public static void Stackfn()
+        {
+            Stack st = new Stack();
+            st.Push(12);
+            st.Push(23);
+            st.Push("AAA");
+
+            foreach(object obj in st)
+            {
+                Console.WriteLine(obj);
+            }
+
+            st.Pop();
+            Console.WriteLine(st.Peek()); 
+        }
+
+        public static void QueFn()
+        {
+            Queue q = new Queue();
+            q.Enqueue("Csharp.Net");
+            q.Enqueue(123);
+            q.Enqueue("Sql");
+
+            foreach(var item in q)
+            {
+                Console.WriteLine(item);
+            }
+
+            q.Dequeue();
+            foreach (var item in q)
+            {
+                Console.WriteLine(item);
+            }
+        }
+
     }
 }
