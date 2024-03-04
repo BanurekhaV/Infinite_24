@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Dotnet_Day8.Generics_1</StartupObject>
+    <StartupObject>Dotnet_Day8.ComparableEg</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -46,8 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ComparableEg.cs" />
+    <Compile Include="Enumerable_Enumerators.cs" />
+    <Compile Include="Generics_2.cs" />
     <Compile Include="Generics_1.cs" />
     <Compile Include="Generics.cs" />
+    <Compile Include="Generics_With_Indexers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

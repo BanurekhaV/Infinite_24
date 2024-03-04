@@ -14,3 +14,11 @@ Non-Generic   -------   Generic
 Each Element can represent value of different type  ------  Same type
 Collection size not fixed, dynamic        ----- Dynamic
 Elements can be added/removed at runtime   ----- same here
+
+Generic class with constraints :
+
+
+IEnumerable and iEnumerator : Both the interfaces are meant for iterating collections. Both give away the same results
+- But the IEnumerable syntax is simpler and short when compared with IEnumerator, which requires calling MoveNext() method in a loop and retrieve the current data 
+
+Icomparable : when we need to sort user defined objects
