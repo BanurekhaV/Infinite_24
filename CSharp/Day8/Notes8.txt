@@ -1,0 +1,16 @@
+Generics : Are a way of defining classes,methods,properties etc decoupled with their datatypes without compromising
+  - type safety
+  - performance
+  - productivity
+
+ArrayList   ---- List
+HashTable  ----- Dictionary
+SortedList  ----- SortedList
+Stack      -----Stack
+Queue   ------- Queue
+
+
+Non-Generic   -------   Generic
+Each Element can represent value of different type  ------  Same type
+Collection size not fixed, dynamic        ----- Dynamic
+Elements can be added/removed at runtime   ----- same here
