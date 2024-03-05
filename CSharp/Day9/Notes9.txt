@@ -10,7 +10,46 @@ They are used extensively in event programming and call backs
 
 Multicast Delegates : where a single delegate object can be made to refer to multiple methods of the same signature
                       We can add on the methods using '+' or remove using '-' operator
-
+Note : When we multicast a delegate object to methods that return a value, we should be rest assured that only the last methods return value is available.
 
 Delegate Object/s being passed as an argument to a function/method
 
+- Provides a good way to encapsulate the methods
+- They are type safe pointer of any method
+- Delegates can be used in anonymous method invocation
+
+Types of Delegates : 
+
+ Function Delegates : Is an in-built delegate type
+                      They must return a value
+                      They can have 0 to 16 input parameters
+                      Does not allow ref and out parameters
+                      They can be used with anonymous method or lamba expression
+
+ Action Delegates :   is a delgate type that does not take any input nor return any value 
+                      They can be used with anonymous method or lamba expression
+
+ Predicate Delegates : is a delegate type that has to take one input parameter and return a boolean(true or false)
+                       They can be used with anonymous method or lamba expression
+
+
+Events : user -->event--->delegate--->function
+------   - Events are declared and raised in a class and are asscociated with event handlers using delegates either within the same class or some other class
+  The class containing the event is used to publish the event (publisher class)
+  The class that accepst the event is called the subscriber class
+        
+
+  An Event can be made to trigger multiple functions using the delegate object that matches the function signature
+
+Using Keyword is used to include namespaces, static classes and as blocks of code that uses various objects
+         - using block will call the Dispose() automatically, where as an object will need to invoke the Dispose()
+
+Dispose() - is a method in IDisposable Interface
+ When we want to implement the Dispose() method, we need to inherit our class from IDisposable
+
+
+Co-Variance : enables to pass a derived type when a base type is expected. It is like variance of same kind 
+     The derived types can have extra functionalities than base type 
+     Can accept big if small is expected   (refer demo (Day10) we are passing Big object when only small is expected as return type)
+
+Contra Variance : Is applied to the parameters. It allows a method with the parameters of a base class to be assigned to a delegate that expects parameters of the derived class
