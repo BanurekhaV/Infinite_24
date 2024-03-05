@@ -1,0 +1,16 @@
+-Delegates : are like function pointers of C/C++
+They are reference type objects that holds the reference to a method. This reference can be changed at Runtime.
+They are used extensively in event programming and call backs
+
+1. Declare delegate objects(either within the namespace or within the class)
+2. Instantiate the delegate object by passing the reference of the method to the object (only the name of the method)
+3. Invoke the delegate object (either using the invoke function or just calling it with '()')
+4. If the method expects arguments, pass it thru the delgate
+5. For passing the reference of the method to the delegate, both the delegate signature and the function/method signature should match
+
+Multicast Delegates : where a single delegate object can be made to refer to multiple methods of the same signature
+                      We can add on the methods using '+' or remove using '-' operator
+
+
+Delegate Object/s being passed as an argument to a function/method
+

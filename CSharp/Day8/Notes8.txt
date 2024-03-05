@@ -21,4 +21,9 @@ Generic class with constraints :
 IEnumerable and iEnumerator : Both the interfaces are meant for iterating collections. Both give away the same results
 - But the IEnumerable syntax is simpler and short when compared with IEnumerator, which requires calling MoveNext() method in a loop and retrieve the current data 
 
-Icomparable : when we need to sort user defined objects
+IComparable : when we need to sort user defined objects, we can implement CompareTo() of the IComparable interface
+
+Also we can compare 2 objects with Compare() of the IComparer<> interface
+
+
+

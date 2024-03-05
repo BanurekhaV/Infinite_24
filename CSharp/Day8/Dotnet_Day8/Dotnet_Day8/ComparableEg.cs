@@ -41,6 +41,14 @@ namespace Dotnet_Day8
             return -1;
         }
     }
+
+    class Marks : IComparer<Student>
+    {
+        public int Compare(Student x, Student y)
+        {
+            return x.Marks.CompareTo(y.Marks);
+        }
+    }
     class ComparableEg
     {
         static void Main()
@@ -55,6 +63,12 @@ namespace Dotnet_Day8
 
             Console.WriteLine("------------");
             Student.StudentInfo();
+
+            Console.WriteLine("Comparing Marks");
+            Marks m = new Marks();
+            Student stud1 = new Student() { Name = "Sathyam", Marks = 88 };
+            Student stud2 = new Student() { Name = "Aakash", Marks = 88 };
+            Console.WriteLine(m.Compare(stud1,stud2));
             Console.Read();
         }
     }
