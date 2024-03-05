@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{69D1EE12-28CD-411A-9B61-1E8EC78DBB4F}</ProjectGuid>
+    <ProjectGuid>{71179418-56BB-45D4-8F14-6A3A7E5274BD}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Dotnet_Day9</RootNamespace>
-    <AssemblyName>Dotnet_Day9</AssemblyName>
+    <RootNamespace>Dotnet_Day10</RootNamespace>
+    <AssemblyName>Dotnet_Day10</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -32,9 +32,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject>Dotnet_Day9.TestEvent</StartupObject>
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -46,13 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Delegate_2.cs" />
-    <Compile Include="Delegate_As_Argument.cs" />
-    <Compile Include="Delegate_Types.cs" />
-    <Compile Include="Events_1.cs" />
-    <Compile Include="Events_2.cs" />
-    <Compile Include="GenericDelegates.cs" />
-    <Compile Include="MulticastDelegate.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
