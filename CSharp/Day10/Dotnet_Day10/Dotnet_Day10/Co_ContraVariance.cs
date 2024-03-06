@@ -37,6 +37,11 @@ namespace Dotnet_Day10
             Console.WriteLine("Function 3");
             return new Small();
         }
+
+        static void PersonInfo(Person p)
+        {
+            //code...
+        }
         static void Main()
         {
             CovarianceEg ceg = Function1;
@@ -48,7 +53,25 @@ namespace Dotnet_Day10
             ceg += Function3;
 
             Small s2 = ceg(new Big());
+            Console.WriteLine("-----Example 2 Co-Contra------");
+
+            var personobject = new Person();
+            var employeeobject = new Employee();
+            var managerobject = new Manager();
+
+            personobject = employeeobject; //1. assigning a more derived type object to a less derived type
+            personobject = managerobject; //2.
+
+            employeeobject = managerobject; //3.
+
+            employeeobject =(Employee) personobject; //contravariance of object (not possible without typecast)
+            persondelegate del = PersonInfo;
             Console.Read();
         }
     }
+
+    delegate void persondelegate(Employee emp);
+    public class Person { }
+    public class Employee : Person { }
+    public class Manager : Employee { }
 }

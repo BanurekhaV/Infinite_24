@@ -48,8 +48,14 @@ Dispose() - is a method in IDisposable Interface
  When we want to implement the Dispose() method, we need to inherit our class from IDisposable
 
 
-Co-Variance : enables to pass a derived type when a base type is expected. It is like variance of same kind 
+Co-Variance and Contravariance : Both these concepts help in preserving the compatability of objects, variables, parameter of more derived type to an objects,variables,parameters of a less derived type.
+
+Co-Variance : 
+
+enables to pass a derived type when a base type is expected. It is like variance of same kind 
      The derived types can have extra functionalities than base type 
-     Can accept big if small is expected   (refer demo (Day10) we are passing Big object when only small is expected as return type)
+     Can accept big if small is expected   (refer demo (Day10) passing Employee type (big) when Person (small)is expectedtype )
 
 Contra Variance : Is applied to the parameters. It allows a method with the parameters of a base class to be assigned to a delegate that expects parameters of the derived class
+ 
+(refere day 10 demo - where a delegate is declared to expect a big type(Employee), but we are assigning a function to the delgate which is expecting a small type(Person)

@@ -1,0 +1,31 @@
+Garbage Collection : It always works on the Managed Heap internally with the engine known as 'Optimization Engine'. It works on an algorithm 'mark & sweep'
+-It occurs when any one the following consitions are satisfied
+    - If the system has low physical memory
+    - If the memory allocate dto various objects in the heap exceeds a pre set threshold value
+    - If the GC.Collect() method is called
+
+Phases in Garcbage Collection : marking, relocating and compacting
+
+Generations : heap memory is organised into 3 generations
+  Generation 0 : newly allocated objects  (all short lived objects(temporray variables)
+  Generation 1 : objects left after generation 0 garbage collection
+  Generation 2 : objects left after generation 1 garbage collection
+
+Important methods of garbage collection : GetGeneration(), GetTotalMemory(), Collect()
+Dispose() vs Finalize() :  Dispose() is called by the application either with the object or using the using block
+
+Finalize() : is called by the GC, before the object that is eligible for collection is reclaimed
+
+Types of Constructors and the 'this' keyword:
+
+using the current object referene, we can make calls to other overloaded constructors of the same class
+
+- Protected Constructor : though is like a private constructor semantically, it still allows to create subclass, and call the instance
+- Protected members of a class are accessible only in the derived class, with the object of the derived class only.
+
+Static Constructors: It is a class constructor that executes before any instance of the class is created
+                     It executes after the static field are initialized
+                     It cannot be called directly
+                     It can initialize only static fields and not non-static
+
+Files: 

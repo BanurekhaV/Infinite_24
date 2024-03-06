@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Dotnet_Day8.ComparableEg</StartupObject>
+    <StartupObject>Dotnet_Day8.Generics</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

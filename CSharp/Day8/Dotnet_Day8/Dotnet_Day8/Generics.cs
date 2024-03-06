@@ -40,6 +40,31 @@ namespace Dotnet_Day8
             {
                 Console.WriteLine(e.ToString());                
             }
+
+            //Dictionary class 
+            Dictionary<int, string> dict = new Dictionary<int, string>();
+            dict.Add(4, "Bananas");
+            dict.Add(1, "Oranges");
+            dict.Add(5, "Apples");
+            dict.Add(2, "Grapes");
+
+            foreach(int v in dict.Keys)
+            {
+                Console.WriteLine(v);
+            }
+            Console.WriteLine();
+
+            foreach(string s in dict.Values)
+            {
+                Console.WriteLine(s);
+            }
+            Console.WriteLine();
+            foreach(KeyValuePair<int,string> kvp in dict)
+            {
+                Console.Write(kvp.Key + " ");
+                Console.Write(kvp.Value);
+                Console.WriteLine(  );
+            }
             Console.Read();
         }
     }

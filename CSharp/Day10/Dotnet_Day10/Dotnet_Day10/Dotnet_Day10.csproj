@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Dotnet_Day10.Co_ContraVariance</StartupObject>
+    <StartupObject>Dotnet_Day10.FilesEg</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -46,7 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConstructorTypes.cs" />
     <Compile Include="Co_ContraVariance.cs" />
+    <Compile Include="Deep_ShallowCopy.cs" />
+    <Compile Include="FilesEg.cs" />
+    <Compile Include="GarbageProgram.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
