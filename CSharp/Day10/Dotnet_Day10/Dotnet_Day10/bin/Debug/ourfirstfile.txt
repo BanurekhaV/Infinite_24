@@ -1,1 +1,1 @@
-This is a file written using Streamwriter. 
+This is a file written using Streamwriter. We are learning how to read and write onto files using stream reader and writer classes of the IO namespace
