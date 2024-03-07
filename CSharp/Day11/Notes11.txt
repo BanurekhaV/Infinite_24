@@ -1,0 +1,40 @@
+Serialization : The process of converting an objects data into a form that can be stored as a physical file, datan=base, memory or over the network.
+
+DeSerialization : It is the reverse process of Serialization, where stream of bytes are converted back to objects
+
+Types of Serialization :
+  1. Binary
+  2. XML
+  3. SOAP
+  4. JSON 
+
+XML : eXtensible markup lang
+
+Threads : are defined as the execution path of a program
+          they are light weight process
+          the thread that executes first is known as the Main thread.
+          the other threads are created by the main thread as child threads
+          threads are defined the system.threading namespace
+
+Importatnt Properties of Thread class
+  - CurrentThread
+  - IsAlive
+  - Name
+  - ThreadState
+
+State of a Thread  :
+   - Unstarted
+   - Runnable
+   - Running
+   - Not Runnable
+   - Dead
+
+Functionality on a Thread :
+  - Sleep
+  - Join
+  - Abort
+  - Suspend
+  - Resume
+  - Start
+   
+          
