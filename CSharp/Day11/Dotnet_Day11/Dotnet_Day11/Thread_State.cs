@@ -30,7 +30,7 @@ namespace Dotnet_Day11
                 //terminate
                 t1.Abort();
                 Console.WriteLine($"Before Start , IsAlive : {t1.IsAlive}, Thread State : {t1.ThreadState}");
-
+                
                 t1.Start();               
 
             }

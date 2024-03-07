@@ -1,0 +1,5 @@
+C:\Banu\Infinite\B3\CSharp\Day11\Dotnet_Day11\FirstLibrary\bin\Debug\FirstLibrary.dll
+C:\Banu\Infinite\B3\CSharp\Day11\Dotnet_Day11\FirstLibrary\bin\Debug\FirstLibrary.pdb
+C:\Banu\Infinite\B3\CSharp\Day11\Dotnet_Day11\FirstLibrary\obj\Debug\FirstLibrary.csproj.CoreCompileInputs.cache
+C:\Banu\Infinite\B3\CSharp\Day11\Dotnet_Day11\FirstLibrary\obj\Debug\FirstLibrary.dll
+C:\Banu\Infinite\B3\CSharp\Day11\Dotnet_Day11\FirstLibrary\obj\Debug\FirstLibrary.pdb

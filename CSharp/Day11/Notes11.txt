@@ -31,10 +31,41 @@ State of a Thread  :
 
 Functionality on a Thread :
   - Sleep
-  - Join
+  - Join   - Thread Synchronization
   - Abort
   - Suspend
   - Resume
   - Start
+
+Thread Synchronization : A mechanism to protect overlap of some crucial/critical data using the below functions :
+  - Blocking
+  - locks
+  - Signalling
+  - Join
+
+Thread Pool : Is a collection of threads that canbe re-used for some job/activity. 
+We can get a thread from pool, using one of the methods of the thread class known as QueueUserWorkItem(). This method tries to give a thread from th epool if available, else will give a callback when available. Till such time the method will be queued. 
+
+
+Class Library : 
+
+first.dll ( add())
+
+  public class second{
+   first f;
+
+  public int subtract(int, int)
+{
+}
+}
+
+first f= new first(); f.add(4,5);
+second s = new second(); s.subtract(5,4);
+
+f.add();
+f.subtract();
+
+extension methods : 
+
    
           

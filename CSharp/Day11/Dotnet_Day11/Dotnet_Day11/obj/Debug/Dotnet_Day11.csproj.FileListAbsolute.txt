@@ -5,3 +5,6 @@ C:\Banu\Infinite\B3\CSharp\Day11\Dotnet_Day11\Dotnet_Day11\bin\Debug\Dotnet_Day1
 C:\Banu\Infinite\B3\CSharp\Day11\Dotnet_Day11\Dotnet_Day11\bin\Debug\Dotnet_Day11.pdb
 C:\Banu\Infinite\B3\CSharp\Day11\Dotnet_Day11\Dotnet_Day11\obj\Debug\Dotnet_Day11.exe
 C:\Banu\Infinite\B3\CSharp\Day11\Dotnet_Day11\Dotnet_Day11\obj\Debug\Dotnet_Day11.pdb
+C:\Banu\Infinite\B3\CSharp\Day11\Dotnet_Day11\Dotnet_Day11\bin\Debug\FirstLibrary.dll
+C:\Banu\Infinite\B3\CSharp\Day11\Dotnet_Day11\Dotnet_Day11\bin\Debug\FirstLibrary.pdb
+C:\Banu\Infinite\B3\CSharp\Day11\Dotnet_Day11\Dotnet_Day11\obj\Debug\Dotnet_Day11.csproj.CopyComplete

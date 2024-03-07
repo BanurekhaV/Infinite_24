@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Dotnet_Day11.Thread_State</StartupObject>
+    <StartupObject>Dotnet_Day11.CallLibrary</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -47,14 +47,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BinareySerialization.cs" />
+    <Compile Include="CallLibrary.cs" />
     <Compile Include="MultiThreads.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ThreadPoolEg.cs" />
     <Compile Include="Threads_1.cs" />
     <Compile Include="Thread_State.cs" />
+    <Compile Include="Thread_Sync.cs" />
     <Compile Include="XmlSerialization.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FirstLibrary\FirstLibrary.csproj">
+      <Project>{6aa64976-7db3-41d3-850e-905f750fc00e}</Project>
+      <Name>FirstLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
