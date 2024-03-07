@@ -28,4 +28,10 @@ Static Constructors: It is a class constructor that executes before any instance
                      It cannot be called directly
                      It can initialize only static fields and not non-static
 
-Files: 
+Files: There are various inbuilt classes in the system.IO namespace for persistence into files
+
+ BinaryReader/Writer
+ StreamReader/writer
+
+DirectoryInfo
+FileInfo
