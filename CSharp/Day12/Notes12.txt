@@ -1,0 +1,14 @@
+Enhancements :
+- Lambda Expressions
+- Query Expression
+- Literal Improvements
+- Dictionary Initilializers
+- Expression Bodied member
+- Exception Filters
+- Local Function
+    - Some Piece of code within a function, that can be called again and again within the parent function
+    - Cannot overload a local function
+    - No access modifiers such as public ,private, protected etc, allowed
+    - Compiler will issue a warning if the local function is not called/used by the Parent function
+    - All Varibales of the enclosing scope, including local variables can be accessed by the local function
+
