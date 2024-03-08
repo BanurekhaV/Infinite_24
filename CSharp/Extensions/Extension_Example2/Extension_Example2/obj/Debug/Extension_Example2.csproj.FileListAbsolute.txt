@@ -1,0 +1,7 @@
+C:\Banu\Infinite\B3\CSharp\Extensions\Extension_Example2\Extension_Example2\bin\Debug\Extension_Example2.exe.config
+C:\Banu\Infinite\B3\CSharp\Extensions\Extension_Example2\Extension_Example2\bin\Debug\Extension_Example2.exe
+C:\Banu\Infinite\B3\CSharp\Extensions\Extension_Example2\Extension_Example2\bin\Debug\Extension_Example2.pdb
+C:\Banu\Infinite\B3\CSharp\Extensions\Extension_Example2\Extension_Example2\obj\Debug\Extension_Example2.csproj.AssemblyReference.cache
+C:\Banu\Infinite\B3\CSharp\Extensions\Extension_Example2\Extension_Example2\obj\Debug\Extension_Example2.csproj.CoreCompileInputs.cache
+C:\Banu\Infinite\B3\CSharp\Extensions\Extension_Example2\Extension_Example2\obj\Debug\Extension_Example2.exe
+C:\Banu\Infinite\B3\CSharp\Extensions\Extension_Example2\Extension_Example2\obj\Debug\Extension_Example2.pdb

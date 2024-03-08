@@ -1,0 +1,7 @@
+C:\Banu\Infinite\B3\CSharp\Day12\Enhancements\Enhancements\bin\Debug\Enhancements.exe.config
+C:\Banu\Infinite\B3\CSharp\Day12\Enhancements\Enhancements\bin\Debug\Enhancements.exe
+C:\Banu\Infinite\B3\CSharp\Day12\Enhancements\Enhancements\bin\Debug\Enhancements.pdb
+C:\Banu\Infinite\B3\CSharp\Day12\Enhancements\Enhancements\obj\Debug\Enhancements.csproj.AssemblyReference.cache
+C:\Banu\Infinite\B3\CSharp\Day12\Enhancements\Enhancements\obj\Debug\Enhancements.csproj.CoreCompileInputs.cache
+C:\Banu\Infinite\B3\CSharp\Day12\Enhancements\Enhancements\obj\Debug\Enhancements.exe
+C:\Banu\Infinite\B3\CSharp\Day12\Enhancements\Enhancements\obj\Debug\Enhancements.pdb
