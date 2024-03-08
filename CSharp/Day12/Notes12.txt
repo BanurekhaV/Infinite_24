@@ -11,4 +11,32 @@ Enhancements :
     - No access modifiers such as public ,private, protected etc, allowed
     - Compiler will issue a warning if the local function is not called/used by the Parent function
     - All Varibales of the enclosing scope, including local variables can be accessed by the local function
+ - Throws : is a keyword that helps ro throw an exception within an expression
+
+-Task : Tasks are a way to implement asynchronous programming. The task object is typically executed asynchronously on a thread pool than synchronously on the main thread.
+ A task scheduler will be responsible to start and manage the task. This is the one, that uses the thread from pool to execute the task
+ It makes the application more responsive
+
+TPL : Task Parallel Library, as set of public types and API's in the System.Threading and Threading.Tasks namespaces
+
+Parallel Programming : is a type of programming in which many execution of process, calculations are carried out simultaneously
+
+We need to ensure that Tasks are independent of each other (order of execution does not matter)
+
+Tasks                 vs              Threads
+Tasks represents asyn. operations     Represents flow of work
+Tasks can return results              Cannot directly return any results
+Task can have multiple cores          Threads can have only one task at a time
+
+We implement parallel programming using 'async' and 'await'
+Task can be said 'that they are higher level concept than a thread'
+
+-async and await : are keywords, used to implement aynchronous programming. Await operator is applied in a task to suspend execution until the awaited task completes.
+-async must always have a await in a method
+
+-async and await in catch and finally blocks also to wait for some other task to complete
+
+-Autoproperties and getters only
+
+
 

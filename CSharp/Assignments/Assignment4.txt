@@ -1,0 +1,28 @@
+I Create a class Library Project called Concession. Change the class name to TicketConcession. Inside the class, Write a method called CalculateConcession(int age)  that takes age as an input and calculates concession for travel as below:
+
+If age<=5 then “Little Champs- Free Ticket” should be displayed along with name and Age
+
+If age >60 then calculate 30% concession on the totalfare
+(Which is a constant amount - you can fix Eg:500/-) and Display “ Senior Citizen” + Calculated Fare along with Name and Age
+
+For others Print "Ticket Booked” + Fare along with Name and Age 
+
+II. Create a Console application to test the above project. Inside Class Program have int TotalFare as Constant, Name, Age as properties.  Accept Name, Age from the user and call the CalculateConcession() method and print the details accordingly
+
+(Hint : Add required references)
+
+III. Lambda queries
+
+ 1)
+Write a query that returns list of numbers and their suares only if the square is greater than 20
+
+Example input {7,2,30}
+Expected Output : 49,900
+
+2) 
+  Write a query that returns words starting with letter 'a' and ending with letter 'm'
+
+ Input : any collections (countries,fruits,colors,states,names etc)
+ eg: {amsterdam, bloom}
+
+Output : amsterdam

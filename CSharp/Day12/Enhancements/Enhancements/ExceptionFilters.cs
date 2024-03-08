@@ -10,6 +10,7 @@ namespace Enhancements
     {
         static void Main()
         {
+            var v = Divide(10, 0);
             try
             {
               //  int number = 0;
@@ -30,6 +31,11 @@ namespace Enhancements
             Console.Read();
         }
 
+        public static float Divide(int x, int y)
+        {
+            //directly throw an exception from an expression
+            return y != 0 ? x % y : throw new DivideByZeroException();
+        }
         public static void DoSomeTask()
         {
             Console.WriteLine("A new Task on Hand..");

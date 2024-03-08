@@ -1,0 +1,10 @@
+C:\Banu\Infinite\B3\CSharp\Day12\Enhancements\WindowsTasks\bin\Debug\WindowsTasks.exe.config
+C:\Banu\Infinite\B3\CSharp\Day12\Enhancements\WindowsTasks\bin\Debug\WindowsTasks.exe
+C:\Banu\Infinite\B3\CSharp\Day12\Enhancements\WindowsTasks\bin\Debug\WindowsTasks.pdb
+C:\Banu\Infinite\B3\CSharp\Day12\Enhancements\WindowsTasks\obj\Debug\WindowsTasks.csproj.AssemblyReference.cache
+C:\Banu\Infinite\B3\CSharp\Day12\Enhancements\WindowsTasks\obj\Debug\WindowsTasks.Form1.resources
+C:\Banu\Infinite\B3\CSharp\Day12\Enhancements\WindowsTasks\obj\Debug\WindowsTasks.Properties.Resources.resources
+C:\Banu\Infinite\B3\CSharp\Day12\Enhancements\WindowsTasks\obj\Debug\WindowsTasks.csproj.GenerateResource.cache
+C:\Banu\Infinite\B3\CSharp\Day12\Enhancements\WindowsTasks\obj\Debug\WindowsTasks.csproj.CoreCompileInputs.cache
+C:\Banu\Infinite\B3\CSharp\Day12\Enhancements\WindowsTasks\obj\Debug\WindowsTasks.exe
+C:\Banu\Infinite\B3\CSharp\Day12\Enhancements\WindowsTasks\obj\Debug\WindowsTasks.pdb
