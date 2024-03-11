@@ -1,0 +1,13 @@
+Remoting : Is a mechanism for communication, between objects of various applications that are not in the same process, nor in the same system
+ - Is a microsoft framework for communication between remote objects
+ - Provides ways to hide various aspects of remote communication viz. managing connections, marshalling of data, reading writing xml/soap mesages
+ - Provides services like
+      - object activation
+      - Life time support of objects
+      - Communication channels
+      - Transport message
+
+Types of Remote Objects : 
+     1. Single Call : Objects that serve one request
+     2. Singleton : Objects that serve multiple clients. The server maintains the state of each client
+     3. Client Activated Objects : Upon clients request for a remote object, the instance of the required object is activated, and the reference of the object is sent back to the client. A proxy object gets created at the client side. All calls will be executed on the proxy

@@ -35,7 +35,9 @@ patternN =>valN,
 _ =>defaultVal
 }
 
-External Aliases
 
 nameof operator : expression or operator produces the name of a variable,type,or a member of a class as string constant
+
+External Aliases : When we need to avoid name clashes in the class names and or methodnames between the different referred assemblies in an exe assembly, we can make use of extern alias ( by giving an alias name to the property of each library - right click on the class library and give an alias name)
+
 
