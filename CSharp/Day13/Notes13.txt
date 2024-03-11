@@ -1,0 +1,41 @@
+Tuples : Is a data structure that contains a sequence of elements of different datatypes. Used when we need to hold an object with properties, without creating an object the same.
+- When we need to return more than one value from a method as return values, then we can use tuples.
+
+ Other options of returning more than one value from a method are :
+  1. Custom Datatype   class custemp{name,doj,sal,mobile,prjdetails}
+    custemp GetEmpData(){}
+  2. Using Ref and Out : difficult to understand, and moreover ref and out are not supported with async methods
+  3. Using dynamic : We can return multiple values using dynamic. Performance point of view we do not use dynamic
+
+Nullable Types : 
+
+Pattern Matching : a feature that allows testing an expression for the occurence of a given pattern . Allows operations like
+  - type checking(type pattern)
+  - null checking(constant pattern)
+  - comparisons(relational pattern)
+  - object deconstruction (positional pattern)
+  - comparing values of properties(property pattern)
+  - expression reuse(var pattern)
+with minimal syntax
+
+switch(expression)
+{
+  case pattern1 :
+
+ ...
+}
+
+expression switch
+{
+pattern1 => val1,
+pattern2 => val2,
+
+..
+patternN =>valN,
+_ =>defaultVal
+}
+
+External Aliases
+
+nameof operator : expression or operator produces the name of a variable,type,or a member of a class as string constant
+

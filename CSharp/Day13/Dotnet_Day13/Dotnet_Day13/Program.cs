@@ -8,6 +8,7 @@ namespace Dotnet_Day13
 {
     class Program
     {
+        public string PName { get; set; } = "Infinite";
         static void Main(string[] args)
         {
             var values = new List<double>() { 10, 20, 30, 40, 50 };
@@ -79,9 +80,14 @@ namespace Dotnet_Day13
         }
 
         //Example 2
-        static (double Min,double Max,double Average)GetResults(List<double>values)
+       public static (double Min,double Max,double Average)GetResults(List<double>values)
         {
             return (values.Min(), values.Max(), values.Average());
+        }
+
+        public void TestFunc(string name)
+        {
+            Console.WriteLine("testing" + " "+name);
         }
     }
 }
