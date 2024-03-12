@@ -10,8 +10,8 @@ namespace Console_Client
     {
         static void Main(string[] args)
         {
-            HttpChannel cc = new HttpChannel(8003);
-            ChannelServices.RegisterChannel(cc);
+            //HttpChannel cc = new HttpChannel(8003);
+            //ChannelServices.RegisterChannel(cc);
 
             //create a service class object
             Service service = (Service)Activator.GetObject(typeof(Service),

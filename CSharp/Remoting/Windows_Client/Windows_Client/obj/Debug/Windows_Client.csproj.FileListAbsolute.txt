@@ -1,0 +1,13 @@
+C:\Banu\Infinite\B3\CSharp\Remoting\Windows_Client\Windows_Client\bin\Debug\Windows_Client.exe.config
+C:\Banu\Infinite\B3\CSharp\Remoting\Windows_Client\Windows_Client\bin\Debug\Windows_Client.exe
+C:\Banu\Infinite\B3\CSharp\Remoting\Windows_Client\Windows_Client\bin\Debug\Windows_Client.pdb
+C:\Banu\Infinite\B3\CSharp\Remoting\Windows_Client\Windows_Client\bin\Debug\Remote_Objects.dll
+C:\Banu\Infinite\B3\CSharp\Remoting\Windows_Client\Windows_Client\bin\Debug\Remote_Objects.pdb
+C:\Banu\Infinite\B3\CSharp\Remoting\Windows_Client\Windows_Client\obj\Debug\Windows_Client.csproj.AssemblyReference.cache
+C:\Banu\Infinite\B3\CSharp\Remoting\Windows_Client\Windows_Client\obj\Debug\Windows_Client.Form1.resources
+C:\Banu\Infinite\B3\CSharp\Remoting\Windows_Client\Windows_Client\obj\Debug\Windows_Client.Properties.Resources.resources
+C:\Banu\Infinite\B3\CSharp\Remoting\Windows_Client\Windows_Client\obj\Debug\Windows_Client.csproj.GenerateResource.cache
+C:\Banu\Infinite\B3\CSharp\Remoting\Windows_Client\Windows_Client\obj\Debug\Windows_Client.csproj.CoreCompileInputs.cache
+C:\Banu\Infinite\B3\CSharp\Remoting\Windows_Client\Windows_Client\obj\Debug\Windows_Client.csproj.CopyComplete
+C:\Banu\Infinite\B3\CSharp\Remoting\Windows_Client\Windows_Client\obj\Debug\Windows_Client.exe
+C:\Banu\Infinite\B3\CSharp\Remoting\Windows_Client\Windows_Client\obj\Debug\Windows_Client.pdb
