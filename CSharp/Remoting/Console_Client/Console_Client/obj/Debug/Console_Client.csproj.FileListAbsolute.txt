@@ -1,0 +1,10 @@
+C:\Banu\Infinite\B3\CSharp\Remoting\Console_Client\Console_Client\bin\Debug\Console_Client.exe.config
+C:\Banu\Infinite\B3\CSharp\Remoting\Console_Client\Console_Client\bin\Debug\Console_Client.exe
+C:\Banu\Infinite\B3\CSharp\Remoting\Console_Client\Console_Client\bin\Debug\Console_Client.pdb
+C:\Banu\Infinite\B3\CSharp\Remoting\Console_Client\Console_Client\bin\Debug\Remote_Objects.dll
+C:\Banu\Infinite\B3\CSharp\Remoting\Console_Client\Console_Client\bin\Debug\Remote_Objects.pdb
+C:\Banu\Infinite\B3\CSharp\Remoting\Console_Client\Console_Client\obj\Debug\Console_Client.csproj.AssemblyReference.cache
+C:\Banu\Infinite\B3\CSharp\Remoting\Console_Client\Console_Client\obj\Debug\Console_Client.csproj.CoreCompileInputs.cache
+C:\Banu\Infinite\B3\CSharp\Remoting\Console_Client\Console_Client\obj\Debug\Console_Client.csproj.CopyComplete
+C:\Banu\Infinite\B3\CSharp\Remoting\Console_Client\Console_Client\obj\Debug\Console_Client.exe
+C:\Banu\Infinite\B3\CSharp\Remoting\Console_Client\Console_Client\obj\Debug\Console_Client.pdb

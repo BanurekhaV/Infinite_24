@@ -1,0 +1,6 @@
+C:\Banu\Infinite\B3\CSharp\Remoting\Remote_Objects\Remote_Objects\bin\Debug\Remote_Objects.dll
+C:\Banu\Infinite\B3\CSharp\Remoting\Remote_Objects\Remote_Objects\bin\Debug\Remote_Objects.pdb
+C:\Banu\Infinite\B3\CSharp\Remoting\Remote_Objects\Remote_Objects\obj\Debug\Remote_Objects.csproj.AssemblyReference.cache
+C:\Banu\Infinite\B3\CSharp\Remoting\Remote_Objects\Remote_Objects\obj\Debug\Remote_Objects.csproj.CoreCompileInputs.cache
+C:\Banu\Infinite\B3\CSharp\Remoting\Remote_Objects\Remote_Objects\obj\Debug\Remote_Objects.dll
+C:\Banu\Infinite\B3\CSharp\Remoting\Remote_Objects\Remote_Objects\obj\Debug\Remote_Objects.pdb

@@ -1,4 +1,5 @@
-Remoting : Is a mechanism for communication, between objects of various applications that are not in the same process, nor in the same system
+Remoting : Is a mechanism for communication, between objects of various applications that are not in the same process(Domain), nor in the same system
+ - They may be using different transport protocols, Serialization format
  - Is a microsoft framework for communication between remote objects
  - Provides ways to hide various aspects of remote communication viz. managing connections, marshalling of data, reading writing xml/soap mesages
  - Provides services like
@@ -7,7 +8,32 @@ Remoting : Is a mechanism for communication, between objects of various applicat
       - Communication channels
       - Transport message
 
+Domain : When an application is loaded o to the memory, a process is created within that application. This is the application domain
+
+Contexts : Application domain is divided into varoius contexts. A context is a set of common constraints,usage,access,functionalities within the object. 
+
+Proxies : Is an instance of the remote object directly available to the client. It does all the marchalling across context and then forwards the request to the actual remote object
+
+Marshalling : Specifies how a remote object is exposed to the client. The process of passing parameters from one context to another . There are 2 ways to marshal
+   1. Marshal by Value  : the server creates a copy of the object and passes the copy to the client
+   2. Marshal by Ref : the client creates a proxy for the object and then uses the proxy for further processing
+
+Channels : is a mechanism that allows data transfers through a stream of bytes
+        HttpChannel, TcpChannel
+
 Types of Remote Objects : 
      1. Single Call : Objects that serve one request
-     2. Singleton : Objects that serve multiple clients. The server maintains the state of each client
+     2. Singleton : Objects that serve multiple clients. One object that serves all the requests of the client. The server maintains the state of each client
      3. Client Activated Objects : Upon clients request for a remote object, the instance of the required object is activated, and the reference of the object is sent back to the client. A proxy object gets created at the client side. All calls will be executed on the proxy
+
+
+Steps for Remoting
+ - Class Library where all remote objects are created
+ - Console Application - Server (Host for the Library)
+ - Client Application 
+Remote Procedure Call (RPC)
+DCOM (Distributed COM)
+Remoting  - replacement of DCOM
+WebServices
+WCF
+API
