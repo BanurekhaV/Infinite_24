@@ -1,0 +1,96 @@
+Software Engineering Principles :
+
+1. Seperation of Concerns 
+2. Modularization
+3. Abstractions (answers what and not how)
+4. Anticipation of Changes :
+      - Generality (de-coupled)  
+      - Incremental Development 
+      - Consistency (Look and feel)
+5. DRY - Do Not Repeat Yourself
+6. KISS - Keep it Simple Stupid
+7. YAGNI - You Aren't Gonna Need IT (Avoid features and functions that are not required)
+8. SOLID - Are design Principles
+
+  S : Single Responsibility Principle (SRP) - Every class, Interface or structure in the code should always have only one job to do
+
+  O : Open Close Principle (OCP) - A S/w module or a class is open for extension but closed modifications
+
+  L : Liskov Substitution Principle (LSP) - It is an extension of OCP, where a derived type extend the base without changing the behaviour of the base (Usage of Interfaces)
+
+  I : Interface Seggregation Principle (ISP) - Derived types should not be forced to implement interface methods that they dont want. Instead of one Fat Interface, many small/thin interface, based on set of methods,  each one serving a single purpose
+
+  D : Dependency Inversion Principle (DIP) - States that high level modules/classes (consumers/clients) should not depend on the low level modules/classes (Concrete Implementing class). Noth should depend on Abstraction (layered architecture)
+
+DIP as a design principle suggests a solution to the dependency problem, but does not say how or the techniques for the same
+
+IOC (Inversion of control) : this is the actual mechanism that allows high level components to depend on the abstraction rather than low level components
+
+  Ioc is a principle , and DI is Implementation
+
+DI : Dependency Injection is a design pattern to inject concrete implementation component into high level component
+
+Ioc container : is a programming framework that provides automatic DI of the components. It is also responsible for
+    1. Registration of a specific dependency type
+    2. Resolution : Creating and injecting Dependency objects into that actual 
+    3. Disposition : managing the lifetime of the dependencies
+
+DI can be used as below
+1. Constructor Injection
+2. Method "
+3. Property  " 
+
+
+Design Principle       					 vs          Design Pattern
+
+- Are general guidelines that guides in application design       Are Proven Solutions to commonly occuring problems
+
+
+Software Design Patterns :  These are documented and tested solutions for recurring problems during development. These patterns solve the problems of Object Creation and Integration
+
+Object creation, Initialization, structural changes of classes,interface, relationships between objects, communication between objects. Based on these requirements, there is broadly 3 patterns
+
+1. Creational Design Patterns ( Object Creation and Initialization)
+         FactoryPattern, AbstractFactoryPattern, SingleTon
+2. Structural Design Pattern ( changes and relationships)
+3. Behavioural Design Pattern (communication between objects)
+     
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

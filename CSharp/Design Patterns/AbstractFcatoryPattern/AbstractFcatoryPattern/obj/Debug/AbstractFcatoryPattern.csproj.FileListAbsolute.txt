@@ -1,0 +1,7 @@
+C:\Banu\Infinite\B3\CSharp\Design Patterns\AbstractFcatoryPattern\AbstractFcatoryPattern\bin\Debug\AbstractFcatoryPattern.exe.config
+C:\Banu\Infinite\B3\CSharp\Design Patterns\AbstractFcatoryPattern\AbstractFcatoryPattern\bin\Debug\AbstractFcatoryPattern.exe
+C:\Banu\Infinite\B3\CSharp\Design Patterns\AbstractFcatoryPattern\AbstractFcatoryPattern\bin\Debug\AbstractFcatoryPattern.pdb
+C:\Banu\Infinite\B3\CSharp\Design Patterns\AbstractFcatoryPattern\AbstractFcatoryPattern\obj\Debug\AbstractFcatoryPattern.csproj.AssemblyReference.cache
+C:\Banu\Infinite\B3\CSharp\Design Patterns\AbstractFcatoryPattern\AbstractFcatoryPattern\obj\Debug\AbstractFcatoryPattern.csproj.CoreCompileInputs.cache
+C:\Banu\Infinite\B3\CSharp\Design Patterns\AbstractFcatoryPattern\AbstractFcatoryPattern\obj\Debug\AbstractFcatoryPattern.exe
+C:\Banu\Infinite\B3\CSharp\Design Patterns\AbstractFcatoryPattern\AbstractFcatoryPattern\obj\Debug\AbstractFcatoryPattern.pdb
