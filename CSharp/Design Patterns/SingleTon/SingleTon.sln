@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.34301.259
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SingleTon", "SingleTon\SingleTon.csproj", "{6BFC9E32-B819-448E-A931-BAD954C3BCD3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SingleTon_Client2", "SingleTon_Client2\SingleTon_Client2.csproj", "{8D9B281F-6C6B-4327-A61F-71DDE5A73365}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6BFC9E32-B819-448E-A931-BAD954C3BCD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BFC9E32-B819-448E-A931-BAD954C3BCD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BFC9E32-B819-448E-A931-BAD954C3BCD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BFC9E32-B819-448E-A931-BAD954C3BCD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D9B281F-6C6B-4327-A61F-71DDE5A73365}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D9B281F-6C6B-4327-A61F-71DDE5A73365}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D9B281F-6C6B-4327-A61F-71DDE5A73365}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D9B281F-6C6B-4327-A61F-71DDE5A73365}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {75A5ABAC-F9FB-48FA-B01D-63F4476856B8}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,11 @@
+C:\Banu\Infinite\B3\CSharp\Design Patterns\SingleTon\SingleTon_Client2\bin\Debug\SingleTon_Client2.exe.config
+C:\Banu\Infinite\B3\CSharp\Design Patterns\SingleTon\SingleTon_Client2\bin\Debug\SingleTon_Client2.exe
+C:\Banu\Infinite\B3\CSharp\Design Patterns\SingleTon\SingleTon_Client2\bin\Debug\SingleTon_Client2.pdb
+C:\Banu\Infinite\B3\CSharp\Design Patterns\SingleTon\SingleTon_Client2\bin\Debug\SingleTon.exe
+C:\Banu\Infinite\B3\CSharp\Design Patterns\SingleTon\SingleTon_Client2\bin\Debug\SingleTon.pdb
+C:\Banu\Infinite\B3\CSharp\Design Patterns\SingleTon\SingleTon_Client2\bin\Debug\SingleTon.exe.config
+C:\Banu\Infinite\B3\CSharp\Design Patterns\SingleTon\SingleTon_Client2\obj\Debug\SingleTon_Client2.csproj.AssemblyReference.cache
+C:\Banu\Infinite\B3\CSharp\Design Patterns\SingleTon\SingleTon_Client2\obj\Debug\SingleTon_Client2.csproj.CoreCompileInputs.cache
+C:\Banu\Infinite\B3\CSharp\Design Patterns\SingleTon\SingleTon_Client2\obj\Debug\SingleTon_Client2.csproj.CopyComplete
+C:\Banu\Infinite\B3\CSharp\Design Patterns\SingleTon\SingleTon_Client2\obj\Debug\SingleTon_Client2.exe
+C:\Banu\Infinite\B3\CSharp\Design Patterns\SingleTon\SingleTon_Client2\obj\Debug\SingleTon_Client2.pdb
