@@ -1,0 +1,6 @@
+C:\Banu\Infinite\B3\CSharp\Testing\MsTesting\MsTesting\bin\Debug\MsTesting.dll
+C:\Banu\Infinite\B3\CSharp\Testing\MsTesting\MsTesting\bin\Debug\MsTesting.pdb
+C:\Banu\Infinite\B3\CSharp\Testing\MsTesting\MsTesting\obj\Debug\MsTesting.csproj.AssemblyReference.cache
+C:\Banu\Infinite\B3\CSharp\Testing\MsTesting\MsTesting\obj\Debug\MsTesting.csproj.CoreCompileInputs.cache
+C:\Banu\Infinite\B3\CSharp\Testing\MsTesting\MsTesting\obj\Debug\MsTesting.dll
+C:\Banu\Infinite\B3\CSharp\Testing\MsTesting\MsTesting\obj\Debug\MsTesting.pdb

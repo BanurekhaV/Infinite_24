@@ -16,7 +16,7 @@ Testing : Is a process of verifying and validating a software program, applicati
 Unit Testing : refers to a simple I-P-O code that takes input,does some process, and gives away an output. Testing this small piece of code is known as Unit Testing
 
 There are lots of test frameworks available. Few of the Third party test frameworks are
-  NUni    (https://www.nunit.org/)
+  NUnit    (https://www.nunit.org/)
   MbUnit
 
 MSTest is a test environment that is included as a part of Visual studio.
@@ -24,7 +24,7 @@ MSTest is a test environment that is included as a part of Visual studio.
 - A single unit test will include a well known structure of Triple A's
   - Arrange  : Arrange all variables,objects etc
   - Act  : calls the methods
-  - Assert : assertains the expected results
+  - Assert : checking the correctness of the code
 
 Example :
 
@@ -41,4 +41,23 @@ public void WhencallingAdd_itshould_sumupallvalues()
 //Assert
   Assert.AreEqual(res,expectedsum);
   
+Note : Test Cases are always public (no other modifier is allowed)
+       Test Cases do not have return types
+       The names of the Test cases should be meaningful revealing the purpose of test, even though it is big
 
+[TestFixture] - Enables the class for testing
+[Test] - Marks the method testable by the test runner
+[SetUp] - Is called everytime before running a test method
+[Ignore] - ignored by the test runner
+
+MSTest : to be installed from nuget. Select Songhoycore.mstest and install in the tesing project
+
+ [TestClass] - marking the class for testing
+ [TestMethod] - marking a method to be tested by the test runner
+ [TestInitialize] - Gets executed before execution of all tests
+ [TestCleanUp] - after all tests are executed, it will executed
+ [ClassInitialize]- executes once for the testclass. But the method marked under this annotation has to be public static void and will have to be passed with an object of the TestContext class
+[ClassCleanup] - executed once after all tests in that class are done. Mark it as public static void without passing any argument
+
+[AssemblyInitialize] - For the entire dll assembly. Mark the method under this as public static void and pass an object of TestContext class
+[AssemblyCleanUp]- mark it public static void, and no argument
