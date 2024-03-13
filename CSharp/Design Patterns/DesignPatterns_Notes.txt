@@ -55,10 +55,35 @@ Object creation, Initialization, structural changes of classes,interface, relati
 2. Structural Design Pattern ( changes and relationships)
 3. Behavioural Design Pattern (communication between objects)
      
- 
+Factory Pattern :  According to the GOF, factory is an object used to create other objects. In other words, factory is a class with a method. This method is used to create and return other objects based on the input. This design creates and initializes the object without exposing the logic of creation to the client
 
+Abstract Factory Pattern : Grouping of common themed objects under a factory
 
+SingleTon Pattern : Is responsible in creating only one Object of the requested type across multiple clients. (private constructor, if needed, we can create a sealed class)
 
+DI pattern using Unity Framework:
+ Tools->Nuget Pacakage Manager->Manage nuget packages for solution->browse for unity.ioc.framework
+select the package and click install. Wait for installation to complete, while giving required approvals
+Post installation we are ready to work with ioc container
+ - Create an Ioc Object
+ - Register the Service Types  (give the Interface name, the implementing class name)
+ - Resolve the Dependencies
+ - Start calling the methods
+
+Layered Architecture :
+
+1. User Interface (UI)
+2. Business Access Layer (BAL)
+3. Data Access Layer (DAL)
+  
+
+Pros and cons of DI:
+Pros: Isolation (both testing and developing)
+Explicit definitions of dependency class
+Enables good Design
+Quich switching of implementation is possible
+
+Cons: Increased number of interfaces and classes
 
 
 
