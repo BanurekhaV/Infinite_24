@@ -1,0 +1,7 @@
+C:\Banu\Infinite\B3\CSharp\Testing\NunitTesting\NunitTesting\bin\Debug\NunitTesting.exe.config
+C:\Banu\Infinite\B3\CSharp\Testing\NunitTesting\NunitTesting\bin\Debug\NunitTesting.exe
+C:\Banu\Infinite\B3\CSharp\Testing\NunitTesting\NunitTesting\bin\Debug\NunitTesting.pdb
+C:\Banu\Infinite\B3\CSharp\Testing\NunitTesting\NunitTesting\obj\Debug\NunitTesting.csproj.AssemblyReference.cache
+C:\Banu\Infinite\B3\CSharp\Testing\NunitTesting\NunitTesting\obj\Debug\NunitTesting.csproj.CoreCompileInputs.cache
+C:\Banu\Infinite\B3\CSharp\Testing\NunitTesting\NunitTesting\obj\Debug\NunitTesting.exe
+C:\Banu\Infinite\B3\CSharp\Testing\NunitTesting\NunitTesting\obj\Debug\NunitTesting.pdb

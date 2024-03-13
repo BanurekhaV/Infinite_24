@@ -1,0 +1,44 @@
+SDLC : Software Development Life Cycle is a detailed plan to develop,maintain,replace,alter,enhance etc.
+
+Initiation : Begins with an opportunity identified by the sponser to automate a process
+System Development : Defines the scope, boundary,risk management, feasibility study
+Planning : Project Management Plan (documents, acquiring resources etc.)
+Requirement Analysis : Detailed functional aspects identified
+Design : Transformimg the functional requirements into viable design
+Development : Designs to be converted into information system
+Integration and Test : Demonstartes the developed systems conforming to the requirements
+Implementation : Preparations to deploying the system onto a production unit
+Operations and Maintenance : Describing tasks to manage and maintain Information system.     	Post implementation and in-process reviews
+Disposition : Describes the end of the system activities
+
+Testing : Is a process of verifying and validating a software program, application, or product
+
+Unit Testing : refers to a simple I-P-O code that takes input,does some process, and gives away an output. Testing this small piece of code is known as Unit Testing
+
+There are lots of test frameworks available. Few of the Third party test frameworks are
+  NUni    (https://www.nunit.org/)
+  MbUnit
+
+MSTest is a test environment that is included as a part of Visual studio.
+
+- A single unit test will include a well known structure of Triple A's
+  - Arrange  : Arrange all variables,objects etc
+  - Act  : calls the methods
+  - Assert : assertains the expected results
+
+Example :
+
+public void WhencallingAdd_itshould_sumupallvalues()
+{
+   //Arrange
+  var a=5;
+  var b=5;
+  var expectedsum=10;
+
+//Act
+  var res=sum(a,b);
+
+//Assert
+  Assert.AreEqual(res,expectedsum);
+  
+
