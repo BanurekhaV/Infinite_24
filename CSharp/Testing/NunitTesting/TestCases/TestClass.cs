@@ -102,5 +102,14 @@ namespace TestCases
             }
         }
 
+        [Test]
+        [TestCase(15,35,50)]
+        [TestCase(10,45,55)]
+        [TestCase(20,50,60)]
+        public void TestAddNumberswithTestcases(int n1,int n2, int expected)
+        {
+            int result = acc.Add(n1, n2);
+            ClassicAssert.AreEqual(expected, result);
+        }
     }
 }

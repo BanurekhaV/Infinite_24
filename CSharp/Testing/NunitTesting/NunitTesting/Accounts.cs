@@ -33,5 +33,11 @@ namespace NunitTesting
             else
                 throw new Exception("Not Enough Funds to Withdraw");
         }
+
+        public int Add(int a, int b)
+        {
+            int c = a + b;
+            return c;
+        }
     }
 }

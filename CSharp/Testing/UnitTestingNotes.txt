@@ -61,3 +61,26 @@ MSTest : to be installed from nuget. Select Songhoycore.mstest and install in th
 
 [AssemblyInitialize] - For the entire dll assembly. Mark the method under this as public static void and pass an object of TestContext class
 [AssemblyCleanUp]- mark it public static void, and no argument
+
+Test Driven Development : Is a strategic approach to sw development, where we first write a testcase before the actual code.
+- Write a failing test
+- code and retest
+- passing test
+
+- Write a failing test
+
+public class TDDeg{
+  public void TestAdd2Nos(){
+   assert.Equals(3,addTwoNumbers(1,2));
+}
+}
+  // the above test fails since we have not written the method addTwoNumbers()
+
+- Write minimal code 
+
+public static int addTwoNumbers(int x, int y)
+{
+return x+y;
+}
+after the above run the test, and make sure it passes
+Refactor the code to improve if required, without changing the functionality

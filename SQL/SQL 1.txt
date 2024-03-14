@@ -1,0 +1,96 @@
+drop database TrainingDB
+
+create database TrainingDB --to create database that can hold many other objects
+use TrainingDB  -- to make the database current
+
+--creating tables that can store the data
+create table tblDepartment(DeptId int primary key,
+DeptName varchar(20),
+DeptLocation varchar(30),
+Budget float)
+
+create table tblEmployee
+(EmpId int primary key,
+EmpName varchar(30),
+Gender char(7),
+Salary float,
+DeptId int foreign key references tbldepartment(DeptId)
+)
+
+--add tuples/rows/records into a table
+insert into tblDepartment values(2,'Admin','Vizag',45000)
+
+--bulk insertion
+insert into tblDepartment values(5,'Testing','Bangalore',55000),
+(4,'Payroll','Hyderabad',20000),(3,'IT','Chennai',75000)
+
+
+--to view the inserted rows/tuple 
+select * from tblDepartment
+
+--to insert partial values into a table, give the columns that will be provided
+--with values in the insert clause
+
+insert into tblEmployee(EmpId,EmpName) values(100,'Avinash')
+select * from tblDepartment
+select * from tblEmployee
+
+insert into tblEmployee(Empid,Empname,gender,salary,deptid,phone) values(109,'Nithyanshu','Male',6850,1,'3333221'),
+(104,'Jaya Aakash','Male',7000,1),(105,'Jamsher','Male',6800,2),
+(101,'Khushi','Female',7100,3)
+
+--if we want to add a colum after table creation without constraints. It works
+alter table tblemployee 
+add Phone varchar(10)
+
+-- trying to give a constraint to a column of a table
+-- which already has rows. This will Fail
+
+alter table tblemployee 
+add Phone varchar(10) unique   
+
+--drop a column from the table
+alter table tblemployee
+drop column Phone
+
+--example to just understand that we can add columns with constraints afetr table creation
+--which does not have any records/rows/tuples
+
+create table dummy(did int,
+dname varchar(30))
+
+select * from dummy
+
+alter table dummy add dphone varchar(10) unique
+
+insert into dummy values(1,'aa',null),(1,'bb',123),(2,'cc','1234')
+
+--giving check constraint after the table is created and is with rows
+--all employee salaries to be >6800
+alter table tblemployee
+add constraint chksal check(Salary>=6500)
+
+--modifying data in a table to update all the phones nos, which are null
+update tblEmployee set phone=98765 where EmpId=101
+update tblEmployee set salary=6600 ,gender='Male' where EmpId=100
+
+select * from tblemployee
+
+--now let us apply a unique constraint on the Phone column
+alter table tblemployee
+add constraint Uphone unique(Phone)
+
+--default constraints after table creation
+alter table tblemployee
+add City varchar(25) default 'Heaven'
+
+--Foreign key constraints after table crreation
+alter table tblemployee
+add constraint newfk foreign key(deptid) references tbldepartment(deptid)
+
+--dropping constraints
+alter table tblemployee
+drop constraint newfk
+
+alter table tblemployee
+drop constraint [FK__tblEmploy__DeptI__2D27B809]

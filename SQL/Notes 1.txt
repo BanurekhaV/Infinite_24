@@ -1,0 +1,85 @@
+Database Management System 
+
+Database : can be defined as the the storage of inter related data that has been organized in such a fashion that retrieval of data is effective and efficient.
+
+-A set of programs to access the data
+-An Environment that is both convenient and efficient to use
+
+Drawbacks of using file systems to store data :
+ - Data redundancy and inconsistency
+ - Difficulty in accessing the data
+ - Data Isolation - multiple files and formats
+ - Integrity Problems
+ - Atomicity of updates 
+ - Concurrent access by multiple users
+ - Security problems
+
+
+Levels of Architecture
+  1. Physical : actual storage
+  2. Logical : perceived data
+  3. Application : specific data for specific users/applications (hiding)
+
+DataModels : A collection of tools for describing
+     1. Data
+     2. Relationships
+     3. Semantics
+     4. Constraints
+
+Types of DBMS
+1.  Hierachial dbms  HDBMS
+2.  Network dbms  NDBMS
+3.  Relational dbms  RDBMS  (E-R Model)
+4.  Object Relation dbms  ORDBMS (Multimedia, Hypertext based databases)
+
+RDBMS : The relational model sorts the data into tables, also known as relations, whcih consists of rows and columns.
+
+Important Terms in RDBMS:
+ Relation - A table (rows and cols)
+ Tuple - one row in a table
+ Attribute  - a column in a table
+ Degree  - number of attributes
+ Cardinality - number of tuples
+ Entity - anything that exists and is distinguishable
+ Relationship - an association between entities
+
+ Types of Reationships :
+ - One to One : 
+ - One to many : 
+ - many to many : 
+
+SQL - Structured Query Language (Case In-sensitive)
+- DDL Data Definition Language (Create,Alter,Drop,Truncate) -Structure definition
+- DML Data Manipulation Language (Insert,Update,Delete)
+- DQL Data Query Language (Select)
+- TCL Transaction Control Language (Commit, RollBack)
+- DCL Data Control Language  (Grant, Revoke)
+
+Super Key : In a given relation R, if K values are sufficient to identify a unique tuple, the K is a super key
+
+Candidate Key :  When K values are minimal
+
+Primary Key : A candidate key chosen as the principal means of identifying tuples in a relation.
+
+Alternate Key : A candidate that is not the primary key, but has the potential to be one later.
+
+Composite Key : A key that has more than one attribute in it 
+
+Foreign Key : In a relational schema, an attribute in a relation that corresponds to the pk of another relation
+
+Integrity Constraints:are rules enforced on the data columns of a table. These are used to limit the type of data that can go into a table. This ensures accuracy and reliability of the data in the database
+
+  1. Domain Integrity Constraints : Type restrictions, length restrictions, data restrictions, range restrictions ( check, default)
+
+  2. Entity Integrity Constraints : States that no primary key value be null, nor duplicates. It has to be unique (primary key, unique)
+
+  3. Referential Integrity Constraints : Is specified between 2 relations and is used to maintain consistency among the tuples in both the relations . Every FK value must have a PK value reference in another table (Foreign Key)
+
+Primary Key : The values have to be unique, cannot take null, or duplicates
+
+Unique Key : The values have to be unique and non-duplicates, but can accomodate one null value
+
+ 
+-Alter : adding and dropping a new column
+         adding a column along with constraints (that work and that dont work)
+Updation of one column or many columns with a restriction using 'where'

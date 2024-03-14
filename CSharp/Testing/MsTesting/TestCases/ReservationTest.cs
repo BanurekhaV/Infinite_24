@@ -12,10 +12,16 @@ namespace TestCases
     [TestClass]
     public class ReservationTest
     {
+        TestContext tc;
+        public TestContext testinstance
+        {
+            get { return tc; }
+            set { tc = value; }
+        }
         [AssemblyInitialize]
         public static void BeforeAssembly(TestContext tc)
         {
-            Debug.WriteLine("BeforeAssembly");
+            tc.WriteLine("BeforeAssembly");
         }
         [AssemblyCleanup]
         public static void AfterAssembly()
@@ -29,7 +35,7 @@ namespace TestCases
         // a testcontext object
         public static void BeforeClass(TestContext tc)
         {
-            Console.WriteLine("Called Before class");
+           tc.WriteLine("Called Before class");
         }
         [ClassCleanup]
         public static void AfterClass()
@@ -71,7 +77,7 @@ namespace TestCases
         [TestInitialize]
         public void BeforeRunningTests()
         {
-            Console.WriteLine("This is before the test");
+           Debug.WriteLine("This is before the test");
         }
 
 
