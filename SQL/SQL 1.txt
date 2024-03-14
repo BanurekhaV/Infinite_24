@@ -25,6 +25,26 @@ insert into tblDepartment values(5,'Testing','Bangalore',55000),
 (4,'Payroll','Hyderabad',20000),(3,'IT','Chennai',75000)
 
 
+--deleting tuple/tuples
+select * from dummy
+delete from dummy where did=1
+
+delete from dummy
+
+truncate table dummy
+
+drop table dummy
+
+--Alias Names
+--'*' all (rows and col)
+select EmpName EmployeeName,Salary as 'Employee Salary' from tblEmployee
+
+--top 3 records
+select top 3 * from tblEmployee
+
+select top 30 percent * from tblemployee
+
+
 --to view the inserted rows/tuple 
 select * from tblDepartment
 

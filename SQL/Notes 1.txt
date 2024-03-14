@@ -83,3 +83,16 @@ Unique Key : The values have to be unique and non-duplicates, but can accomodate
 -Alter : adding and dropping a new column
          adding a column along with constraints (that work and that dont work)
 Updation of one column or many columns with a restriction using 'where'
+
+Delete                                          Truncate
+DML command                                    DDL Command
+Can place restrictions with where clause       Cannot place restrictions
+Slow                                           Faster
+Retains the structure			       Retains the structure
+Can rollback 				       cannot rollback
+
+
+Relational Theory - Set Operations
+
+Selection   - where
+Projections - coln list
