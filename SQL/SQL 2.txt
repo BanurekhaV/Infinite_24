@@ -1,0 +1,92 @@
+use TrainingDb
+
+
+sp_help dummy
+
+select * from tblemployee
+select * from dummy
+drop table dummy
+ -- identity column ensures automatic data entry for any int data type
+ -- we can give the start value and the increment value, else it will 1,1 respectively
+create table dummy(did int identity(2,2), 
+dname varchar(35))
+
+insert into dummy values('aa'),('bb'),('cc')
+
+delete from dummy 
+
+--select options
+--1. relational operators(<,>,>=,<=,<>,=)
+select * from tblEmployee where salary<7000
+
+select * from tblemployee where salary=6600
+
+select * from tblemployee where salary >6800 and salary <7500
+
+select * from tblEmployee where salary is not null
+select * from tblEmployee where salary is  null
+
+select * from tblemployee where salary between 6800 and 7500 --(lower and higher values are inclusive)
+select * from tblemployee where salary not between 6800 and 7500
+
+--Arithmetic operators (+,/,*,-,%)
+select EmpName as 'Employee Name', (salary*12) as 'Annual Salary'  from tblEmployee
+
+select EmpName as 'Employee Name', (salary*12) as 'Annual Salary'  from tblEmployee
+where (salary*12)>80000
+
+select Empname,salary+1000 as 'New Salary' from tblEmployee
+
+update tblemployee set salary=salary+100 where salary between 6500 and 6600
+
+--in operator
+select * from tblemployee where deptid=1 or deptid=2 
+
+select * from tblemployee where deptid in(1,2)
+
+select * from tblemployee where deptid not in(1,2)
+
+--like operators (wild card)
+-- % ( substitues zero,one or more characters)
+-- _ (substitutes one value)
+-- [] (range of values)
+-- ^ (not in the range)
+select * from tblemployee where Empname like 'J%'
+
+select * from tblemployee where Empname not like 'J%'
+select * from tblemployee where Empname like '%a'
+select * from tblemployee where Empname ='avinash'
+
+select * from tblemployee where Empname like 'avinash'
+select * from tblemployee where Empname like '_%h'
+
+select * from tblemployee where Empname like '%h'
+
+select * from tblemployee where Empname like '_i%'
+select * from tblemployee where Empname like '_a%'
+
+select * from tblemployee where Empname like '_[a,e,i]%'
+
+select * from tblemployee where Empname like '_[^a,e,i]%'
+
+select * from tblemployee where Empname like '__[m]%'
+
+select * from tblemployee where Empname like '%[i]'
+
+select * from tblemployee where Empname like '%[^i,u]'
+
+--functions
+select distinct(deptid) from tblEmployee
+
+--Aggregate functions
+select min(salary) as Minimum, max(salary) as Maximum, avg(salary) as Average
+from tblEmployee
+
+select sum(salary) from tblemployee
+ 
+select count (deptid) from  tblemployee  -- null values are not considered
+select count(*)deptid from tblemployee  -- null values are included
+
+--functions to the RHS of a where clause may not work
+select * from tblemployee
+where salary >avg(salary)
