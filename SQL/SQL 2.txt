@@ -90,3 +90,50 @@ select count(*)deptid from tblemployee  -- null values are included
 --functions to the RHS of a where clause may not work
 select * from tblemployee
 where salary >avg(salary)
+
+
+--ordering or sorting the tuples based on a column
+select Empname from tblEmployee
+order by EmpName desc
+
+--sorting by multiple columns
+select Empname,DeptId,Salary from tblEmployee
+order by Deptid,Salary desc
+
+--sorting on alias column names
+select Empname,DeptId Department ,Salary Earnings from tblEmployee
+order by Department,Earnings desc
+
+--sorting on a column/s that are not a part of the select clause
+select Empname from tblEmployee
+order by Deptid,salary desc
+
+select * from tblEmployee
+order by DeptId
+
+--group by
+--dept wise avg salary
+
+select deptid, avg(salary) as 'Department Average' from tblEmployee
+group by deptid
+
+--multiple columns grouping
+select deptid, salary, avg(salary) as 'Department Average' from tblEmployee
+group by deptid,salary
+
+--grouping on a column not in the select list
+select  avg(salary) as 'Department Average' from tblEmployee
+group by deptid
+
+--not possible to group on an alias column
+select deptid Department, avg(salary) as 'Department Average' from tblEmployee
+group by Department
+
+--count the no.of male and female employees
+select gender,count(*) from tblemployee
+group by gender
+
+--count the no.of male and female 
+select gender,deptid,count(*) as 'No.Of Employees' from tblEmployee
+group by deptid, gender
+order by deptid,gender
