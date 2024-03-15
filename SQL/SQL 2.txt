@@ -137,3 +137,72 @@ group by gender
 select gender,deptid,count(*) as 'No.Of Employees' from tblEmployee
 group by deptid, gender
 order by deptid,gender
+
+
+--count the no.of male and female 
+select gender,deptid,count(*) as 'No.Of Employees' from tblEmployee
+group by deptid, gender
+having count(*)>1
+order by deptid,gender
+
+select  deptid, avg(salary) as 'Department Average',sum(salary) as Total from tblEmployee
+group by deptid
+having avg(salary)>6800 and sum(salary)>10000
+order by [Department Average] desc
+
+--dept name wise sum of salary ( involves 2 tables)
+--joins
+select * from tblDepartment
+
+select tbldepartment.DeptName, sum(salary) from tblDepartment,tblEmployee
+where tblDepartment.DeptId=tblEmployee.DeptId
+group by DeptName
+having sum(salary)>10000
+
+--Joins:
+--  cross join (cartesan product) 
+  select * from tblEmployee,tblDepartment
+
+  select * from tblEmployee cross join tblDepartment
+
+ -- Equi Joins/Natural Joins (=)
+ select td.deptname,td.deptlocation,te.empname,te.salary from tblDepartment td, tblemployee te
+ where td.DeptId=te.DeptId
+
+select td.deptname,td.deptlocation,te.empname,te.salary from tblDepartment td join tblEmployee te
+on td.DeptId=te.DeptId
+
+--1. Inner joins (equi join)
+--2. outer joins (matching +  non matching records)
+     --a) left outer join (matching +  non matching records from left hand side table)
+	 --b) right outer join (matching +  non matching records from right hand side table)
+	 --c) full outer join (matching +  non matching records from both the tables)
+
+select td.deptname,td.deptlocation,te.empname,te.salary from tblDepartment td left outer join tblEmployee te
+on td.DeptId=te.DeptId
+
+select td.deptname,td.deptlocation,te.empname,te.salary from tblDepartment td right outer join tblEmployee te
+on td.DeptId=te.DeptId
+
+select td.deptname,td.deptlocation,te.empname,te.salary from tblDepartment td full outer join tblEmployee te
+on td.DeptId=te.DeptId 
+
+--self joins (A relation/table is joined with itself)
+            --giving alias names to the table is mandatory
+
+--select empname,salary from tblEmployee t1 join tblemployee t2
+--where t1.managerid=t2.EmpId
+
+--select all employees who earn more than Jamsher
+  --1. what is the earnings of jamsher ?
+  --2. select all empployees who earn more than jamsher
+  select salary from tblemployee where empid=105
+select * from tblemployee where salary > 6800
+
+select * from tblemployee
+where salary > 
+             (select salary from tblemployee where empid=105)
+
+--list of employees who earn more than any employee of dept 2 or 3
+
+select salary from tblemployee where deptid =2
