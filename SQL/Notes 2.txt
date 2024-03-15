@@ -1,0 +1,53 @@
+Order By is used to sort the results of the select clause. It will not change the physical order
+ - Default order is ascending, we can do a desc sort
+ - Can sort on multiple columns seperated by a comma
+ - We can order by on an alias column name
+ - We can sort on a column not in the select list
+
+Group by : allows to group the results on one or more columns to represent any group information
+   - We can group on multiple columns 
+   - We need to group on all the columns in the select list except for the aggregates
+   - We cannot group on an alias column
+
+query clause follows the below order:
+select list
+from
+where   - place restriction on rows
+group by - aggregate 
+having  -- place restrictions on a group
+order by -- 
+
+Execution of the query follows the below order
+from 
+where
+group
+having
+order by
+select
+
+
+selection/restriction - where
+projection  column list comma seperated
+joins
+union
+except
+divide
+
+
+Subquery : Query within a query
+the main query is the final answer we need. But the main query depends on another query for its completion. This query will take a form of inner query and gets executed first. The result of the inner query is passed on to the main/outer query. the main/outer takes this as an input to complete the query
+
+Guidelines for using subquery
+ 1. Enclose the subqueries in parenthesis
+ 2. Place subqueries on the right hand side of the comparison condition
+ 3. Use single-row operators with single-row subquery and multi-row operators with multi-row subqueries
+
+Single-Row operators
+    =, >, < ,>=, <=, <>,!=
+
+Multi-Row operators
+   in, any, all
+
+
+
+
