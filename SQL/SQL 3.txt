@@ -1,0 +1,110 @@
+use trainingdb
+
+
+select lower('SQL SERVER')
+select len(empname) from tblemployee
+select SUBSTRING(empname,1,3)from tblEmployee
+
+--find all employees and their salaries who earn more than any employee of dept 2
+
+select empname,salary from tblemployee 
+where salary >any(select salary from tblemployee where deptid=2)
+
+--find all employees and their salaries who earn more than all employees of dept 2
+select empname,salary from tblemployee 
+where salary >all(select salary from tblemployee where deptid=2)
+
+--find all employees and their salaries who earn equal to that of the employee of dept 2
+select empname,salary from tblemployee 
+where salary in(select salary from tblemployee where deptid=2)
+
+-- column level constraint
+create table EmpDummy
+(Empno int primary key,  
+EName varchar(30) not null,
+EAge int check(EAge between 21 and 58),
+ECity varchar(25) default 'Chennai',
+EPhone varchar(10) unique,
+EDeptid int references tbldepartment(deptid))
+
+--table level constraints
+create table EmpDummy1
+(EmpNo int,
+EName varchar(35)not null,
+EAge int,
+ECity varchar(25),
+Ephone varchar(10),
+EDeptid int,
+primary key(EmpNo),
+check(EAge between 21 and 50),
+foreign key(edeptid) references tbldepartment(deptid),
+unique(ephone))
+
+--for testing (assignment)
+create table DEPT(deptno numeric(2) primary key, dname varchar(15), loc varchar(15))
+ 
+insert into DEPT(deptno, dname, loc) values(10,'ACCOUNTING','NEW YORK'), 
+(20,'RESEARCH','DALLAS'),
+(30,'SALES','CHICAGO'), 
+(40,'OPERATIONS','BOSTON')
+
+create table EMP(empno numeric(4) primary key, ename varchar(20), job varchar(20),mgr_id numeric(4), hiredate date, sal int check(sal>0), comm int, deptno numeric(2) foreign key references dept(deptno))
+ 
+insert into EMP(empno, ename, job, mgr_id, hiredate, sal, comm, deptno) 
+values
+    (7369, 'SMITH', 'CLERK', 7902, '17-DEC-80', 800, NULL, 20),
+    (7499, 'ALLEN', 'SALESMAN', 7698, '20-FEB-81', 1600, 300, 30),
+    (7521, 'WARD', 'SALESMAN', 7698, '22-FEB-81', 1250, 500, 30),
+    (7566, 'JONES', 'MANAGER', 7839, '02-APR-81', 2975, NULL, 20),
+    (7654, 'MARTIN', 'SALESMAN', 7698, '28-SEP-81', 1250, 1400, 30),
+    (7698, 'BLAKE', 'MANAGER', 7839, '01-MAY-81', 2850, NULL, 30),
+    (7782, 'CLARK', 'MANAGER', 7839, '09-JUN-81', 2450, NULL, 10),
+    (7788, 'SCOTT', 'ANALYST', 7566, '19-APR-87', 3000, NULL, 20),
+    (7839, 'KING', 'PRESIDENT', NULL, '17-NOV-81', 5000, NULL, 10),
+    (7844, 'TURNER', 'SALESMAN', 7698, '08-SEP-81', 1500, 0, 30),
+    (7876, 'ADAMS', 'CLERK', 7788, '23-MAY-87', 1100, NULL, 20),
+    (7900, 'JAMES', 'CLERK', 7698, '03-DEC-81', 950, NULL, 30),
+    (7902, 'FORD', 'ANALYST', 7566, '03-DEC-81', 3000, NULL, 20),
+    (7934, 'MILLER', 'CLERK', 7782, '23-JAN-82', 1300, NULL, 10)
+
+	update emp set sal=sal*1.1 where
+	deptno=(select deptno from dept where dname like'research')
+
+	--self join
+	select * from emp
+	--find all Supervisors and their subordinates name
+	select e.ename as 'Subordinate Name', m.ename as 'Supervisor Name'
+	from emp e join emp m on e.mgr_id=m.empno
+	--subqueries
+--display the names,job and salary of employees where the job is that of 7900 and salary
+--greater than that of empno 7369
+
+select ename,job,sal from emp
+where job=(select job from emp where empno=7900) --'Clerk'
+and sal>(select sal from emp where empno=7369)   -- 800
+
+--nested subquery
+--find all employees who are having the job as that of smith
+select ename,job,sal from emp
+where job=
+         (select job from emp where empno =
+		                                (select empno from emp where ename='Smith'))
+
+-- list dept wise min salary which are greater than dept 20
+select deptno, min(sal) from emp group by deptno
+having min(sal)>(select min(sal) from emp where deptno=20)
+
+--find the list of employees who earn less than any manager, but they should not be a manager
+
+select ename,job,sal from emp
+where sal <any(select sal from emp where job like'M%') and job<>'Manager'
+
+sp_help tblemployee
+
+--disable /enable check constraint
+alter table tblemployee nocheck constraint chksal  -- disable check constraint
+
+alter table tblemployee check constraint chksal --enable check constraint
+
+
+insert into tblemployee values(112,'Ramya','Female',6400,4,6765676,'Bangalore')

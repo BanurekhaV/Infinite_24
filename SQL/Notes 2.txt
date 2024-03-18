@@ -45,6 +45,8 @@ Guidelines for using subquery
 Single-Row operators
     =, >, < ,>=, <=, <>,!=
 
+select lower("SQL SERVER")
+
 Multi-Row operators
    in, any, all
 
