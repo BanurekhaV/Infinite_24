@@ -1,0 +1,35 @@
+-Enabling and disabling check constraints
+
+-bulk insertion (invloves copying multiple rows at a time from one table to another, provided both the
+    tables have the same no of columns and datatypes and also the order)
+
+Hard Delete : deleting a row permanently
+
+Soft Delete : not deleting but marking a remarks/status (non active, 'non-operation')
+
+cascade delete or update (when a parent row is deleted/updared, all child references will also be deleted/updated))
+
+Corelated subquery : is a query where one row of data for table is compared with each row against a related table. 
+-It is used whenever a subquery must return a different result or set of results for each candidate row considered in the main query.
+-can use all and any operators
+-can use for deletion and updation as well
+-inner queries are driven by the outer query value
+
+--Case
+  -simple case
+  - case with else
+  - serached case
+
+Transact SQL : t-Sql
+
+Variables : are of 2 types (1. Global Variables (@@), 2. Local variables (@))
+-we can assign values to the local variables using set and select
+
+-begin and end
+-set and select
+-select and print
+
+ASCII - one character = 1 byte = 8 bits
+
+UNICODE - one character=2 bytes=16 bits
+

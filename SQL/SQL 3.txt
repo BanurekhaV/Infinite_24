@@ -108,3 +108,167 @@ alter table tblemployee check constraint chksal --enable check constraint
 
 
 insert into tblemployee values(112,'Ramya','Female',6400,4,6765676,'Bangalore')
+
+--bulk insertion
+insert into EmpDummy values(2,'XYZ',22,'Delhi','12234567',2),(3,'PQR',24,'Hyderabad',3245,1)
+
+select * from EmpDummy
+--bulk insertion
+select * from EmpDummy1
+
+insert into EmpDummy1
+select * from empdummy where ECity='Delhi'
+
+--corelated subquery
+-- to find all employees who earn more than the average salary in thier department
+
+/*to solve the above requirement, outer query has to supply deptid, then the 
+inner query will find the avg for that depratment, which is again used by the outer 
+query to qualify*/
+select * from tblEmployee
+
+select empname,salary,deptid from tblEmployee oq
+where salary >(select AVG(salary) from tblEmployee where deptid=oq.DeptId)
+
+--second highest salary
+
+select e.empname,e.salary from tblEmployee e
+where 2=(select count(salary) from tblEmployee e1 where e1.salary >=e.Salary)
+
+-- replaced with a simple inner join
+--using corelated subquery
+select e.empname, e.salary from tblemployee e 
+where salary >(select avG(salary) from tblEmployee e1
+where e1.DeptId=e.DeptId)
+
+--the same is used with join
+select e.empname,e.salary from tblemployee e inner join
+(select DEptid,avg(salary) as Department_Average from tblEmployee
+group by deptid) as e1 on e.deptid=e1.deptid where e.salary > e1.Department_Average
+
+--to update a table using corelated subquery
+
+--update all employees salary whose salary is the minimum in that department
+
+select deptid,min(salary) from tblEmployee
+group by deptid
+
+update tblemployee set salary=salary+200 from tblemployee t1 
+where salary<=
+              (select min(t2.salary) from tblEmployee t2 where t2.DeptId=t1.DeptId)
+
+--case
+create table casetable(cid int, casename varchar(20))
+
+insert into casetable values(5,'white'),(2,'blue'),(3,'green'),(4,'yellow')
+
+select * from casetable
+
+--simple case without else
+select cid,casename,
+case casename
+   when 'red' then 'danger'
+   when 'blue' then 'primary'
+   when 'green' then 'success'
+end as remarks
+   from casetable
+   --case with else
+   select cid,casename,
+case casename
+   when 'red' then 'danger'
+   when 'blue' then 'primary'
+   when 'green' then 'success'
+   else 'warning'
+end as colorremarks
+   from casetable
+
+--searched case
+select cid,casename,
+case 
+   when casename='red' then 'danger'
+   when casename='blue' then 'primary'
+   when casename='green' then 'success'
+   else 'Incorrect color'
+end as color_dsesc
+   from casetable
+
+--nested cases inside if else statement
+
+declare @salesmade int
+set @salesmade=245  -- 1. assigning a value to a variable using set
+select @salesmade=400 --2. assigning a value to a variable using select
+select @salesmade as 'Total Sales'  -- renaming a variable using select alone
+
+print 'The total sales made is ' + ' ' + cast(@salesmade as varchar(5))
+select 'The total sales made is ' + ' ' + cast(@salesmade as varchar(5))
+if @salesmade>300
+  select 'Bumper Sales'
+else
+ begin
+  select case 
+   when @salesmade between 100 and 200 then 'Poor Sales'
+   when @salesmade between 201 and 300 then 'Ok sales'
+   when @salesmade between 301 and 500 then 'Good Sales'
+   else 'No Sales at all'
+   end as 'Sale Status'
+  end
+
+  --nested case
+
+declare @totsales int
+set @totsales=100
+select case
+ when @totsales >=500 then 'Bumper Sales'
+ when @totsales <500 then
+   case
+     when @totsales between 100 and 200 then 'Poor Sales'
+     when @totsales between 201 and 300 then 'Ok sales'
+     when @totsales between 301 and 500 then 'Good Sales'
+	 else 'No sales'
+    end
+ end as SaleData
+
+ --conversions/casting
+ select 1+'2'
+ select 1+2
+ select 1+'a'
+
+ --Transact SQL
+ --allows us to use programming constructs for decision making
+
+ --eg 1
+ begin
+ declare @v1 int =50
+ declare @v2 int=100
+ declare @sum int
+ set @sum=@v1+@v2
+ print 'The total of 2 nos. is' + ' ' + cast(@sum as varchar(5))
+ select @sum
+
+  if(@v1>@v2)
+  print 'v1 is greater'
+  else
+  print 'v2 is greater'
+end
+
+ end
+--using tsql increase the salary by 200/- for all employess who earn less than empid 109
+
+--increase salary for employee
+
+ begin
+  declare @esal float
+  declare @ename varchar(30)
+  select @ename=empname, @esal=salary from tblEmployee where empid=110
+  print 'Name of the Employee : ' +  ' ' + @ename
+  print @ename + ' ' +'Current Salary is :' + ' '+cast(@esal as varchar(5))
+   if(@esal<=6600)
+     begin
+       set @esal=@esal+200
+	   print 'Employee revised Salary is :'+ '  '+ cast(@esal as varchar(5))
+	 end
+	 else 
+	  begin
+	   print 'ok salary'
+      end
+end
