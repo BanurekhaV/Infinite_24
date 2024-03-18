@@ -272,3 +272,55 @@ end
 	   print 'ok salary'
       end
 end
+
+
+
+--while, break and continue
+declare @ctr int=1
+while @ctr<=5
+ begin
+  print @ctr
+  set @ctr=@ctr+1
+ end
+
+ -- break and continue
+declare @ctr1 int=0
+while @ctr1<=5
+ begin
+   set @ctr1=@ctr1+1
+   if @ctr1=4
+   --break
+   continue
+   print @ctr1
+ end
+
+ --union and union all
+ create table table2(TId int identity, TName varchar(30),
+ TGrade char(1),TPercentage int)
+
+ insert into table2 values('Simran','A',85),('Sanjeev','A',80),('SHanthanu','B',65),
+ ('Yashika','B',60)
+
+ select * from table1
+ select * from table2
+
+ alter table table1 add newcol varchar(5)
+
+ select TGrade,Tpercentage from table1
+ union all
+ select TGrade,tpercentage from table2
+
+ --intersect
+ drop table dummy
+ create table dummy2(BonusId int ,ID int,BonusAmt float)
+
+ insert into dummy2 values(200,1,25000),(201,3,20000)
+
+ select * from dummy
+ select * from dummy2
+
+ select dummy.Id,dname,dummy2.BonusAmt from dummy left join dummy2 on 
+ dummy.id=dummy2.id
+ intersect
+  select dummy.Id,dname,dummy2.BonusAmt from dummy right join dummy2 on 
+ dummy.id=dummy2.id

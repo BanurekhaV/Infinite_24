@@ -16,9 +16,13 @@ Corelated subquery : is a query where one row of data for table is compared with
 -inner queries are driven by the outer query value
 
 --Case
-  -simple case
-  - case with else
-  - serached case
+  -simple case (with or without else):  case keyword is immediately followed by case expression and before when
+                                        value exists for each when statement
+
+  - searched case (with or without else): case keyword is followed by when statement. There is no expression between case and when
+                                          boolean expression exists for each when statement
+
+ - nested case : case within a case, case inside if else
 
 Transact SQL : t-Sql
 
@@ -28,8 +32,24 @@ Variables : are of 2 types (1. Global Variables (@@), 2. Local variables (@))
 -begin and end
 -set and select
 -select and print
+-if and else
+-case then
+-while
+-break and continue
 
 ASCII - one character = 1 byte = 8 bits
 
 UNICODE - one character=2 bytes=16 bits
+
+Set Commands : are operators used to work with multiple tables
+   -Union, Union all, intersect,except
+
+Rules for using set operators :
+ 1. the result set of both queries must have same number of columns
+ 2. the datatypes of the columns of the both results set must be same
+ 3. the positional ordering of the column returned by the query must be same
+ 4. if we want to sort the final result, then the order by clause must be given at the end of the query
+
+Union : removes duplicates occuring be concatenating 2 resultsets
+union all : doe not remove duplicates
 
