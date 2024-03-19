@@ -39,3 +39,58 @@ as (select deptid,deptname,deptlocation from tblDepartment)
 --insert into dmlcte values(7,'Quality')
 --delete from dmlcte where department_number =7
 update dmlupdatecte set deptlocation='Mumbai' where department_number=6
+
+
+--recursive cte
+with ourcte (Empno,Ename,Mgr_Id,EmpLevel)
+as(select empno,ename,mgr_id, 1   --- initial subquery
+from emp 
+where mgr_id is null
+
+union all
+
+select e.empno,e.ename,e.mgr_id,Emplevel + 1 -- recursive subquery
+from emp e inner join ourcte on e.mgr_id=ourcte.empno
+where e.mgr_id is not null)
+
+select * from ourcte
+order by emplevel
+
+--recursive eg 2
+with cte_week(n, wkday)
+as(select 0,DATENAME(dw,0)
+union all
+select n + 1, datename(dw,n + 1) from cte_week where n < 6)
+select n,wkday from cte_week
+
+--additional functions
+create table Marks(stdname varchar(20), cls_subject varchar(10),marks int)
+
+insert into marks values('Kavya','Maths',80),('Kavya','Science',70),('Kavya','English',65)
+insert into marks values('Satyam','Maths',68),('Satyam','Science',85),('Satyam','English',90)
+insert into marks values('Vikash','Maths',65),('Vikash','Science',90),('Vikash','English',60)
+
+select * from Marks
+--1. rownumber()
+select stdname,cls_subject,marks,ROW_NUMBER() over (order by marks desc)Row_nos from marks
+
+--2. rank()
+select stdname,cls_subject,marks,rank() over (order by marks desc)Ranking from marks
+
+--3 dense_rank()
+select stdname,cls_subject,marks,dense_rank() over (order by marks desc)Row_nos from marks
+
+--ranks with partition
+update marks set marks=80 where stdname='Satyam' and cls_subject='Maths'
+select stdname,cls_subject,marks,rank() over (partition by cls_subject order by marks desc)Row_nos from marks
+
+select stdname,cls_subject,marks,dense_rank() over (partition by cls_subject order by marks desc)Row_nos from marks
+
+--Roll Up operator
+--subtotals and grand totals of columns. It is an extension to group by clause
+
+select deptid, sum(salary) as Total from tblemployee group by deptid
+
+select deptid as Department, sum(salary) as Total
+from tblEmployee
+group by rollup(deptid)
