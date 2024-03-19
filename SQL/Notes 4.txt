@@ -17,3 +17,17 @@ Advantages of ctes: Reusability
 Disadvantages : can be used only within the scope of sql statement/s and not others
                 not supported by many database platforms
 
+rank() - function when used with over() clause, defines a set of rows as results. 
+         can also be used with partition to define subset of data
+         can use order by clause to sort the results 
+         skips rank number when it encounters a tie in values
+
+dense_rank() - same as rank(), except that it will not skip any rank number even if there is a tie in data
+
+Coalesce : a built-in function to handle null values in the data. It evaluates multiple input values and returns the first non-null value, after which it terminates
+- acts like a shortcut alternative to lengthy case statements
+- running 2 or more queries as a single query
+- can be used for concatenation of column values as a single value
+
+Rollup: extension to group by clause
+        calculates sub totals and grand totals

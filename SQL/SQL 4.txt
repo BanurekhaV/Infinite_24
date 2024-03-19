@@ -94,3 +94,52 @@ select deptid, sum(salary) as Total from tblemployee group by deptid
 select deptid as Department, sum(salary) as Total
 from tblEmployee
 group by rollup(deptid)
+
+
+--coalesce
+
+select * from tblDepartment
+update tblDepartment set deptname=null where deptid=6
+
+select coalesce(deptid,500) as Department, sum(salary) as Total
+from tblEmployee
+group by rollup(deptid)
+
+select deptid as Department, sum(salary) as Total
+from tblEmployee
+group by rollup(deptid)
+
+select coalesce(deptname,'AllDeptTotal') as Department, sum(salary) as Total
+from tblEmployee e join tblDepartment d on e.DeptId=d.DeptId
+group by rollup(deptname)
+
+select isnull(null,'value')
+select coalesce(null,null,null,'a',null)
+
+declare @str1 char,@str2 char,@str3 char,@str4 char
+select coalesce(@str1,@str2) as 'Results',
+  case  
+    when @str1 is not null then @str1
+	 when @str2 is not null then @str1
+	 end as 'Case Results'
+
+--use the above with default
+declare @st1 char,@st2 char,@st3 char,@st4 char
+select coalesce(@st1,@st2,'OurDefault') as 'Results',
+  case  
+    when @st1 is not null then @st1
+	 when @st2 is not null then @st1
+	 else 'It is default'
+	 end as 'Case Results'
+
+--using northwind
+--coalesce being used for concatenation
+select firstname,lastname,coalesce([firstname],' ') + ' '+([lastname]) as fullname from employees
+
+--subtotals and grandtotals for dept and gender
+
+select coalesce(deptname,'AllDeptTotal') as Department, 
+coalesce(gender,'AllGenders')as Gender,
+sum(salary) as Total
+from tblEmployee e join tblDepartment d on e.DeptId=d.DeptId
+group by rollup(deptname,gender)
