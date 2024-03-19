@@ -157,6 +157,29 @@ update tblemployee set salary=salary+200 from tblemployee t1
 where salary<=
               (select min(t2.salary) from tblEmployee t2 where t2.DeptId=t1.DeptId)
 
+Example : corelated sub query
+
+use Northwind
+
+select categoryid,unitprice from products
+order by categoryid
+
+--find the products whose unitprice is greater to the average unitprice of the product
+--within the same category
+
+select productname,unitprice,categoryid from products p1
+where unitprice >(
+                 select avg(p2.unitprice) from products p2
+				  where p2.CategoryID=p1.CategoryID
+				  group by p2.CategoryID)
+				  order by CategoryID,ProductName
+
+
+select categoryid,avg(unitprice) from products 
+group by CategoryID
+
+
+
 --case
 create table casetable(cid int, casename varchar(20))
 

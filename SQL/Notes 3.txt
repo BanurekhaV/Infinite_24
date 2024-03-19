@@ -14,6 +14,8 @@ Corelated subquery : is a query where one row of data for table is compared with
 -can use all and any operators
 -can use for deletion and updation as well
 -inner queries are driven by the outer query value
+-are dependent on th eouter query for its values
+-they are executed repeatedly
 
 --Case
   -simple case (with or without else):  case keyword is immediately followed by case expression and before when
@@ -53,3 +55,6 @@ Rules for using set operators :
 Union : removes duplicates occuring be concatenating 2 resultsets
 union all : doe not remove duplicates
 
+intersect : the common occurences are retrieved from the output of first query set and the 2nd query set
+
+except : is the reverse of intersect

@@ -1,0 +1,41 @@
+use trainingdb
+
+--ctes
+--1. 
+with firstcte(Empname,AnnualSalary,Department) as
+(select Empname, (Salary*12),tblDepartment.DeptName 
+from tblEmployee join tblDepartment on
+tblEmployee.DeptId=tblDepartment.DeptId)
+
+--main query 1.
+--select Empname,Department,AnnualSalary from firstcte
+--where AnnualSalary>82000
+
+--main query 2.
+select department,avg(annualsalary) from firstcte
+group by department having avg(AnnualSalary)>82000
+
+
+--eg 2 multiple ctes
+--first cte decl 
+with mycte1 as(select * from tblemployee),
+
+--second cte decl
+mycte2 as(select * from tblDepartment)
+
+--main query using the above cte's
+select mycte1.Empname,mycte1.Salary,mycte2.deptname from mycte1 join mycte2
+on mycte1.DeptId=mycte2.deptid
+
+select * from tblDepartment
+--eg 3 ctes with dml
+
+
+with dmlcte(Department_Number,DeptName) as (select deptid,deptname from tblDepartment)
+
+with dmlupdatecte(Department_Number,DeptName,deptlocation) 
+as (select deptid,deptname,deptlocation from tblDepartment)
+--main query
+--insert into dmlcte values(7,'Quality')
+--delete from dmlcte where department_number =7
+update dmlupdatecte set deptlocation='Mumbai' where department_number=6

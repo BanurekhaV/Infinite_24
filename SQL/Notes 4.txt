@@ -1,0 +1,19 @@
+CTE : Common Table Expression : allows us to define a named temporary resultset that is available in the execution scope of statementsvix. select,insert,update and delete
+- We can perform dml operations 
+- We can multiple ctes seperated with a ',' and with a keyword 'with' to define a cte
+- We can refer one cte within the other
+- We can have recursive cte
+
+syntax : with <ctename>(column list)
+         as (cte definition), ctename as (select....)
+
+      sql statements - main query
+
+Advantages of ctes: Reusability
+                 complex qieries can be broken down into different cte's 
+                 more readable
+                 does not occupy memory
+
+Disadvantages : can be used only within the scope of sql statement/s and not others
+                not supported by many database platforms
+
