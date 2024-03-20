@@ -72,7 +72,6 @@ delete from vw1 where empid=111  -- succeeds
 
 update vw1 set Salary=7000 where empid=107  -- also succeeds
 
-
 --indexes
 drop table testtable
 create table testtable(tid int, tname varchar(20),tcity varchar(20))
@@ -85,7 +84,7 @@ update testtable set tid=6 where tname='E'
 select * from testtable
 
 create clustered index idxtid on testtable(tid)
-sp_help testtable
+sp_help tblemployee
 
 --now let us check with unique clustered index on a table without pk
 create unique clustered index idxtid on testtable(tid)
@@ -104,7 +103,6 @@ select * from tblEmployee
 
 create nonclustered index idxename on tblemployee(empname)
 create nonclustered index idxsal on tblemployee(salary)
-
 
 --filtered index 
 drop index tblemployee.idxfil
@@ -145,70 +143,3 @@ select convert(varchar(24),getdate())
 
 select cast(day(getdate()) as varchar(2)) + ' '+ datename(mm,getdate()) + ' '
 + cast(Year(getdate())as varchar(4))as [Date Month Year]
-
-
-
---procedures
---eg 1
-create procedure prwish
-as
-select 'Welcome to SQL procedures'
-
-sp_helptext prwish
---call the above procedure
---can be called simply by their name / with execute procedurename / exec procedurename
-prwish
-execute prwish
-exec prwish
-
---eg 2
-create or alter proc prcsecond
-as
-begin
-select * from tblemployee where salary between 6900 and 7500 and deptid in(1,2,3)
-end
-
-prcsecond
-
---eg 3
-
---procedure with input
-create or alter proc getEmpSalary @empid int
-as
-begin
-select empname,salary from tblEmployee where empid=@empid
-end
-
-getEmpSalary 121
-
---eg 4
---display the given employee data with the given gender
-create or alter proc getGendept(@deptno int, @gen varchar(10))
-as
-begin
-select * from tblemployee where DeptId=@deptno and gender=@gen 
-end
-
-getgendept 2,'Male'
-
---procedures with both input and output parameters
---eg 5
---get the salary for a given employee
-create or alter proc GetEmpSalary(@ename varchar(25), @sal float output)
-as
-begin
-select @sal=salary from tblEmployee where empname=@ename
-end
-
---to execute the above proc with ouput
---1. 
-declare @retsal float
-execute GetEmpSalary 'Arjun',@retsal output
-print 'The Salary of the given Employee is :' + cast(@retsal as varchar(10))
-select @retsal
-
---2. by changing the order of input output parameters
-declare @returnSal float
-exec GetEmpSalary @sal=@returnsal output,@ename='Nidhi'
-select @returnsal
-

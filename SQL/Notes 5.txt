@@ -4,3 +4,38 @@ Views : are virtual tables that do not have any data by themselves, and are depe
 
 syntax : create view <viewname> as 
 select    .....
+
+Indexes : are mechanisms of sorting the data physically within the database
+ they are of 2 types
+1. Clustered Index : It sorts the physical table itseld every time a DML operation is done
+                - There can be only one clustered index per table
+2. Non-Clustered Index : We can have many non-clustered index per table 
+                - Creates a seperate Index table where the data is sorted
+                - It occupies space 
+                - Any dml manipulations does not affect the table but affects the index table(sorts)
+
+The above 2 types can be either unique or non-unique 
+
+3. Filtered Index : Is a non clustered index with a predicate. Used in situations where we need only some portion of the index
+
+
+--Computed / Calculated columns
+-- Date functions and conversions
+
+--Stored Procedures : An query statement undergoes
+   1. Parsing
+   2. Execution Plan is created
+   3. Plan is executed
+
+- are saved sql statements along with the plan for execution(including parsing).
+- can be reused
+- they are faster in performance
+- they are parsed once 
+
+- we can simply call them and they execute
+- They are stored as an object in the relational schema
+
+--Procedures may or may not take arguments/parameters/input
+--Procedures can take any number of arguments
+--Procedures always have an integer return type
+--Procedures can also return output values
