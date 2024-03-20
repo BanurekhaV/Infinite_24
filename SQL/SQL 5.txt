@@ -212,3 +212,68 @@ declare @returnSal float
 exec GetEmpSalary @sal=@returnsal output,@ename='Nidhi'
 select @returnsal
 
+
+--multiple output values from procedure
+--eg 6
+create or alter proc GetEmpSalnDept(@ename varchar(25), @sal float output, @deptid int output)
+as
+begin
+select @sal=salary,@deptid=deptid from tblEmployee where empname=@ename
+end
+
+
+declare @retsal float
+declare @edeptid int
+execute GetEmpSalnDept 'Arjun',@retsal output, @edeptid output
+print 'The Salary and the department of the given Employee is :' + cast(@retsal as varchar(10)) +' '+cast(@edeptid as varchar(2))
+select @retsal,@edeptid
+
+--procedure with return parameter
+--given a dept id, the proc returns no.of employees in that department
+
+--eg 7
+create or alter proc EmpCount @id int
+as
+begin
+return (select count(empid) from tblemployee where deptid=@id)
+end
+
+--to execute the above proc
+declare @empctr int
+exec @empctr=Empcount 5
+print 'Number of employees in the dept are :' + ' '+cast(@empctr as varchar(4))
+
+-- procedure to show that it cannot return non integer values
+--eg 8 
+create or alter proc getname @eid int
+as
+begin
+return select empname from tblemployee where empid=@eid
+end
+
+--to execute
+declare @empname varchar(25)
+execute @empname=getname 103
+print @empname
+
+--dml operations with procedures
+--eg 9
+create or alter procedure EmpIns(@eid int, @ename varchar(25),@ph varchar(10))
+as
+begin
+insert into tblemployee(Empid,Empname,Phone) values(@eid,@ename,@ph)
+end
+
+empins 115,'Yashika',667788
+
+select * from tblemployee
+
+--updation
+--eg 10
+create or alter proc UpdDept
+as
+begin
+update tblemployee set deptid=5 where deptid is null
+end
+
+upddept
