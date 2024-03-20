@@ -1,0 +1,6 @@
+Views : are virtual tables that do not have any data by themselves, and are dependent on the underlying table data
+- There are objects in the relational schema (just the view definitions are stored)
+- Used in providing security to the data.
+
+syntax : create view <viewname> as 
+select    .....
