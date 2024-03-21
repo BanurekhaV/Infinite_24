@@ -77,3 +77,108 @@ errproc
 select * from sysmessages  -- system messages
 
 sp_addmessage 55000,8,'Classic Infinite Error'
+
+
+--Transactions
+select * from EmpDummy
+
+delete from Empdummy where empno=3
+rollback
+
+--eg 1
+begin transaction
+ select * from tblemployee where empid=114
+ update tblEmployee set salary=6666 where empid=114
+  select * from tblemployee where empid=114
+  rollback  -- commit
+
+  --eg 2
+  begin tran
+  insert into tblEmployee values(116,'Suryansh','Male',6800,2,88997,'Hyderabad') --has to be committed
+  select * from tblemployee where empid=116
+    save tran t1
+
+	delete from tblemployee where empid=116
+select * from tblemployee where empid=116
+ save tran t2
+ update tblDepartment set DeptLocation='Nagpur' where deptid=6
+
+ select * from tblDepartment
+ rollback tran t1
+ commit  --or rollback
+
+ select * from tblDepartment
+ select * from tblEmployee
+
+ --procedure with exception handling, transaction,few dml operations
+
+ create table Products
+ (ProductId int primary key,
+ Productname varchar(30)not null,
+ Price int,
+ QuantityAvailable int)
+
+ --populate the table with some data
+ insert into products values(101,'Laptops',50000,100),
+ (102,'Desktops',30000,25),(103,'Tablets',55000,50),
+ (104,'SmartPhones',60000,60)
+
+ --create a productsales table to record sales
+ create table ProductSales
+ (SaleId int primary key,
+ ProductId int references Products(ProductId),
+ QuantitySold int)
+
+  select * from products
+  select * from ProductSales
+
+  --create proc for the transaction
+  create or alter proc Sales 
+  @pid int, @qty_to_sell int 
+  as
+  begin
+    --first we need to check if there is enough stock of products to sell the qty
+	 declare @stockavailable int
+	 select @stockavailable=QuantityAvailable from Products 
+	 where ProductId=@pid
+	 --we need to throw an error if the stock is less than the qty_to_sell
+	 if(@stockavailable < @qty_to_sell)
+	   begin
+	    raiserror('Not Enough Stock on hand to sell',16,1)
+       end
+     else
+	  begin  -- we will start a transaction to record sales
+	  begin tran
+	   --first let us reduce the quantityavailable in products table
+	   update Products set
+	   quantityavailable=(quantityavailable - @qty_to_sell)
+	   where ProductId=@pid
+	   --next we need to insert a row in the productsales table
+	   --inorder not to have pk violations, we can use a logic to autogenerate the 
+	   --saleid, by finding the max of saleid
+	   declare @maxsaleid int
+	   select @maxsaleid= case
+	     when max(SaleId) is null then 0
+		 else max(SaleId)
+		 end
+		 from ProductSales
+		 --we will increment the @maxsaleid by 1, so that we dont get pk violation
+		 set @maxsaleid = @maxsaleid + 1
+		 --now we can insert into productsales
+		 insert into Productsales values(@maxsaleid,@pid,@qty_to_sell)
+		 --let us now use @@Error, a global variable which tracks the recent error if any
+		 if(@@ERROR <> 0)
+		  begin
+		   rollback transaction
+		   print 'Something Went Wrong.. try later. Rolling back'
+		end
+		  else
+		  begin
+		   commit transaction
+		   print 'Transaction Successful'
+		  end
+       end
+end
+
+--exceute the above procedure
+sales 102,10

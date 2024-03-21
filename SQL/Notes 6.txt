@@ -12,4 +12,27 @@ Severity Level : Tells about the importance of the error. This can range between
 
 State : it is an arbitrary value that is not important for us. This ranges from 0 to 127. 
 
+Transactions : A single unit of work that contains many Sql statements.
+   A transaction begins when the first dml statement is executed and ends with one of the following events
+     - A commit or Rollback is issued
+     - Auto commit
+     - The user Exits
+     - The system crashes
 
+Transaction management ensures
+   - Data Consistency
+   - Preview data changes before making it permanent
+   - Group logically related operations
+
+All transactions must start with a 'begin transaction'
+
+Save Points/Transaction :Are logical markers/blocks of a set of operations in a transaction. Ther are not ANSI standards
+
+ACID Properties:
+
+A - Atomicity      
+C - Consistency 
+I - Isolation     
+D - Durability
+
+Locks in sql are of 2 types : 1. Shared lock 2. exclusive lock
