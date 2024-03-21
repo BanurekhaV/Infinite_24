@@ -36,3 +36,31 @@ I - Isolation
 D - Durability
 
 Locks in sql are of 2 types : 1. Shared lock 2. exclusive lock
+
+--Functions : are reusable piece of code that can be called from select statements,where, join clauses
+
+They are of 2 types
+  1. Scalar functions :
+      -Functions that accept 0 or many parameters.
+      -Will have to return a scalar value(int,char,float,varcharchar,decimal etc..)
+     - cannot return text,ntext,image,timestamp
+
+  2. Table Valued Functions : 
+     a) Inline Table valued: returns a table of values
+                             does not have begin or end statements
+
+     b) Multistatement Table Valued : Can contain many sql statements
+                      is enclosed within begin and end clauses
+                      returns a user created table variable
+
+syntax :
+ create function <functionname>(parameters list with data types)
+   returns datatype
+ as
+ begin
+  function body..
+ return the actual data
+ end
+            
+
+

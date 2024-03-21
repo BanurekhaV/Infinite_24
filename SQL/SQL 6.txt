@@ -182,3 +182,120 @@ end
 
 --exceute the above procedure
 sales 102,10
+
+
+
+--Functions
+--scalar
+--eg 1
+create or alter function fnEmpdata(@ename varchar(25),@gender varchar(10))
+returns nvarchar(50)  -- specifying the return datatype
+as
+begin
+return (select @ename + '  is a ' + @gender + 'Employee')  -- actual data being returned
+end
+
+--to execute the above funtion
+select empid,fnempdata(empname,gender) as 'Employee Details' from tblemployee --does not work
+
+--we have to give either a 2 part qualification or 3 part
+--2 part
+select empid,dbo.fnempdata(empname,gender) as 'Employee Details' from tblemployee
+
+--3 part
+select empid,trainingdb.dbo.fnempdata(empname,gender) as 'Employee Details' from tblemployee
+
+drop function fnempdata  -- or
+
+drop function dbo.fnempdata
+
+--eg 2
+--find the sum of 2 nos. passed as a parameter to a function
+create function add2nos(@n1 int, @n2 int)
+returns int
+as
+begin
+--@sum int
+--set@sum=@n1+@n2
+--return @sum
+return @n1 + @n2
+end
+
+select dbo.add2nos(10,12) 
+print dbo.add2nos(20,25)
+
+--eg 3 hands on
+--create a function that calculates the area of a rectangle
+
+create or alter function fn_Area(@length float,@breadth float)
+returns float
+as
+begin
+declare @area float
+set @area = @length * @breadth
+return @area
+end
+
+select dbo.fn_Area(4.5,5.6) as 'Area of Rectangle'
+
+--eg 4
+-- to calculate completed age
+create or alter function fn_findage(@dob date)
+returns int
+as
+begin
+ declare @age int
+ set @age = datediff(year,@dob,getdate()) -
+  case
+    when(month(@dob) > month(getdate())) then 1
+	else 0
+	end
+ return @age
+ end
+
+ select dbo.fn_findage('1985/11/21')as 'Completed Age'
+
+ create or alter function fn_findagerunning(@dob date)
+returns int
+as
+begin
+ declare @age int
+ set @age = datediff(year,@dob,getdate())
+ return @age
+ end
+
+  select dbo.fn_findagerunning('1985/11/21')as 'Running Age'
+
+  --inline table valued functions
+
+  --eg 1
+create or alter function fn_Empdetails()
+returns table 
+as
+ return (select empid,empname,salary,deptname from tblemployee 
+ join tbldepartment on tblemployee.deptid=tbldepartment.deptid)
+
+ select * from fn_Empdetails()
+
+ --eg 2
+ create or alter function fn_deptwiseEmp(@deptid int)
+returns table 
+as
+ return (select empid,empname,Salary,deptid from tblemployee 
+where deptid=@deptid)
+
+--ways to execute the above function
+
+select * from fn_deptwiseEmp(1)
+
+--way 2
+select * from tbldepartment d join dbo.fn_deptwiseemp(1)
+on d.DeptId=fn_deptwiseEmp.DeptId
+
+--way 3
+select d.deptname,fn_deptwiseEmp.Empname,fn_deptwiseEmp.salary from tblDepartment d
+join fn_deptwiseEmp(2) on d.DeptId=fn_deptwiseEmp.deptid
+
+--way 4
+select d.deptname,fn_deptwiseEmp.Empname,fn_deptwiseEmp.salary from tblDepartment d
+,fn_deptwiseEmp(2) where d.DeptId=fn_deptwiseEmp.deptid
