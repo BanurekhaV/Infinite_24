@@ -299,3 +299,39 @@ join fn_deptwiseEmp(2) on d.DeptId=fn_deptwiseEmp.deptid
 --way 4
 select d.deptname,fn_deptwiseEmp.Empname,fn_deptwiseEmp.salary from tblDepartment d
 ,fn_deptwiseEmp(2) where d.DeptId=fn_deptwiseEmp.deptid
+
+
+--multistatement table valued 
+--can return a dummy table like structure, which is encompassed within begin and end clauses
+use northwind
+
+select * from customers
+--get customers by their countryname
+
+create or alter function Cust_By_Country(@country varchar(20))
+returns
+@CustomersByCountry table
+(CustId varchar(10),
+CustName varchar(30),
+City varchar(15),
+Country varchar(20))
+as
+begin
+ insert into @CustomersByCountry
+ select CustomerID,contactname,city,country from customers
+ where country=@country
+
+ --we might check if rows were selected for a given country
+ if @@ROWCOUNT = 0
+  begin
+   insert into @CustomersByCountry values(' ','No Customers Found',null,null)
+  end
+  return
+ end
+
+ select * from Cust_By_Country('India')
+
+ --hands on
+ --write a multi statement table valued function to get 
+ --all employees of a given department
+

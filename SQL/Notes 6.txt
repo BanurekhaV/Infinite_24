@@ -61,6 +61,19 @@ syntax :
   function body..
  return the actual data
  end
+
+Differences between Functions and Stored Procedures
+
+1. A function must return a value whereas a procedure never returns value explicitly
+2. A function can have only input parameters whereas procedures can have both input and output
+3. A function can be used only to select data, whereas procedures can be used in dml operations
+4. A function cannot handle errors, whereas procedures can
+5. A function cannot have transactions, procedures can
+6. A function can call only other functions, but procedures can call other procedures and other functions
+7. UDF can be used in sql statements like select,where,join,having  clauses, but procedures cannot
+
+
+
             
 
 

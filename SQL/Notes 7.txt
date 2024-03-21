@@ -1,0 +1,16 @@
+Triggers : are used to create user defined constraints or Business Rules
+ - They are like procedures or functions that can be reused, but unlike procedures/functions they are not called, but fired automatically, whenever ther is an event
+
+Events : are either DDL or DML events
+
+Triggers can be for DDL or DML events
+Thet can be before/after, instead of triggers
+
+
+triggers fire -> on an object --> when an event occurs
+
+Magic tables get created during the scope of execution of the trigger body
+   1. Inserted Table
+   2. Deleted Table
+
+Update events are always delete followed by insert 

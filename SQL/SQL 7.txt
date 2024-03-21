@@ -1,0 +1,13 @@
+--triggers
+ --eg 1
+ create or alter trigger trgInsertEmp
+ on tblemployee
+ for insert
+ as
+ begin
+ select * from tblemployee
+  select * from inserted  -- to understand that insertion is first happening in the inserted table  end
+end
+  --now when we insert into tblemployee the above trigger fires
+
+  insert into tblEmployee values(118,'Yuvraj','Male',6750,3,190807,'Hyderabad')
