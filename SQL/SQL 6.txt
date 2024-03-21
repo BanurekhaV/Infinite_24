@@ -1,0 +1,79 @@
+use trainingdb
+
+--procedures with t-sql
+--eg 1
+select * from tblEmployee
+
+create or alter proc updsal(@increment int, @eid int)
+as
+begin
+declare @newsal float
+set @newsal=(select salary from tblEmployee where empid=@eid)
+if(@newsal <=6800)
+  begin
+   set @newsal=@newsal+@increment
+   print 'The revised salary is :' + ' '+ cast(@newsal as varchar(10))
+  end
+ else
+   begin
+     print 'Salary is oK'
+   end
+end
+
+updsal 1000, 104
+
+--eg 2
+--tax calculation where annual salary of the employees is >82000
+create or alter proc TaxCalculator(@eid int, @annualsal float output)
+as
+begin
+ declare @tempsal float
+ select @tempsal=(salary*12) from tblemployee where empid=@eid
+
+ if(@tempsal>82000)
+  begin
+   set @annualsal=@tempsal
+  end
+  else
+   begin
+    print 'Not eligible for taxation'
+   end
+end
+
+declare @asal float
+declare @taxamt float
+exec taxcalculator 100, @asal output
+set @taxamt=(@asal*6)/100  -- some tax calculation
+print 'The Tax amount to be paid is :' + ' '+cast(@taxamt as varchar(10))
+
+--exception handling
+create or alter proc ErrProc
+as
+begin
+ select salary+empname from tblemployee where empid=108
+ end
+
+
+errproc 
+--with error handler
+
+create or alter proc ErrProc
+as
+begin
+begin try
+ select salary+empname from tblemployee where empid=108
+end try
+begin catch
+ --select 'error in procedure'
+ --raiserror(8114,16,5)
+ raiserror(55000,-1,1,'Invalid Operation in ErrProc')
+ --throw 55000,'Error',1
+end catch
+end
+
+errproc
+
+--user defined error messages
+select * from sysmessages  -- system messages
+
+sp_addmessage 55000,8,'Classic Infinite Error'

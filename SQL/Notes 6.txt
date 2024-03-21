@@ -1,0 +1,15 @@
+Exception handling:
+Error Number : The error number is a unique identifier given for each error that occurs in SQL server.
+ It is below 50000 for predefined errors amd must be above 50000 for user defined errors
+
+Error Message : It is a brief piece of information describing the error just occured. It can be maximum of 2047 characters
+
+Severity Level : Tells about the importance of the error. This can range between 0 and 24.
+    0 to 9 : not severe, and can be considered as status messages/information
+    11 to 16 : Indicates user generated errors
+    17 to 19 : Indicates software errors that cannot be corrected by the users, and must be reported to the sys admin\
+    20 to 24 : Indicates fatal errors that can damage the database/system. Here the database connection immediately terminates to ensure database security
+
+State : it is an arbitrary value that is not important for us. This ranges from 0 to 127. 
+
+
