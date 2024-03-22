@@ -31,3 +31,17 @@ end
    1. Database Scoped DDL Trigger : Triggers created for specific activities for a particular database (databse level)
 
    2. Server Scoped DDL Trigger : at Server level (all databases of the server)
+
+
+Cursors: are objects that store the resultset of any query and allows traversal over tge rows
+
+There are 2 types of cursors 1: Implicit cursor : are created by the database engine automatically and process it
+                             2. Explicit cursor : User defined cursors that can be used to travel down the rows
+
+Life Cycle :
+   1. Declare a cursor
+   2. Open the cursor
+   3. Fetch data as long as there are rows
+   4. Close the cursor
+   5. Deallocate the cursor 
+
