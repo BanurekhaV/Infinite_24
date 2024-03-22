@@ -14,3 +14,20 @@ Magic tables get created during the scope of execution of the trigger body
    2. Deleted Table
 
 Update events are always delete followed by insert 
+
+--Instead of trigger : are triggers that fire and do something else than the actual event
+
+syntax
+
+create trigger <trigger name>
+on <table|views
+instead of insert,update,delete
+as
+begin
+....
+end
+
+--DDL triggers . They are of 2 types
+   1. Database Scoped DDL Trigger : Triggers created for specific activities for a particular database (databse level)
+
+   2. Server Scoped DDL Trigger : at Server level (all databases of the server)

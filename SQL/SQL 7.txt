@@ -138,3 +138,121 @@ begin
 	where empid=111
 
 	select * from employeeaudit
+
+
+update tblemployee set deptid=1 where deptid in(4,5)
+
+	select * from employeeaudit
+
+	--instead of triggers
+	--eg 1
+	create or alter trigger trg_instead_ofinsert
+	on tbldepartment
+	instead of insert,update,delete	
+	as
+	begin
+	select 'Permission denied --contact Admin'
+	end
+	
+
+	select * from tbldepartment
+	select * from tblEmployee
+
+	insert into tbldepartment values(7,'Quality','Delhi',null)
+	delete from tblDepartment where deptid=6
+	update tblDepartment set deptname='Accounts' where deptid=6
+	
+	--eg 2
+	--let us try to insert a row thru a view as below
+	create view veEmpadd
+	as
+	select empid,empname,gender,salary,phone,d.deptname 
+	from tblemployee e join tbldepartment d
+	on e.deptid=d.deptid
+
+	--now let us insert one record into the view
+
+	insert into veempadd values(300,'Banurekha','Female',6750,1010101,'Admin')
+
+/*	Msg 4405, Level 16, State 1, Line 156
+View or function 'veempadd' is not updatable because the modification affects multiple base tables.*/
+
+	--we can use instead of triggers to over come the above error on insert
+	--we are creating a trigger on the view
+
+	create or alter trigger trig_onView
+	on veempadd
+	instead of insert
+	as
+	begin
+	 declare @departmentid int
+
+	 --first let us check if there is a valid dept id for the given dept name in the 
+	 --insert clause above  ('IT')
+	 set @departmentid=(select deptid from tbldepartment d , inserted 
+	 where inserted.deptname=d.DeptName)
+	 select @departmentid
+
+	 --let us now check if @departmentid is having valid id or null
+	 if(@departmentid is null)
+	  begin
+	   raiserror('Invalid Department Name. Statement Terminated',16,1)
+	   return
+	  end
+
+	  --if @departmentid is valid, then do the insertion into the base table
+	  insert into tblEmployee(empid,empname,gender,salary,deptid,phone)
+	 select empid,empname,gender,salary,@departmentid,phone from inserted
+	 end
+
+	 --now let us try inserting one row into the view
+	 insert into veempadd values(200,'Banurekha','Female',6750,'IT',1010101)
+
+	 select * from tblemployee
+
+	 --DDL triggers
+	 --Database scopped
+
+	 create database dummy
+	 use dummy
+	 go
+
+	 create or alter trigger trg_restrict_create_table
+	 on database 
+	 for create_table
+	 as
+	 begin
+	  print 'Welcome to creating Tables in this Database'
+	  commit transaction
+	  end
+
+
+	  create table dummy_dummy(did int,dname varchar(10))
+
+	  --server scoped DDL trigger
+	  create trigger trg_restrict_all
+	  on all server
+	  for create_table,alter_table,drop_table
+	  as
+	   begin
+	    print ' You cannot create.alter,drop any table in any database of this server'
+		rollback transaction
+		end
+
+
+
+	--dropping a database trigger 
+	drop trigger if exists trg_restrict_create_table on database
+
+	--dropping a server scoped trigger
+	drop trigger if exists trg_restrict_all on all server
+
+	
+set implicit_transactions off- to enable/diable autocommit mode
+
+begin tran
+delete from tblDepartment where deptid=6
+rollback
+select * from tblDepartment
+
+insert into tblDepartment values(6,'Accounts',null,null)
