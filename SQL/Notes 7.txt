@@ -45,3 +45,12 @@ Life Cycle :
    4. Close the cursor
    5. Deallocate the cursor 
 
+
+Forward only :We can only move forward from 1 st row to 2nd row like wise
+
+Static : Cursors that do not reflect any updations made after opening the cursor
+
+Dynamic : Opposite to static which allows us to see the updations after the cursor is opened 
+
+Keyset : These cursors are driven by keysets of unique values
+
