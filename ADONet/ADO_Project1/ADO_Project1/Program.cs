@@ -12,8 +12,12 @@ namespace ADO_Project1
             
         static void Main(string[] args)
         {
-            InsertData();
-            SelectData();
+            //  InsertData();
+            // DeleteData();
+            // SelectData();
+            //StoredProc_WithParameter();
+            //StoredProc_With_Output();
+             getScalar();
             Console.Read();
         }
 
@@ -91,6 +95,127 @@ namespace ADO_Project1
             {
                 Console.WriteLine("Some SQl error occured..");
             }
+        }
+
+        //for deletion
+
+        public static void DeleteData()
+        {
+            con = getConnection();
+            Console.WriteLine("Enter Empid : ");
+            int eid = Convert.ToInt32(Console.ReadLine());
+            cmd = new SqlCommand("select * from tblemployee where empid=@eid");
+            cmd.Parameters.AddWithValue("@eid", eid);
+            cmd.Connection = con;
+
+            dr = cmd.ExecuteReader();
+           // dr.HasRows
+            while(dr.Read())
+            {
+                for(int i=0;i<dr.FieldCount;i++)
+                {
+                    Console.WriteLine(dr[i]);
+                }
+            }
+            if(dr.HasRows)
+            { 
+             
+            Console.WriteLine("Are you sure to delete this Employee ? Y/N");
+            string answer = Console.ReadLine();
+                if (answer == "y" || answer == "Y")
+                {
+                    con.Close();
+                    SqlCommand cmd1 = new SqlCommand("delete from tblemployee where empid=@eid", con);
+                    cmd1.Parameters.AddWithValue("@eid", eid);
+                    con.Open();
+                    int ctr= cmd1.ExecuteNonQuery();
+                    if (ctr > 0)
+                    {
+                        Console.WriteLine("Record Deleted Successfully..");
+                    }
+                else
+                    Console.WriteLine("Could not delete..");
+                }
+               
+            }
+            else
+            {
+                Console.WriteLine("Employee with id {0} does not exists",eid);
+            }
+        }
+
+        //calling procedures with input parameter
+        public static void StoredProc_WithParameter()
+        {
+            con = getConnection();
+            try
+            {
+                Console.WriteLine("Enter The Employee Id :");
+                int eid = int.Parse(Console.ReadLine());
+                cmd = new SqlCommand("getsal", con); //cmdtext here takes only the name of the procedure
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@eid", eid);
+
+                dr = cmd.ExecuteReader();
+                while(dr.Read())
+                {
+                    Console.WriteLine($"Employee Named {dr[0]} earns Rs. {dr[1]}");
+                }
+            }
+            catch (SqlException se)
+            {
+                Console.WriteLine("Some Sql error occured..");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Data error occured..");
+            }
+            
+        }
+        //calling procedure with output value
+        public static void StoredProc_With_Output()
+        {
+            con = getConnection();
+            Console.WriteLine("Enter Employee Name :");
+            string empname = Console.ReadLine();
+            cmd = new SqlCommand();
+            cmd.CommandText = "getEmpSalary";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = con;
+
+            //we shall use a class called SqlParameter for input output values
+            SqlParameter param1 = new SqlParameter
+            {
+                ParameterName="@ename",
+                SqlDbType=SqlDbType.NVarChar,
+                Value=empname,
+                Direction=ParameterDirection.Input
+            };
+            cmd.Parameters.Add(param1);
+
+            //for output parameter
+            SqlParameter outparam = new SqlParameter
+            {
+                ParameterName = "@sal",
+                SqlDbType = SqlDbType.Float,
+                Direction = ParameterDirection.Output
+            };
+
+            cmd.Parameters.Add(outparam);
+
+            cmd.ExecuteScalar();
+            Console.WriteLine("Salary of Employee : {0} is : {1}", empname,outparam.Value);
+        }
+
+        //method with scalar info. (one data of any type)
+        public static void getScalar()
+        {
+            con = getConnection();
+            cmd = new SqlCommand("Select count(Empid) from tblemployee", con);
+            int empcount=(int)cmd.ExecuteScalar(); //or
+
+            int ecount = Convert.ToInt32(cmd.ExecuteScalar());
+            Console.WriteLine("No. of employees : {0}", empcount);
         }
     }
 }

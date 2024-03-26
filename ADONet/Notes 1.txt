@@ -1,0 +1,54 @@
+ADO.Net : Data Tier Framework consisting of classes amd methods that abstract the complete movement of data in the datasource (database,xml,access,excel)
+
+ADO.Net Architecture 
+ 1. Connected Arch : the application remains connected with the database throughout
+
+ 2. Disconnected Arch : The application automatically connects/disconnects during processing. The application uses a dataset object to store the data 
+
+Objects :
+Connection
+   -Transaction
+Command
+   -Parameters(collection)
+
+2 methods viz executereader and executenonquery helps in executing our Sqlcommands
+  -ExecuteReader() returns an object of SqlDataReader. Used with select statements
+  -ExceuteNonquery() returns an integer that specifies rows affected . Used with insert/update/delete
+
+DataReader : is an resultset object which holds the output of select 
+
+DataAdapter
+  - InsertCommand
+  - UpdateCommand
+  - DeleteCommand
+  - SelectCommand
+
+DataSet: is a collections of 
+  DataTables collection
+  DataRows    ""
+  DataColumns  ""
+  DataRelations 
+  DataConstraint
+
+connection thru Windows Authentication :
+
+1. string constr= "server=<servername> ;database=<databasename>;integrated security=true"
+  --or
+string constr= "server=<servername> ;database=<databasename>;trusted_connection=true"
+
+also specify as below
+
+Data source=<servername>; initial catalog=<databasename>;integrated security=true"  or trusted_connection=true"
+
+Connection thru SQL Authentication
+
+1. string constr= "server=<servername> ;database=<databasename>;user id=admin;password=admin@123"
+
+
+Data source=<servername>; initial catalog=<databasename>;user id=admin;password=admin@123"
+
+
+
+ 
+
+
