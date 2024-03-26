@@ -1,0 +1,67 @@
+--multiple file group :
+--Example
+create database HoliDB1 on primary
+(
+--primary group
+Name='HoliDB',
+filename='C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\HoliDB1.mdf',
+size=5mb,
+maxsize=unlimited,
+filegrowth=1024kb
+),
+
+--secondary group
+--1st file in secondary group
+filegroup holigroup1
+( 
+ Name='HoliDBfile3',
+ filename='C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\HoliDBfile3.ndf',
+ size=1mb,
+ maxsize=unlimited,
+ filegrowth=1024kb),
+
+  --2nd file in the secondary group
+
+  filegroup holigroup2
+  (
+  Name='HoliDBfile4',
+  filename='C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\HoliDBfile4.ndf',
+  size=1mb,
+  maxsize=unlimited,
+  filegrowth=1024kb),
+
+  --log file on secondary group
+filegroup logroup1
+(
+Name='HoliDBlogfile',
+filename='C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\HoliDBlogfile2.ldf',
+size=5mb,
+maxsize=unlimited,
+ filegrowth=1024kb)
+
+ use HoliDB1
+ select DB_Name() as [DatabaseName], Name,file_id, physical_name,
+  (size * 8.0/1024)as Size,
+  ((size * 8.0/1024)-(FILEPROPERTY(name,'SpaceUsed')* 8.0/1024))as FreeSpace
+  from sys.database_files
+
+  --or give the below command
+
+  DBCC showfilestats
+
+  --now let us create a table on a particular file group rather than the primary
+  create table Customers(Custid varchar(7),
+  Custname varchar(30),
+  CustCity varchar(20)) on holigroup1
+
+  --creating table normally w/o specifying any groups. 
+  create table Samples(sid int,sname varchar(30)) -- this will get created on the primary
+
+  drop table samples
+  --setting one of the group as default
+ alter database HoliDB1 modify filegroup holigroup1 default
+
+ -- Note : if we have inserted say about 40000 rows, the resultant size will be appx
+ --(40000 * 8.0/1024)=312.5 mb 
+
+ sp_help samples

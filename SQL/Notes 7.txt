@@ -54,3 +54,7 @@ Dynamic : Opposite to static which allows us to see the updations after the curs
 
 Keyset : These cursors are driven by keysets of unique values
 
+
+
+
+

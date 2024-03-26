@@ -1,0 +1,35 @@
+Normalization : is a process of decomposing a complex data structure to simpler ones.  This technique produces set of relations with desirable properties for the enterprise.
+
+What if not normalized : We end up having redundant data thereby leading to 1.Insert Anomalies, 2. Update and 3 delete anomalies
+
+We normalize using a concept called functional dependency
+
+-describes the relationship between attributes in a relation
+
+we have different normal forms
+
+1. 1 Normal Form  - at every intersection of a row and a column, there should be precisely one and only one data
+2. 2 nd NF : when all non prime attributes are fully functionally dependant on the whole key. Suggests removal of partial dependencies
+3. 3rd NF : All non key attributes to be directly dependent on the determinant and not transitively. Transitive dependencies to be removed
+
+BC NF
+4th, 5th 6th nf
+
+note : 
+search window->run->services.msc->see if MSSQL server is running. If not you will get an error no.40. Simply start the services
+
+File and Filegroups and growths:
+
+Physical data is stored as datapages (data files)
+
+Every database has atleast 2 operating system files : 1. data file, 2. log file
+
+Data files can be either primary or secondary
+
+
+-Every time we create a database, the system creates 2 files viz
+
+1. Data file (.mdf) - primary file group (default)
+2. A transactional log file (.ldf)
+
+Multiple file groups : Help us to store data in a granular manner.

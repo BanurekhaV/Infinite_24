@@ -1,0 +1,65 @@
+SQL profiler : 
+
+
+
+
+
+
+use HoliDB
+
+create table sampletable(Id int primary key, val varchar(5))
+
+insert into sampletable values(1,'AA'),(2,'BB'),(3,'CC'),(4,'DD');
+--let us create few stored procedures and analyse the data usage etc
+delete from sampletable where id>4
+
+select * from sampletable
+
+create or alter proc adddata
+@id int,@v varchar(5),
+@res varchar(10) output
+as
+begin
+ begin try
+   begin transaction
+      insert into sampletable values(@id,@v)
+	commit
+	set @res='OK'
+ end try
+ begin catch
+   if @@TRANCOUNT > 0
+    rollback
+	set @res='Error'
+ end catch
+
+ end
+
+ --2 
+
+ create proc getdata @data char(5)
+ as
+ begin
+  select Id,val from sampletable where val=@data 
+  end
+
+  --let us now execute the above procedure in order
+
+  drop procedure insertproc
+
+  declare @r varchar(5)
+ exec adddata 4,'FF', @r output
+ print @r
+
+ -- alternately
+ declare @d1 varchar(10)
+ set @d1='OK'
+ exec adddata @id=4,@v='EE',@res=@d1 output
+ select @d1
+
+ exec getdata @data='EE'
+
+ select * from customers where customerid like 'ALFKI'
+
+ select * from Employees
+
+ select * from Orders where EmployeeID=4
