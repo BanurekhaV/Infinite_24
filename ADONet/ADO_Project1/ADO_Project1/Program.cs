@@ -17,7 +17,8 @@ namespace ADO_Project1
             // SelectData();
             //StoredProc_WithParameter();
             //StoredProc_With_Output();
-             getScalar();
+            // getScalar();
+            SqlTransactionEg();
             Console.Read();
         }
 
@@ -216,6 +217,52 @@ namespace ADO_Project1
 
             int ecount = Convert.ToInt32(cmd.ExecuteScalar());
             Console.WriteLine("No. of employees : {0}", empcount);
+        }
+
+        //transaction example
+        public static void SqlTransactionEg()
+        {
+            con = getConnection();
+
+            cmd = con.CreateCommand();
+            SqlTransaction transaction;
+
+            //to begin a transaction
+            transaction = con.BeginTransaction("SampleTran");
+
+            //must assign both connection and transaction object to command
+            cmd.Connection = con;
+            cmd.Transaction = transaction;
+            try
+            {
+                cmd.CommandText = "insert into Products values(107,'SmartWatches',8500,20)";
+                cmd.ExecuteNonQuery();
+                cmd.CommandText= "insert into Products values(106,'USB',500,25)";
+                cmd.ExecuteNonQuery();
+
+                //attempt to commit the transaction
+                transaction.Commit();
+                Console.WriteLine("2 rows added to the table");
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("Commit Exception type : {0}",e.GetType());
+                Console.WriteLine(e.Message);
+
+                //Attempt to rollback the transaction
+                try
+                {
+                    //con.Close();
+                    transaction.Rollback();
+                }
+                catch(Exception ex)
+                {
+                    Console.WriteLine("Rollback Exception type : {0}",ex.GetType());
+                    Console.WriteLine(ex.Message);
+                }
+            }
+
+
         }
     }
 }
