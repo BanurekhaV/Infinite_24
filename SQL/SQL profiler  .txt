@@ -1,8 +1,12 @@
-SQL profiler : 
+SQL profiler : is a GUI tool that helps
+-step thriugh the queries to find the cause of the problem
+-Find and diagnose slow running queries
+-Capture series of T-sql statements that leads to any problem
+-Monitor the performance
 
-
-
-
+Performance Tuning Advisor: 
+is a tool that helps diagnose issues with performance as well
+and also few suggestions to rectify the same
 
 
 use HoliDB

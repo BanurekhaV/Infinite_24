@@ -1,0 +1,7 @@
+C:\Banu\Infinite\B3\ADONet\ADO_Project1\ADO_Project1\bin\Debug\ADO_Project1.exe.config
+C:\Banu\Infinite\B3\ADONet\ADO_Project1\ADO_Project1\bin\Debug\ADO_Project1.exe
+C:\Banu\Infinite\B3\ADONet\ADO_Project1\ADO_Project1\bin\Debug\ADO_Project1.pdb
+C:\Banu\Infinite\B3\ADONet\ADO_Project1\ADO_Project1\obj\Debug\ADO_Project1.csproj.AssemblyReference.cache
+C:\Banu\Infinite\B3\ADONet\ADO_Project1\ADO_Project1\obj\Debug\ADO_Project1.csproj.CoreCompileInputs.cache
+C:\Banu\Infinite\B3\ADONet\ADO_Project1\ADO_Project1\obj\Debug\ADO_Project1.exe
+C:\Banu\Infinite\B3\ADONet\ADO_Project1\ADO_Project1\obj\Debug\ADO_Project1.pdb
