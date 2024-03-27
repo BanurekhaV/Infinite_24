@@ -11,6 +11,7 @@ namespace Disconnected_ADO1
         static void Main(string[] args)
         {
             getRegions();
+           // callProcedure();
             Console.Read();
         }
 
@@ -66,8 +67,8 @@ namespace Disconnected_ADO1
                 da.InsertCommand = scb.GetInsertCommand();
                 da.Update(ds, "nRegion");
                 Console.WriteLine("--------After Insertion---------");
-                da.Fill(ds, "nRegion");
-               // dt = ds.Tables["nregion"];
+               // da.Fill(ds, "nRegion");
+                dt = ds.Tables["nregion"];
 
                 //reading the data after inserting one row
                 foreach (DataRow drow1 in dt.Rows)
@@ -100,6 +101,25 @@ namespace Disconnected_ADO1
             catch(SqlException se)
             {
                 Console.WriteLine(se.Message);
+            }
+        }
+
+        public static void callProcedure()
+        {
+            con = getConnection();
+            da = new SqlDataAdapter("[Ten Most Expensive products]", con);
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            foreach(DataRow dr in dt.Rows)
+            {
+                foreach(DataColumn dc in dt.Columns)
+                {
+                    Console.Write(dr[dc]);
+                    Console.Write(" ");
+                }
+                Console.WriteLine();
             }
         }
     }

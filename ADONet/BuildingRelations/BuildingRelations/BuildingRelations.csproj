@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{540BC9D6-EB02-409F-9852-37CEB1BBA03D}</ProjectGuid>
+    <ProjectGuid>{FBAAAE98-3B14-4E8D-8FBA-532C420853B1}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Disconnected_ADO1</RootNamespace>
-    <AssemblyName>Disconnected_ADO1</AssemblyName>
+    <RootNamespace>BuildingRelations</RootNamespace>
+    <AssemblyName>BuildingRelations</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -32,9 +32,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject>Disconnected_ADO1.ConnectionPooling</StartupObject>
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -46,7 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConnectionPooling.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
