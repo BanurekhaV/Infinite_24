@@ -1,0 +1,70 @@
+--XML Operations
+
+Extensible Markup Lang. It is a text based mark up. It is derived from Standard Generalized Markup Lang(SGML)
+-Xml tags identify the data and are used to store and organize, rather than having specifics of how to display the data
+-Xml is a public standard (W3C - an open standard)
+
+XML usage : xml works behind the screen to simplify the creation of html documents for small and large web sites
+- Is used to store and exchange data
+- Can enable customization of data to suit the application/organization
+- Xml can express virtually any type of data
+- Xml can merge with style sheets to create desired outputs
+
+<message>
+ <text>
+   dfgkhl
+ </text
+</message>
+
+<  &lt,
+>  &gt
+&  &amp
+'  &apos
+"  &quot
+
+Xml documents can be validated  against
+ 1. DTD - Document Type Definition
+ 2. XSD - Xml Schema Definition
+
+DTD :
+
+<?Xml version="1.0"?>
+<!Doctype Employee System "employee.dtd">
+<employee>
+  <firstname>Amitabh</firstname>
+  <lastname>Bachhan</lastname>
+  <email>ab@infinite.com</email>
+</employee
+<employee>
+  <firstname>Shahrukh</firstname>
+  <lastname>Khan</lastname>
+  <email>srk@infinite.com</email>
+</employee>
+
+
+XSD :
+<?xml version="1.0"?>
+<employee
+xmlns="https://www.infinite.com"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.infinite.com employee.xsd">
+ <firstname>Amitabh</firstname>
+  <lastname>Bachhan</lastname>
+  <email>ab@infinite.com</email>
+</employee>
+
+
+LINQ :  Languahe Integrated Query
+
+  - is a query lang that is standardized to query any data source
+  - less code
+  - more readable
+  - provides intellisense support
+  - complile time safety
+  - familiar lang
+
+There are 2 basic ways to write Linq queries
+  1. Query Syntax/Query Expression: from <range variable> in <IEnumerable>/<IQueryable><collection> <standard query operators>/<lambda expressions>
+  select or group by
+
+ 2. Method Syntax/Method extensions /fluent) uses extension operators with lambda
