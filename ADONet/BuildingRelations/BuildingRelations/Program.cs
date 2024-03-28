@@ -130,7 +130,7 @@ namespace BuildingRelations
             // 11.1 by creating primary key foreign key
             DataColumn parent = dsEmployment.Tables["EmployeeStatus"].Columns["EmpStatusID"];
             DataColumn child = dsEmployment.Tables["Employees"].Columns["EmpStatusID"];
-
+            
             //11.2 setting the realtion between parent and child
             DataRelation emprel = new DataRelation("EmpStatusRelation", parent, child);
 

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FBAAAE98-3B14-4E8D-8FBA-532C420853B1}</ProjectGuid>
+    <ProjectGuid>{0F2C1F43-C6D9-4C3E-A732-A424239EF251}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>BuildingRelations</RootNamespace>
-    <AssemblyName>BuildingRelations</AssemblyName>
+    <RootNamespace>XMLOperations</RootNamespace>
+    <AssemblyName>XMLOperations</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>BuildingRelations.Relations_Constraints</StartupObject>
+    <StartupObject>XMLOperations.LINQEgs</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -46,9 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LINQEgs.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Relations_Constraints.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
