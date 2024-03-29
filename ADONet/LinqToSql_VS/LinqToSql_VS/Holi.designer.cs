@@ -33,6 +33,9 @@ namespace LinqToSql_VS
     partial void InserttblEmployee(tblEmployee instance);
     partial void UpdatetblEmployee(tblEmployee instance);
     partial void DeletetblEmployee(tblEmployee instance);
+    partial void InsertProduct(Product instance);
+    partial void UpdateProduct(Product instance);
+    partial void DeleteProduct(Product instance);
     #endregion
 		
 		public HoliDataContext() : 
@@ -71,6 +74,21 @@ namespace LinqToSql_VS
 			{
 				return this.GetTable<tblEmployee>();
 			}
+		}
+		
+		public System.Data.Linq.Table<Product> Products
+		{
+			get
+			{
+				return this.GetTable<Product>();
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.EmpCount")]
+		public int EmpCount([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id);
+			return ((int)(result.ReturnValue));
 		}
 	}
 	
@@ -255,6 +273,140 @@ namespace LinqToSql_VS
 					this._City = value;
 					this.SendPropertyChanged("City");
 					this.OnCityChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Products")]
+	public partial class Product : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ProductId;
+		
+		private string _Productname;
+		
+		private System.Nullable<int> _Price;
+		
+		private System.Nullable<int> _QuantityAvailable;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnProductIdChanging(int value);
+    partial void OnProductIdChanged();
+    partial void OnProductnameChanging(string value);
+    partial void OnProductnameChanged();
+    partial void OnPriceChanging(System.Nullable<int> value);
+    partial void OnPriceChanged();
+    partial void OnQuantityAvailableChanging(System.Nullable<int> value);
+    partial void OnQuantityAvailableChanged();
+    #endregion
+		
+		public Product()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int ProductId
+		{
+			get
+			{
+				return this._ProductId;
+			}
+			set
+			{
+				if ((this._ProductId != value))
+				{
+					this.OnProductIdChanging(value);
+					this.SendPropertyChanging();
+					this._ProductId = value;
+					this.SendPropertyChanged("ProductId");
+					this.OnProductIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Productname", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
+		public string Productname
+		{
+			get
+			{
+				return this._Productname;
+			}
+			set
+			{
+				if ((this._Productname != value))
+				{
+					this.OnProductnameChanging(value);
+					this.SendPropertyChanging();
+					this._Productname = value;
+					this.SendPropertyChanged("Productname");
+					this.OnProductnameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Int")]
+		public System.Nullable<int> Price
+		{
+			get
+			{
+				return this._Price;
+			}
+			set
+			{
+				if ((this._Price != value))
+				{
+					this.OnPriceChanging(value);
+					this.SendPropertyChanging();
+					this._Price = value;
+					this.SendPropertyChanged("Price");
+					this.OnPriceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QuantityAvailable", DbType="Int")]
+		public System.Nullable<int> QuantityAvailable
+		{
+			get
+			{
+				return this._QuantityAvailable;
+			}
+			set
+			{
+				if ((this._QuantityAvailable != value))
+				{
+					this.OnQuantityAvailableChanging(value);
+					this.SendPropertyChanging();
+					this._QuantityAvailable = value;
+					this.SendPropertyChanged("QuantityAvailable");
+					this.OnQuantityAvailableChanged();
 				}
 			}
 		}

@@ -1,0 +1,65 @@
+
+LINQ - collections  (arrays)
+LINQ - objects      (classes)
+LINQ - DataTable    (collection - 2dimension)
+
+LINQ - SQL : offers runtime infrastructure for the management of relational data as objects    
+
+Tables  ----> Classes
+Columns ----> Properties
+Rows  ------> Instances
+Storedprocedures ---> Methods
+
+Inorder to work with Linq-Sql, we need to convert all relational objects to Programming Objects. This process of mapping is known as ORM(Object relational mapper/mapping)
+
+Advantages : 1. We can query database object as a .net object
+             2. Development becomes easier
+             3. Intellisense Support
+             4. Type safety is ensured by the compiler
+             5. Handles SQL Injection attack
+
+Mapped objects are generated using either 
+     1. Visual Studio ( using Linq-to-Sql classes, we can get the mappings done as a .dbml file)
+
+     2. SQL Metal ( a tool which is a .exe, that generates the .dbml file on giving certain commands)
+
+Steps for working with vs:
+----------------------------
+1. Create a ConsoleApplication for .net framework
+2. Right click on the project-->add-->new item
+3. Search for Linq to Sql classes and add it (yoy mat change the .dbml file name)
+4. Observe that a reference to System.Data.Linq is added, and also a Layout and a designer.cs files added (do not change anything here)
+5. Have a look at the constructors for the generated  DataContext class. It is       	4 in nos and all parameterized.
+6. Go to view menu and select SQL Server Object Explorer option
+7. You will find both a local as well as a remote instance of the SQL Server.
+8. Select a database to work with, and select the tables you want. Drag and drop them in the left side of the dbml layout
+9. Any procedures/functions required, to be dragged and dropped to the right side of the layout.
+10. Wait for sometime, as the orm maps the relevant objects.
+11. Build the application/project
+12. Go to designer.cs file and observe that an empty constructor is created, along with all the included tables, procedures,fucntions information added. 
+13. Now create an object of the DataContext class and instantiate it.
+14. You are free to work with the sql objects converted as .net objects
+
+2. with Sql Metal:
+-----------------
+use developer command prompt. 
+
+Go to c:\windows\system32 and type the below:
+
+sqlmetal.exe /server:<give your servername fully /database:Northwind /dbml:c:\banu\infinite\b3\adonet\nwind.dbml /context:NorthwindContext
+
+next create a console application
+right click and add existing item
+search for your dbml file and add it
+
+then go to app.config file and make the below entry under <configurations>
+
+<connectionStrings>
+		<add name="NwindConnstr" //any meaningful name
+			  connectionString="Data Source=<your servername correctly;
+			  initial catalog=Northwind;integrated security=true"
+			  providerName="System.Data.SqlClient"/>
+	</connectionStrings>
+
+
+Build once and start using the sql objects.

@@ -1,0 +1,10 @@
+C:\Banu\Infinite\B3\ADONet\LinqToSql_SQLMetal\LinqToSql_SQLMetal\bin\Debug\LinqToSql_SQLMetal.exe.config
+C:\Banu\Infinite\B3\ADONet\LinqToSql_SQLMetal\LinqToSql_SQLMetal\bin\Debug\LinqToSql_SQLMetal.exe
+C:\Banu\Infinite\B3\ADONet\LinqToSql_SQLMetal\LinqToSql_SQLMetal\bin\Debug\LinqToSql_SQLMetal.pdb
+C:\Banu\Infinite\B3\ADONet\LinqToSql_SQLMetal\LinqToSql_SQLMetal\obj\Debug\LinqToSql_SQLMetal.csproj.AssemblyReference.cache
+C:\Banu\Infinite\B3\ADONet\LinqToSql_SQLMetal\LinqToSql_SQLMetal\obj\Debug\LinqToSql_SQLMetal.csproj.CoreCompileInputs.cache
+C:\Banu\Infinite\B3\ADONet\LinqToSql_SQLMetal\LinqToSql_SQLMetal\obj\Debug\LinqToSql_SQLMetal.exe
+C:\Banu\Infinite\B3\ADONet\LinqToSql_SQLMetal\LinqToSql_SQLMetal\obj\Debug\LinqToSql_SQLMetal.pdb
+C:\Banu\Infinite\B3\ADONet\LinqToSql_SQLMetal\LinqToSql_SQLMetal\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Banu\Infinite\B3\ADONet\LinqToSql_SQLMetal\LinqToSql_SQLMetal\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Banu\Infinite\B3\ADONet\LinqToSql_SQLMetal\LinqToSql_SQLMetal\obj\Debug\LinqToSql_SQLMetal.csproj.CopyComplete
