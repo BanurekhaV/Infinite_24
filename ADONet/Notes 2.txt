@@ -68,3 +68,5 @@ There are 2 basic ways to write Linq queries
   select or group by
 
  2. Method Syntax/Method extensions /fluent) uses extension operators with lambda
+
+

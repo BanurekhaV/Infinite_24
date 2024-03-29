@@ -40,12 +40,12 @@ namespace XMLOperations
             var result = c.GroupJoin(p, crs => crs.CID, pers => pers.PID, (cr, pr) => new
             {
                 key = cr.CName,
-                s = pr
+                p = pr
             });
             Console.WriteLine( "Group-Joined List of Persons who have either taken ADO or C#");
             foreach(var course in result)
             {
-                foreach(var person in course.s)
+                foreach(var person in course.p)
                 {
                     Console.WriteLine(course.key + " " + person.PName);
                 }

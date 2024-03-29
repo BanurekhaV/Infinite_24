@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Holi">
+  <DataContextMoniker Name="/HoliDataContext" />
+  <nestedChildShapes>
+    <classShape Id="ddf0a23f-25be-4fe2-b00b-baa4cd254c5c" absoluteBounds="1.25, 2.5, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/HoliDataContext/tblEmployee" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4a83d0ba-dc51-4450-8a68-ca26c76e5539" absoluteBounds="1.2650000000000001, 2.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
