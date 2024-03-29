@@ -27,7 +27,7 @@ Steps for working with vs:
 ----------------------------
 1. Create a ConsoleApplication for .net framework
 2. Right click on the project-->add-->new item
-3. Search for Linq to Sql classes and add it (yoy mat change the .dbml file name)
+3. Search for Linq to Sql classes and add it (you may change the .dbml file name)
 4. Observe that a reference to System.Data.Linq is added, and also a Layout and a designer.cs files added (do not change anything here)
 5. Have a look at the constructors for the generated  DataContext class. It is       	4 in nos and all parameterized.
 6. Go to view menu and select SQL Server Object Explorer option
@@ -42,21 +42,21 @@ Steps for working with vs:
 
 2. with Sql Metal:
 -----------------
-use developer command prompt. 
+1. use developer command prompt. 
 
-Go to c:\windows\system32 and type the below:
+2. Place yourself in c:\windows\system32 and type the below:
 
-sqlmetal.exe /server:<give your servername fully /database:Northwind /dbml:c:\banu\infinite\b3\adonet\nwind.dbml /context:NorthwindContext
+sqlmetal.exe /server:<give your servername fully> /database:Northwind /dbml:c:\banu\infinite\b3\adonet\nwind.dbml /context:NorthwindContext
 
-next create a console application
-right click and add existing item
-search for your dbml file and add it
+3. next create a console application
+4. right click and add existing item
+5. search for your dbml file and add it
 
-then go to app.config file and make the below entry under <configurations>
+6. then go to app.config file and make the below entry under <configurations> tag
 
 <connectionStrings>
-		<add name="NwindConnstr" //any meaningful name
-			  connectionString="Data Source=<your servername correctly;
+		<add name="NwindConnstr" 
+			  connectionString="Data Source=;
 			  initial catalog=Northwind;integrated security=true"
 			  providerName="System.Data.SqlClient"/>
 	</connectionStrings>

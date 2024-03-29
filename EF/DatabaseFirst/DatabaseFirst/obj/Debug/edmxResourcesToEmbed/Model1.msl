@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TrainingDBModelStoreContainer" CdmEntityContainer="TrainingDBEntities">
+    <EntitySetMapping Name="DEPTs">
+      <EntityTypeMapping TypeName="TrainingDBModel.DEPT">
+        <MappingFragment StoreEntitySet="DEPT">
+          <ScalarProperty Name="deptno" ColumnName="deptno" />
+          <ScalarProperty Name="dname" ColumnName="dname" />
+          <ScalarProperty Name="loc" ColumnName="loc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EMPs">
+      <EntityTypeMapping TypeName="TrainingDBModel.EMP">
+        <MappingFragment StoreEntitySet="EMP">
+          <ScalarProperty Name="empno" ColumnName="empno" />
+          <ScalarProperty Name="ename" ColumnName="ename" />
+          <ScalarProperty Name="job" ColumnName="job" />
+          <ScalarProperty Name="mgr_id" ColumnName="mgr_id" />
+          <ScalarProperty Name="hiredate" ColumnName="hiredate" />
+          <ScalarProperty Name="sal" ColumnName="sal" />
+          <ScalarProperty Name="comm" ColumnName="comm" />
+          <ScalarProperty Name="deptno" ColumnName="deptno" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="TrainingDBModel.Product">
+        <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="Productname" ColumnName="Productname" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="QuantityAvailable" ColumnName="QuantityAvailable" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblDepartments">
+      <EntityTypeMapping TypeName="TrainingDBModel.tblDepartment">
+        <MappingFragment StoreEntitySet="tblDepartment">
+          <ScalarProperty Name="DeptId" ColumnName="DeptId" />
+          <ScalarProperty Name="DeptName" ColumnName="DeptName" />
+          <ScalarProperty Name="DeptLocation" ColumnName="DeptLocation" />
+          <ScalarProperty Name="Budget" ColumnName="Budget" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEmployees">
+      <EntityTypeMapping TypeName="TrainingDBModel.tblEmployee">
+        <MappingFragment StoreEntitySet="tblEmployee">
+          <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+          <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+          <ScalarProperty Name="DeptId" ColumnName="DeptId" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="City" ColumnName="City" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="EmpCount" FunctionName="TrainingDBModel.Store.EmpCount" />
+  </EntityContainerMapping>
+</Mapping>

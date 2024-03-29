@@ -1,0 +1,33 @@
+Entity Framework :
+
+- It is an Object Relational Mapper (ORM)
+- It is an open source framework for ADO.Net
+- It helps developers to develop applications faster 
+
+DBContext : is an instance of the database that represents all database objects, and groups any changes that has to be written back to the database as a unit
+
+Types of Entities:
+
+1. POCO Entities : (Plain Old CLR Object) A POCO entity is a class that does not depend on any framework base classes, but is just a normal .Net CLR class
+
+2. Dynamic Proxy Entities :(POCO Proxy) Dynamic Proxy is a runtime proxy class which wraps the POCO entity
+
+EF has 3 approaches to work with data
+
+1. Database First Approach: (Existing Database) : Relations are simple mapped to classes as Models
+2. Code First Approach: (New Database) : Classes get mapped to relations using migrations
+3. Model First Approach:(Create models in design mode, then we convert them to classes, which are then mapped to relations)
+
+
+Entity States : The Life cycle that describes the process in which an entity is created, deleted, modified. An entity is always in any of the following states
+
+1. Added : The entity is marked as added, wehen we perform insertion. The entity will be tracked by the context, but the data will not be available yet in the database.
+
+2. Deleted : The entity is marked as deleted. The entity will be tracked by the context and data exists in the database. When SaveChanges() is called, the entity is detached
+
+3. Detached : The entity is not being tracked by the context. An entity will be in this state as soon as it is created using new operator
+
+4. Modified : The entity is been modified. The entity is tracked and data exists in the database, and some or all property values have changed. After savechanges(), it is in unchanged state
+
+5. Unchanged :  The entity either has been added or modified and saved. 
+

@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TrainingDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="DEPT">
+    <Key>
+      <PropertyRef Name="deptno" />
+    </Key>
+    <Property Name="deptno" Type="Decimal" Precision="2" Scale="0" Nullable="false" />
+    <Property Name="dname" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="loc" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="EMPs" Relationship="Self.FK__EMP__deptno__403A8C7D" FromRole="DEPT" ToRole="EMP" />
+  </EntityType>
+  <EntityType Name="EMP">
+    <Key>
+      <PropertyRef Name="empno" />
+    </Key>
+    <Property Name="empno" Type="Decimal" Precision="4" Scale="0" Nullable="false" />
+    <Property Name="ename" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="job" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="mgr_id" Type="Decimal" Precision="4" Scale="0" />
+    <Property Name="hiredate" Type="DateTime" Precision="0" />
+    <Property Name="sal" Type="Int32" />
+    <Property Name="comm" Type="Int32" />
+    <Property Name="deptno" Type="Decimal" Precision="2" Scale="0" />
+    <NavigationProperty Name="DEPT" Relationship="Self.FK__EMP__deptno__403A8C7D" FromRole="EMP" ToRole="DEPT" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductId" />
+    </Key>
+    <Property Name="ProductId" Type="Int32" Nullable="false" />
+    <Property Name="Productname" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Price" Type="Int32" />
+    <Property Name="QuantityAvailable" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tblDepartment">
+    <Key>
+      <PropertyRef Name="DeptId" />
+    </Key>
+    <Property Name="DeptId" Type="Int32" Nullable="false" />
+    <Property Name="DeptName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="DeptLocation" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Budget" Type="Double" />
+    <NavigationProperty Name="tblEmployees" Relationship="Self.FK__tblEmploy__DeptI__267ABA7A" FromRole="tblDepartment" ToRole="tblEmployee" />
+  </EntityType>
+  <EntityType Name="tblEmployee">
+    <Key>
+      <PropertyRef Name="EmpId" />
+    </Key>
+    <Property Name="EmpId" Type="Int32" Nullable="false" />
+    <Property Name="EmpName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Gender" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
+    <Property Name="Salary" Type="Double" />
+    <Property Name="DeptId" Type="Int32" />
+    <Property Name="Phone" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tblDepartment" Relationship="Self.FK__tblEmploy__DeptI__267ABA7A" FromRole="tblEmployee" ToRole="tblDepartment" />
+  </EntityType>
+  <Association Name="FK__EMP__deptno__403A8C7D">
+    <End Role="DEPT" Type="Self.DEPT" Multiplicity="0..1" />
+    <End Role="EMP" Type="Self.EMP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DEPT">
+        <PropertyRef Name="deptno" />
+      </Principal>
+      <Dependent Role="EMP">
+        <PropertyRef Name="deptno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblEmploy__DeptI__267ABA7A">
+    <End Role="tblDepartment" Type="Self.tblDepartment" Multiplicity="0..1" />
+    <End Role="tblEmployee" Type="Self.tblEmployee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblDepartment">
+        <PropertyRef Name="DeptId" />
+      </Principal>
+      <Dependent Role="tblEmployee">
+        <PropertyRef Name="DeptId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TrainingDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="DEPTs" EntityType="Self.DEPT" />
+    <EntitySet Name="EMPs" EntityType="Self.EMP" />
+    <EntitySet Name="Products" EntityType="Self.Product" />
+    <EntitySet Name="tblDepartments" EntityType="Self.tblDepartment" />
+    <EntitySet Name="tblEmployees" EntityType="Self.tblEmployee" />
+    <AssociationSet Name="FK__EMP__deptno__403A8C7D" Association="Self.FK__EMP__deptno__403A8C7D">
+      <End Role="DEPT" EntitySet="DEPTs" />
+      <End Role="EMP" EntitySet="EMPs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblEmploy__DeptI__267ABA7A" Association="Self.FK__tblEmploy__DeptI__267ABA7A">
+      <End Role="tblDepartment" EntitySet="tblDepartments" />
+      <End Role="tblEmployee" EntitySet="tblEmployees" />
+    </AssociationSet>
+    <FunctionImport Name="EmpCount">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+</Schema>

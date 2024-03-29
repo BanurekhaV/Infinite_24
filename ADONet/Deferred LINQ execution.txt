@@ -1,0 +1,24 @@
+Deferred LINQ execution:
+  -is a default way of execution
+  - When we write a LINQ query, it doesnt execute by itself until
+   we access the query results.
+ - The execution is deferred until the query variable is iterated over in a foreach loop
+
+Benefits of deferred execution :
+ 1. Avoid unnecessary execution and hence improves performance
+ 2. Query Construction and execution are decoupled
+ 3. A deferred execution query is reevaluated when we re enumerate the collection. Hence we always get the latest data
+ 
+
+Deferred/Lazy Operators                             Immediate/GreedyOperators
+
+Query is not executed at the point of its            Query is executed at the pointof its 		 	
+  declaration/construction	   			declaration
+
+ProjectionOperators :				  Aggregate functions
+select,selectmany                                 ElementOperators (first,last,single)
+Restriction operators:                            ToList(),ToString(),ToArray(),ToDictionary()
+where
+Paging operators :
+take,skip
+
