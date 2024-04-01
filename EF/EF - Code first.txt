@@ -1,0 +1,39 @@
+EF - Code first approach: 
+
+1. Create a Console Application
+2. Add a folder to the project called 'Models'
+3. inside the Models folder create class/classes
+     public class Books{}
+4. Use the namespace System.Data.ComponentModel.DataAnnotations and DataAnnotations.scghema respectively(thi swill enable annotations to the table object and key property
+5. Create a DbContext class which inherits from DbContext class (This class will be available in System.Data.Entity namespace install EF for the same
+6. Go to app.config file and after </startup> section
+    add the below lines
+  <connectionStrings>
+		<add name="BooksConnection"
+			  connectionString="Data Source=Laptop-tjj7d977;initial catalog=PublishersDB; integrated security=true;"
+			  providerName="System.Data.SqlClient"/>
+	</connectionStrings>
+7. Create an empty constructor in context class and give the connection string name as below
+
+      public BooksDBContext():base("name=BooksConnection")  {}  // the name is the same as in the app.config name attribute
+
+8. Build once
+9. Invoke the PMC (package manager Console window - tools-nugetpackageManager->PackageManager Console). the prompt looks as below
+
+pm>
+In the prompt we first give
+ 1. pm>enable-migrations    (This will enable a Migrations folder and add all the initial info)
+This creates a configuration file. In the configuration.cs file, change the AutomaticMigrationEnabled=true;
+
+Next in the PMC type
+2. pm>add-migration "<give a meaningful name>" (this would enable creation of relevant entity objects)
+
+Next in the PMC
+3. pm>update-database -v (This will ensure all mapped objects are created in the database)
+
+Observe in the sqlserver, a new database with tables and migration history are created
+
+Note : Further changes to the class/es, Models will call for only 2nd and 3rd commands to be given.
+
+ 
+        
