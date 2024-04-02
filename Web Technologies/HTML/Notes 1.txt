@@ -1,0 +1,44 @@
+WWW : 
+Network of Information
+  - A uniform naming scheme for locating resources on the web(URI)
+  - Protocols, for access to the named resouces over the web (HTTP)
+  - Hypertext, for easy navigation among the resources(HTML)
+
+Every resource (Html document,images,videos,applications,programs)on the web has an address that may be accessed by a URI
+
+Eg : http://www.mypage.com/mydir
+   1. the protocol to access resource
+   2. the name of the machine hosting the resource
+   3. the name of the resource itself
+
+ URI >(URN || URL)
+
+Anatomy of a web page
+ Html + CSS + Javascript = Content + Styles + Behaviours
+
+Seperation of concerns?? easier maintenenace and faster
+
+HTMl is the Lifeblood of the www. 
+CSS - No Plain HTMl, do it in style
+Javascript : Gives behaviour to the html(data). Works behind the screen
+     Validating user inputs
+     Interactions with server based on the user actions
+
+Web Site : front end interface through which the public interacts with the business online
+    - is a like a foundation and can host several web applications
+    - can have message boards, blogs, photo gallery, and many others
+
+Web Application : services specific to a business needs. It integrates with the IT infrsatucture
+
+Web Server : The actual infrastructure that hosts all the above 
+
+W3C - A world wide web consortium was formed in the year 1994 by Time Lee. It aims at a way of standardising the protocols and technologies to build web contents
+
+HTML : Is all about Tags/Elements and attributes and values
+
+Semantic Tags : Tags that convey meaning to both the developers as well as the browser engine   <title><footer><address><strong>
+       Non Semantic Tags : Tags that do not have any meaning  <div><span><b>
+
+<span> element is like an inline, which usually can accomodate a small chunk of in-line html, whereas <div> element is a block-line used for large chunks of html code
+
+Forms
