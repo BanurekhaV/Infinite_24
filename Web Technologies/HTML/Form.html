@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html>
     <body>
-        <p><h1><centre>Registration Form</centre></h1></p>
-        <form action="C:\Banu\Infinite\B3\Web Technologies\HTML\registre.html" method="post" >
+        <p><h1 style="color: Blue; "><centre>Registration Form</centre></h1></p>
+        <p style="background-color: aqua;color: black;font-size: 48px;">Please Register here..</p>
+        <form action="registre.html" method="post" >
+            <fieldset>
+                <legend>Personal Info</legend>
          First Name : &nbsp;&nbsp;
          <input type="text" name="fname">
          <br/><br/>
@@ -13,19 +16,32 @@
          <input type="radio" name="gender" value="female">Female &nbsp;
          <input type="radio" name="gender" value="others">Others
          <br/><br/>
-         City : &nbsp;&nbsp;<select name="city">
+         City : &nbsp;&nbsp;<select name="city" multiple>
               <option value="blr">Bengaluru</option>
               <option value="chn">Chennai</option>
               <option value="hyd">Hyderabad</option>
               <option value="vz">Vizag</option>
          </select><br/><br/>
+        </fieldset>
+        <br/><br/>
+        <fieldset>
+            <legend>Documents</legend>
          ID Proof: <br/>
          <input type="checkbox" name="id1" value="ac">Aadhar Card<br/>
          <input type="checkbox" name="id2" value="dc">Driving License<br/>
          <input type="checkbox" name="id3" value="pc">Pan Card
          <br/>
          Upload Proof of Identity : &nbsp; <input type="file"><br/>
+        </fieldset>
          <br/>
+         <input list="Qualifications" />
+         <datalist id="Qualifications">
+            <option value="12"></option>
+            <option value="ug"></option>
+            <option value="pg"></option>
+         </datalist>
+         <br/><br/>
+
          <input type="submit" value="Register" />
          <input type="reset" value="Clear"/>
 
