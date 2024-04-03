@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            img{
+                height: 60px;
+                width: 60px;
+                }
+            #table{
+                   background-color: aqua;
+                }
+            #name{
+                    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                    color:coral;
+                    font-size: 30px;
+                    font-stretch:semi-condensed;
+                }
+          .dashed{
+                    border: dashed;
+                }
+             .groove{
+                    color:darkorchid;
+                    border:groove;
+                    border-width: 5px;
+                    border-color: palegreen;
+                }
+        </style>
+    </head>
+    <body>
+        <h1 style="color:blue">Products List</h1>
+        <div style="background-color: silver;">
+         <h2>Baby Items</h2>
+        </div>
+        <div id="table">
+            <table border="1">
+              <tr>
+                <th>S.No</th>
+                <th>Product Name</th>
+                <th>Price</th>
+                <th>Picture</th>
+              </tr>
+              <tr>
+                <td>101</td>
+                <td colspan="2">Dolls</td>
+                <td>1500</td>
+                <td><img src="Images/Doll.jpg"/></td>
+              </tr>
+              <tr>
+                <td>102</td>
+                <td>Doggy</td>
+                <td>500</td>
+                <td><img src="Images/Puppy.jpg"/></td>
+              </tr>
+              <tr>
+                <td>103</td>
+                <td rowspan="2">Chocolates</td>
+                <td>25</td>
+                <td><img src="Images/Chocolate.jpg"/></td>
+              </tr>
+              <tr>
+                <td>104</td>
+                <td>Biscuits</td>
+                <td>50</td>
+                <td><img src="Images/Biscuits.jpg"/></td>
+              </tr>
+            </table>
+        </div>
+       <br/><br/>
+       <div class="dashed">I am a DIV with dashed border</div>  <br/><br/>
+       <p class="groove">I am a Grooved One</p>
+       <p id="name">I am a Paragraph with ID selector</p>
+
+    </body>
+</html>

@@ -1,6 +1,6 @@
 <html>
     <head>
-        <!-- internal,css
+        <!-- internal css
             1. tag selector-->
         <style>
            h1{
@@ -10,12 +10,49 @@
              color: green;
              border: 5px solid rgb(250,60,250);
            } 
+           p{
+            color:red;
+            font-size: 24px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            border:1px solid black;
+            border-width: 5px 15px 10px 20px;
+            border-color: red green blue blueviolet;
+           }
+           #Top{          
+            padding: 4px;
+            height: 400px;
+            width: 400px;            
+           }
+           #Pop{
+           background-color: chartreuse;
+            padding: 2em;
+            height: 600px;
+            width: 400px;
+           
+           }
+           .myclass{
+            color:green;
+            font-weight: bolder;
+           }
+           .bg{
+            background-image: url('Images/Doll.jpg');
+            background-position:top;
+            background-repeat: no-repeat;
+           }
         </style>
     </head>
-    <body>
-        <h1>We are trying out internal CSS</h1>
-
-        <h2>heading 2</h2>
-        <h1>This is heading one</h1>
+    <body class="bg">
+        <div id="Pop">
+            <h1>Vegetable Salads</h1>
+            <p class="myclass">Salads are healthy and rich in nutrients</p><br/>
+            <p>Veggies are a good source of Vitamins and Minerals</p>
+        </div>
+        <br/><br/>
+       <div id="Top">
+           <h1>Fruit Salads</h1>
+           <p class="myclass">Fresh fruits keeps good health</p><br/>
+           <p>Have fruits everyday</p>
+       </div>
+        
     </body>
 </html>

@@ -41,4 +41,16 @@ Semantic Tags : Tags that convey meaning to both the developers as well as the b
 
 <span> element is like an inline, which usually can accomodate a small chunk of in-line html, whereas <div> element is a block-line used for large chunks of html code
 
-Forms
+Forms :
+  action
+method
+
+Styles :
+ a)inline styles -   few style attributes given along an element
+ b) internal styles - we create seperate styles within the page (applicable only in the page where it is declared)
+ c) external styles- Create a seperate styles file and can be used in any page/s
+  
+ internal/external,styles can have styles declared for 
+    1. Tag selectors
+    2. Ids selectors
+    3. Class selectors

@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <style>
+            div{
+                width: 100px;
+                height: 100px;
+                background-color: red;
+                animation-name: test;
+                animation-duration: 400ms;
+                position: relative;            
+            }
+
+            /*we need to have the animation effect using keyframes
+            standard syntax*/
+            @keyframes test{
+                0%{
+                    background-color: red;
+                }
+                25%{
+                    background-color: yellow;
+                    left:200px;
+                    top:0px
+                }
+                50%{
+                    background-color: blue;
+                    left: 200px;
+                    top: 200px;
+                }
+                100%{
+                    background-color: green;
+                }
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div>hello!!</div>
+    </body>
+</html>

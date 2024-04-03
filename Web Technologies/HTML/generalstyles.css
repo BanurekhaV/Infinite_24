@@ -1,0 +1,12 @@
+div{
+    background-color: coral;
+    height: 700px;
+    width: 800px;
+    color:blue;
+}
+#MyId{
+    color:darkmagenta;
+}
+.cls{
+    color: firebrick;
+}
