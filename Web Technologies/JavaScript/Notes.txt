@@ -1,0 +1,39 @@
+Javascript:
+-is an easy to use scripting language thta can be embedded either in the head od body element of a web page
+-used to enhance the dynamics and interactive web pages
+-Performs calculations, validations, special effects to documents, creates security passwords etc.
+-was invented by Brendan Eich
+
+
+Basic Uses of JS:
+Browser detection
+Cookies
+Control browsers
+Validate Forms
+
+What JS can do?
+-Modify html pages, write text, add or remove tags,change styles etc
+-Exceutes code on events
+-Sends Requests to server and loads data without reloading of the page
+
+Limitations of JS:
+ - cant read/write to hard disk, copy files, call other programs
+ - cannot do network request
+ - No multi threading/multi processing
+
+Web page document is an object
+-Any Table/forms/buttons/images are also objects
+
+eg if we want to change the color of page
+   document.bgcolor="red"
+
+document.open()
+document.write()
+
+onClick="fn1()"
+
+to access external js
+<script src="myscripts.js">/<script>
+
+
+
