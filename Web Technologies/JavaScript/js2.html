@@ -1,0 +1,27 @@
+<html>
+    <body>
+        <p>Say What :?</p><input id="sayThis" size="35">
+        <p>How may Times :?</p>
+        <select id="thismany">
+            <option value="1">1</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="20">20</option>
+        </select>
+        <button onclick="doLoop()">Do It</button>
+        <div id="results"></div>
+
+        <script>
+            function doLoop(){ 
+                var sayWhat = document.getElementById('sayThis').value;
+                var maxloop = document.getElementById('thismany').value;
+                var str = ' ';
+                for(var i=1; (i <= maxloop); i++)
+                {
+                    str = str + i + ':' + sayWhat + '<br/>' ;
+                }
+                 document.getElementById('results').innerHTML = str;
+            }
+        </script>
+    </body>
+</html>

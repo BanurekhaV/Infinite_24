@@ -1,0 +1,58 @@
+<html>
+    <body>
+        <!--while loop-->
+        <!--<script>
+        var count = 0;
+        document.write("Starting the Loop...");
+        
+        while(count < 10)
+        {
+            if(x==5){break;}
+            document.write("Current Count :" + count + "<br/>");
+            count++;
+        }
+        document.write("Stopping the Loop...");
+    </script>-->
+    
+    <!--For in loop
+
+    <h1>For In Loop - Iterating a collection</h1>
+    <div id="results">Show Results here</div>
+   <script>
+    var numbers=[2,4,6,8,10];
+    let str=" ";
+    for(let x in numbers){
+        str += numbers[x] +"<br/>";
+    }
+    document.getElementById("results").innerHTML = str;
+</script> -->
+
+<!--For of Loop
+<p id="demo"></p>
+<script>
+    const flowers = ["Roses","Lilies","Jasmines","Chrysanthimums"];
+    let f = ' ';
+    for(let i of flowers){
+        f += i + "<br/>";
+    }
+  document.getElementById('demo').innerHTML= f;
+</script> -->
+
+<!--goto label-->
+
+<script>
+    outerloop: 
+    for(var i=0; i <5 ; i++){
+        document.write("Outer loop :" + i +"<br/>");
+        innerloop:
+        for(var j = 0; j < 5;j++){
+            if( j > 3) break;   //quits the innerloop
+            if (i == 2)break innerloop;   //do the same thing
+            if(i == 4)break outerloop; //quits the outerloop
+            document.write("Innerloop :" + j + "<br/>")
+        }
+    }
+    document.write("Exitting loop..")
+</script>
+    </body>
+</html>
