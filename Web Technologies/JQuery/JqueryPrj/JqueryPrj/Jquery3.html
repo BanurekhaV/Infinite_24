@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+    <script>
+        $(documnet).ready(function () {
+            $(".ex .hide").click(function () {
+                $(this).parents(".ex").hide();
+            });
+        });
+    </script>
+
+    <style>
+        div.ex{
+            background-color: #e5eecc;
+            padding:7px;
+            border:solid 1px #c3c3c3;
+        }
+    </style>
+</head>
+<body>
+    <h3>Island Trading</h3>
+    <div class="ex">
+        <button class="hide">Hide Me</button>
+        <p>
+            Contact : Helen <br />
+            RedMond House
+            Seatle
+            Washington
+        </p>
+    </div>
+
+    <h3>Fedex Shippers</h3>
+    <div class="ex">
+        <button class="hide">Hide Me</button>
+        <p>
+            Contact :Barkley <br />
+            265, Boulevard
+            Paris
+            </p>
+    </div>
+</body>
+</html>

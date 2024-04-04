@@ -1,0 +1,51 @@
+JQuery :
+  - JavaScript Library.
+  - Is a light weight library
+  - Write less to do more
+  - Purpose of Jquery is to make usage of javascript easier on the website
+  - It takes lots of common tasks, which uuially consists of several lines of code, wraps them into methods that we can call with a single line of code
+
+ Features :
+ HTML/DOM manipulation
+ CSS manipulation
+ HTML event methods
+ Effects and animations
+ AJAX (Asynchronous Java script and XML)
+ Utilities
+
+<script src="jquery-3.4.1.min.js">
+
+-can include from thr google/microsoft cdn
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script src="https://ajax.aspnetcdn.com/ajax/jquery-3.4.1.min.js"></script>
+
+Syntax :
+
+$(selector).action()
+
+$ - Sign used to define/access Jquery
+(selector) - to query or find HTML Elements
+action() - some task to be performed on the element
+
+$(this).hide() - current element gets hidden
+
+$('p').hide()  - hides all paragraph elements
+
+We need to ensure if the document is ready for actions, in order to prevent the jquery code from running before the document completes loading
+
+$(document).ready(function(){
+  -- jqury methods here
+});
+
+Methods:
+
+hide()
+show()
+toggle()
+fadeIn()
+fadeOut()
+slide()
+Animate()
+callback 
+chaining
