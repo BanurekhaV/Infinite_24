@@ -36,4 +36,86 @@ to access external js
 <script src="myscripts.js">/<script>
 
 
+--Javascript statements are composed of
+ values.operators,expressions,keywords and comments
 
+--defines 2 types of values
+  Fixed values : are called as literals
+     numbers are written with or without decimals
+     strings are written within single or double quote
+variables names are case sensitive
+-if declared variables are not assigned with values, then they have undefined as a value
+- if we re declare  a js variable, it will not loose its data
+
+empty values : are not the same as undefined
+var myvar="" (this variable has both value of emptiness and type of string)
+
+null : are object data type
+  
+var employee=null (value is null, but datatype is an object)
+
+     x, X
+
+myname='AAA'
+var myname;
+
+$,_,'letter'
+var a,b,c
+
+var name,age;
+name='banu'
+age=28
+
+
+var x=15;
+
+comparison operators in js
+
+== : are data's equal
+=== : both the data and the datatype are equal
+!= : values not equal
+!== : values and datatype not equal
+typeof operator returns the datatype
+ 
+  typeof"abcd" - returns string
+  typeof[1,2,3,4] - returns an object
+  typeof{fname='a', lname='b'} - returns object
+
+
+function sayHi(name){
+alert("Hi" + name);}
+
+var wish = sayHi;     //assigning a function to a variable using reference
+
+wish('Ramu');    //we are calling a variable that calls a function
+
+var y='abcd'
+
+y=true;  // is now a boolean
+  Variable Values: are called as variables
+
+var mydoggies=[];
+mydoggies[0]='Labrador'
+
+
+closure functions - Global variables can be made local with closures
+
+Global and local variables with the same name are different. Modifying one does not change the other
+
+Variables created without var keyword are always global, even when written inside a function
+
+Local scope:
+  function myfunc1(){
+   var a=15;
+ return a*a;
+}
+
+closures :
+
+<script>
+  var a=5;   //global variable
+  function myfunc1(){
+     return a*a;
+}
+
+</script>
