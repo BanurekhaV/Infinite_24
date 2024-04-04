@@ -27,8 +27,8 @@
     </head>
     <body>
         <!--automatically invoked functions
-        <p id="res"></p>-->
-      <p id="gd">Get Date</p>
+        <p id="res"></p>
+        <p id="gd">Get Date</p>
       <script>
        /* (function(){
             document.getElementById('res').innerHTML="Hi.. Calling Self.";
@@ -39,10 +39,33 @@
        // document.getElementById('res').innerHTML = x(5,5);
 
        //3. date functions
-         var currentdate = new Date();
-         currentdate.setDate(currentdate.getDate()+120);
+
+       //  var currentdate = new Date();
+       //  currentdate.setDate(currentdate.getDate()+120);
       </script>
-      <input type="button" onclick="document.getElementById('gd').innerText = currentdate" value="GetDate"
+    <input type="button" onclick="document.getElementById('gd').innerText = currentdate" value="GetDate"
+     -->
+
+     <!--Closure function-->
+      <script>
+
+        function multiplier(factor){
+            return function(number){
+                return number * factor;
+            };        
+        }
+
+        var twice = multiplier(2);  //assigned a function to a variable
+        console.log (twice);
+        console.log(twice(5));
+        /* multiplier returns a frozen chunk of code that gets stored in twice variable
+        the last line then calls the value in this varibale, causing the frozen chunk to be activated
+        (return number*factor)
+        observe that it still has the access to the global variable-factor from the multiplier
+        and in addition gets access to the argument passed duringunfreezing(5)
+         thru the local variable - number */
+
+      </script>
     </body>
 
 </html>

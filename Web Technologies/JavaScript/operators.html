@@ -1,0 +1,49 @@
+<html>
+
+<body onload="checkscope()">
+    <!--
+    <script>
+        var a = 25;
+        var b = 15;
+        var c ='hi';
+        var lb ="<br/>"
+      document.write("a-b =");
+      var res = a-b;
+      document.write(res);
+      document.write(lb);
+
+      document.write("(a==b)=> ");
+      document.write(a==b);
+      document.write(lb);
+
+      document.write("(a || b) =>")
+      res = (a ||b);
+      document.write(res);
+      document.write(lb);
+
+      document.write("(a && b) =>")
+      res = (a && b);
+      document.write(res);
+      document.write(lb);
+
+      document.write("(a>b)? 100: 200)=>")
+      res=(a>b)?100:200;
+      document.write(res);
+      document.write(lb);
+      console.log("All is Well");
+    </script> -->
+
+    <script>
+        var myVar='global';  //declaring a global variable
+        function checkscope(){
+            result=prompt('enter name');
+            document.write('Your name is :' + result + "<br/>");
+            result=confirm("Are you sure");
+            document.write('Your selected :' + result + "<br/>");
+            var myVar="local";  //declari ng a local variable with the same name as that of global variable
+            document.write(myVar);
+
+        }
+    </script>
+</body>
+</html>
