@@ -1,0 +1,33 @@
+JSON : Javascript Object Notation
+-LightWeight format for storing and exchanging data
+-Used to negotiate content
+-Easy to use and understand
+-Lang Independent
+-Supports data structure like arrays and objects
+-Executes faster on the server
+-Is enclosed within {}
+-Is a name/value pair (name is always a string)
+-Is a simple Text based format
+
+Eg:
+
+{"name": "Infinite", "age":23,"headoffice":"Bangalore"}
+
+Arrays
+
+{
+"Courses":[{"Name" : "CSharp", "Duration" : "40hrs", "Fees" : 8000},
+{"Name" : "SQL", "Duration" : "30hrs", "Fees" : 6000},
+{"Name" : "ASP.Net", "Duration" : "40hrs", "Fees" : 8000}
+]
+
+Disadvantage : No Error Handling
+               No built in security
+
+Data Type Support : string,number,object,booleans,array,null
+
+Data type not supported : date,function, undefined
+
+parse()
+
+stringify()
