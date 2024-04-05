@@ -60,3 +60,7 @@ Events :
 bind() - to bind the event handler with the event
   selector.bind(eventtype, [eventdata],handler)
 unbind() - to remove the event 
+
+Get or set html data using
+
+ html(), text(), val()
