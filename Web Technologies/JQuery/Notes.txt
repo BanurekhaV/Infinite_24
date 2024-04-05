@@ -64,3 +64,13 @@ unbind() - to remove the event
 Get or set html data using
 
  html(), text(), val()
+
+append,prepend,remove,emty()
+
+
+AJAX : Asynchronous Javascript and XML.
+
+It is about loading the data and display the same without having to reload the entire page
+Jquery provides various methods to make ajax calls
+
+
