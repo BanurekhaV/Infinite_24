@@ -18,11 +18,25 @@
         //});
 
         //eg for toggle
+        //$(document).ready(function () {
+        //    $('button').click(function () {
+        //        $('div').toggle();
+        //    })
+        //})
+
+        //eg for css manipulation
         $(document).ready(function () {
+            var clicked = true;
             $('button').click(function () {
-                $('div').toggle();
-            })
-        })
+                if (clicked) {
+                    $(this).css('background-color', 'red');
+                    clicked = false;
+                } else {
+                    $(this).css('background-color', 'blue');
+                    clicked = true;
+                }
+            });
+        });
     </script>
 
     <style>
@@ -43,12 +57,15 @@
     <button id="hide">Hide</button>
     <button id="show">Show</button>-->
 
-    <!-- html for toggle query-->
+    <!-- html for toggle query
     <button>Toggle</button>
     <div>
         <img src="C:\Banu\Infinite\B3\Web Technologies\HTML\Images\Puppy.jpg" height="100" width="100"/>
         <p>Here we Go!</p>
-    </div>
+    </div>-->
+
+    <!--html for css manipulation-->
+    <button>Press here</button>
 
 </body>
 </html>

@@ -49,5 +49,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="jquery1.html" />
+    <Content Include="Jquery2.html" />
+    <Content Include="Jquery3.html" />
+    <Content Include="Jquery4.html" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

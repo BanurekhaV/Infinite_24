@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- handling events makes a page dynamic-->
+    <script>
+        $(document).ready(function () {
+            ////to bind
+            //$('div').bind('click', function (event) {
+            //    alert('Hi there!! ' + event.target.innerHTML);
+            //});
+
+            //to unbind
+            $('div').bind('click', function (event) {
+                alert('Hello ' + event.target.innerHTML);
+                alert("The Event Type is : " + event.type);
+                $('button').click(function () {
+                    $('div').unbind('click')
+                })
+            })
+        })
+    </script>
+
+    <style>
+        .div{
+            margin:10px;
+            padding:12px;border:2px solid blue;width:60px;
+        }
+    </style>
+</head>
+<body>
+    <p>Click on any square to see the results</p><br />
+    <div class="div" style="background-color:red">Div No. One</div>
+    <div class="div" style="background-color:blue">Div No. Two</div>
+    <div class="div" style="background-color:green">Div No. Three</div>
+
+    <button>Unbind</button>
+</body>
+</html>

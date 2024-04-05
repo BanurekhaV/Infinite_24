@@ -49,3 +49,14 @@ slide()
 Animate()
 callback 
 chaining
+
+
+Events : 
+ event type : a string that contains javascript event viz. click,dblclick,onsubmit
+ event data : optional, used to map some info that can be passed to the handler
+
+ handler : a function that executes some piece of code every time the event is triggered
+
+bind() - to bind the event handler with the event
+  selector.bind(eventtype, [eventdata],handler)
+unbind() - to remove the event 
