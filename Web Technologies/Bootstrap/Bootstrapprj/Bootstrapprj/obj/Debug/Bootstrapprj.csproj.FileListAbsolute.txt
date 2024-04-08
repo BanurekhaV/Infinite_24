@@ -1,0 +1,7 @@
+C:\Banu\Infinite\B3\Web Technologies\Bootstrap\Bootstrapprj\Bootstrapprj\bin\Debug\Bootstrapprj.exe.config
+C:\Banu\Infinite\B3\Web Technologies\Bootstrap\Bootstrapprj\Bootstrapprj\bin\Debug\Bootstrapprj.exe
+C:\Banu\Infinite\B3\Web Technologies\Bootstrap\Bootstrapprj\Bootstrapprj\bin\Debug\Bootstrapprj.pdb
+C:\Banu\Infinite\B3\Web Technologies\Bootstrap\Bootstrapprj\Bootstrapprj\obj\Debug\Bootstrapprj.csproj.AssemblyReference.cache
+C:\Banu\Infinite\B3\Web Technologies\Bootstrap\Bootstrapprj\Bootstrapprj\obj\Debug\Bootstrapprj.csproj.CoreCompileInputs.cache
+C:\Banu\Infinite\B3\Web Technologies\Bootstrap\Bootstrapprj\Bootstrapprj\obj\Debug\Bootstrapprj.exe
+C:\Banu\Infinite\B3\Web Technologies\Bootstrap\Bootstrapprj\Bootstrapprj\obj\Debug\Bootstrapprj.pdb
