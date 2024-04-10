@@ -45,7 +45,8 @@ Load
 LoadComplete
 OnPreRender
 Render
-Unload
+Unload : Is the last event that gets triggered after the page has been fully rendered and the html is already sent to the client.
+This stage, the page object is ready for discarding, because of which we cannot indulge in any page properties. 
 
 Trace : is like a debugger that traces all request and response activities of a page/es. In order to be able to trace we should enable the trace in web.config file as below
 
@@ -60,8 +61,14 @@ Every Server control i.e asp: <controls> inherently will have a viewstate variab
 
 State of the Page (The current page with its values or data/info)
 
-View State : is a variable of object type that need not be typecasted
- - Can store any data including UDT(user defined type)
- - It gets stored in the client application
+Application Life Cycle :
 
+ - Application Start : When a request is made by the user, the request is actually to the web server for the application. During this time the method Application_Start is executed and all global variables are set to their default values
 
+-Object Creation : HttoContext, HttpRequest and HttpResponse objects are created for respective request and response cycle of events
+
+-HttpApplication Creation : This object/s are created by the web server to process each subsequent request sent to the application
+
+-Dispose : This is called before an application instance is destroyed. One can use this method to release manually any unmanaged resources.
+
+-Application End : Final part of the application, where it is finally unloaded from memory.
