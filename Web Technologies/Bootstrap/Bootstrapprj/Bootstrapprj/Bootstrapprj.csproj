@@ -51,6 +51,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="BS1.html" />
+    <Content Include="BSForm.html" />
+    <Content Include="Carousels.html" />
     <Content Include="ImageGallery.html" />
     <Content Include="Navbar.html" />
   </ItemGroup>

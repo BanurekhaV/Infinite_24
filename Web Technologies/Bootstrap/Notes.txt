@@ -1,0 +1,56 @@
+BootStrap: Free Frontend framework for easier and faster web development
+-It includes html and css based design templates for tables,forms,navigations,typography,modals, image carousels and many javascript plug ins
+- It gives the ability to create responsive design
+
+
+Developed and released as an open source during 2011 by Mark Otto and Jacob Thornton at Twitter
+
+Advantages : Easy to use
+            Responsive features to adjust to all types of devices
+           The core framework targetted mobile first approach
+           It is compatabile with all modern browsers
+
+
+ways to get Bootstrap?
+
+- Download and install
+- include from the cdn
+
+<link rel="stylesheet" href="  https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css ">
+ 
+
+Javascript -->
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"</script>
+
+
+<!Doctype html>
+<html lang="en">
+<head>
+ <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+</html>
+
+
+Works with a concept known as containersto wrap the site contents
+
+There are 2 classes to choose from
+  1. .container class which provides fixed width container
+  2. .container-fluid class provides a full width, spanning the entire viewport
+
+
+Components : A set of reusable and customizable components for web developement
+
+1. Jumbotron : manking contents look larger and bigger to catch attention
+2. Alerts : Predefined Pop up messages
+3. Buttons: predefined complete css to perform actions
+4. Badge : labelling components
+5. Progress Bar : progress on operations
+6. Nav bar : header bar on the top of the applicxation, providing navigation
+7. Forms : multiple inputs
+8. List Groups : display of series of contents
+9. Card : Provides customizable,extensible and flexible content containers
+10. Carousels : imgage sliding (using css and js)
+11. Breadcrumbs : provides location of the current page in the navigation heirarchy
