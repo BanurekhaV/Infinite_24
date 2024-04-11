@@ -22,6 +22,8 @@ namespace StateManagement
             //lbldata2.Text = rc["d2"];
 
             //Non Persistent Cookie
+            lbldata1.Text = Request.Cookies["uname"].Value.ToString();
+            lbldata2.Text = Request.Cookies["pswd"].Value.ToString();
         }
 
     }

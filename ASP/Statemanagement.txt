@@ -22,12 +22,15 @@ b) Hidden Fields : is a control in the toolbox, which is not visible at runtime
 
 c) Cookies : are a way of managing the state across pages. 
     Cookies are of 2 types : 1. Persistent Cookies (uses an object of the HttpCookies class) and 
-2) Non-Persistent Cookies (data is directly stored in the resonse obnject
+2) Non-Persistent Cookies (data is directly stored in the resonse object
 
-  
+d)Query Strings : It is a state management technique that uses the url. The data are sent thru the address bar making them visible. Hence sensitive data should not be sent via quert strings
+
+url encoding (%?). can be used for formatting the data. 
 
 
 2. Server Side Techniques
-  a) Session State
-  b) Application State
+  a) Session State  : are like viewstate variables that keep track of the state across sessions
+
+  b) Application State : manages the state of the entire application using application state
 
