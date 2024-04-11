@@ -20,7 +20,11 @@ b) Hidden Fields : is a control in the toolbox, which is not visible at runtime
 -Can be used if in case we need to store few values only, and use Viewstate for many values
 -Like Viewstate, hidden fields also can maintain state only acoss the same page post backs
 
+c) Cookies : are a way of managing the state across pages. 
+    Cookies are of 2 types : 1. Persistent Cookies (uses an object of the HttpCookies class) and 
+2) Non-Persistent Cookies (data is directly stored in the resonse obnject
 
+  
 
 
 2. Server Side Techniques

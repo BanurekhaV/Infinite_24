@@ -67,12 +67,28 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CookiesDestination.aspx" />
+    <Content Include="CookiesSource.aspx" />
     <Content Include="HiddenFields.aspx" />
     <Content Include="TestForm.aspx" />
     <Content Include="ViewState.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CookiesDestination.aspx.cs">
+      <DependentUpon>CookiesDestination.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CookiesDestination.aspx.designer.cs">
+      <DependentUpon>CookiesDestination.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CookiesSource.aspx.cs">
+      <DependentUpon>CookiesSource.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CookiesSource.aspx.designer.cs">
+      <DependentUpon>CookiesSource.aspx</DependentUpon>
+    </Compile>
     <Compile Include="HiddenFields.aspx.cs">
       <DependentUpon>HiddenFields.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

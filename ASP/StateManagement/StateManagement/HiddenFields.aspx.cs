@@ -24,6 +24,7 @@ namespace StateManagement
 
         protected void btnload_Click(object sender, EventArgs e)
         {
+            Response.Redirect("TestForm.aspx");
             lblmsg.Text = HiddenField1.Value + " " + HiddenField2.Value;
         }
     }

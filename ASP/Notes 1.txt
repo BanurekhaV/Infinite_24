@@ -40,6 +40,20 @@ Page Life Cycle:
  -Page Request : This is when the page is first requested from the server. The server checks if it is requested for the first time. If yes then it compiles,parses and creates response and sends it to the client. 
 If it is not the first time, then it checks the Cache to see if the page exits. if so send the response from the cache
 
+ -Page Start - We get the 2 objects Request and Response 
+
+ -Page Initialization : Durimg this time, all the controls on a web page is initialized viz. labels, textboxes, etc
+
+ - Page Load : Here page is actually loaded in the memory with the default values
+
+ -Validations : Form Validations, for eg, if a list box is supposed to have list of values, a validation can be set for the same
+
+ - PostBack event handlings : This event gets triggered if the same page is being loaded again. 
+
+ - Page Render : This happens just before all the response info. is sent to the user. All the info. is saved(viewstate) and the result is sent to the user as a complete web page
+
+ - Unload : Once the page output is sent to the user, there is no need for the object in the memory. disposing of the page object is effected
+
 Page Events :
 Pre-Init
 Init
