@@ -52,5 +52,33 @@ namespace ValidationsPrj
           //  }
 
         }
+
+        protected void Btninfo_Click(object sender, EventArgs e)
+        {
+            Txtinfo.Text = DropDownList1.SelectedIndex.ToString();
+            if (DropDownList1.Text == "Apples")
+            {
+                Txtinfo.Text = "500";
+            }
+            else if (DropDownList1.Text == "Mangoes")
+            {
+                Txtinfo.Text = "300";
+            }
+            else if (DropDownList1.Text == "Bananas")
+            {
+                Txtinfo.Text = "150";
+            }
+            else if (DropDownList1.Text == "Grapes")
+            {
+                Txtinfo.Text = "120";
+            }
+            else if (DropDownList1.Text == "Oranges")
+            {
+                Txtinfo.Text = "80";
+            }
+            else
+                Txtinfo.Text = "Please select a fruit";
+
+        }
     }
 }

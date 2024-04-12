@@ -13,6 +13,10 @@
                 if ((args.Value > 0) && (args.Value % 2 == 0)) {
                     args.IsValid = true;
                     //Btnsave.Enabled = true;
+                   // var i = document.getElementById('<%= Btnsave.ClientID %>');//.Enabled = true;
+                    var i = document.getElementById('Btnsave');
+                    alert(i);
+                    i.Enabled = true;
                 }
                 else {
                     args.IsValid = false;
@@ -34,7 +38,7 @@
             <br />
             <br />
             <input type="button" runat="server" onclick="IsEven(s,e)" value="Validate"/>
-            <asp:Button ID="Btnsave" runat="server" Text="Save" OnClick="Btnsave_Click"  />
+            <asp:Button ID="Btnsave" runat="server" ClientIDMode="Static" Text="Save" OnClick="Btnsave_Click"  Enabled="false" />
             <br />
             <br />
             <asp:Label ID="lbl1" runat="server" Text="Label"></asp:Label>
