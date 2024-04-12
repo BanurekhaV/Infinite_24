@@ -7,7 +7,17 @@
     <title></title>
     <script type="text/javascript" lang="javascript">
         function IsEven(source, args) {
-
+            if (args.Value == "") {
+                args.IsValid = false;
+            } else {
+                if ((args.Value > 0) && (args.Value % 2 == 0)) {
+                    args.IsValid = true;
+                    //Btnsave.Enabled = true;
+                }
+                else {
+                    args.IsValid = false;
+                }
+            }
         }
     </script>
 </head>
@@ -23,7 +33,8 @@
             ValidateEmptyText="True" ClientValidationFunction="IsEven"></asp:CustomValidator>
             <br />
             <br />
-            <asp:Button ID="Btnsave" runat="server" Text="Save" OnClick="Btnsave_Click" />
+            <input type="button" runat="server" onclick="IsEven(s,e)" value="Validate"/>
+            <asp:Button ID="Btnsave" runat="server" Text="Save" OnClick="Btnsave_Click"  />
             <br />
             <br />
             <asp:Label ID="lbl1" runat="server" Text="Label"></asp:Label>

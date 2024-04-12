@@ -16,7 +16,7 @@ namespace ValidationsPrj
 
         protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
         {
-            if(args.Value =="")
+            if (args.Value == "")
             {
                 args.IsValid = false;
             }
@@ -29,6 +29,10 @@ namespace ValidationsPrj
                 else
                     args.IsValid = false;
             }
+            //if (args.IsValid)
+            //{
+            //    Btnsave.Enabled = true;
+            //}
 
         }
 
@@ -36,6 +40,7 @@ namespace ValidationsPrj
         {
             if(Page.IsValid)
             {
+               
                 lbl1.Text = "Data Validated.., and Saving ";
                 lbl1.ForeColor = System.Drawing.Color.Green;
             }

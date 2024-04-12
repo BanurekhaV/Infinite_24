@@ -68,7 +68,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CustomForm.aspx" />
+    <Content Include="Images\Apples.jpg" />
+    <Content Include="Images\Bananas.jpg" />
+    <Content Include="Images\Grapes.jpg" />
+    <Content Include="Images\Mangoes.jpg" />
+    <Content Include="Images\Oranges.jpg" />
     <Content Include="Registration.aspx" />
+    <Content Include="TestForm.aspx" />
     <Content Include="Web.config" />
     <Content Include="Welcome.html" />
   </ItemGroup>
@@ -88,6 +94,13 @@
     <Compile Include="Registration.aspx.designer.cs">
       <DependentUpon>Registration.aspx</DependentUpon>
     </Compile>
+    <Compile Include="TestForm.aspx.cs">
+      <DependentUpon>TestForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestForm.aspx.designer.cs">
+      <DependentUpon>TestForm.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -98,6 +111,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
