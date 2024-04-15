@@ -1,0 +1,22 @@
+use trainingdb
+
+create table ErrorLogger
+(Logid bigint identity not null,
+ExceptionMsg varchar(max),
+ExceptionType varchar(100),
+ExceptionSource varchar(max),
+ExceptionUrl varchar(100),
+LogDate datetime)
+
+--let us create a procedure to insert rows into the log table as and when error occurs
+create or alter proc ExLog
+(@exmsg varchar(max),@extype varchar(100),@exsrc varchar(max),
+@exurl varchar(100))
+as
+begin
+  insert into ErrorLogger(ExceptionMsg,ExceptionType,ExceptionSource,ExceptionUrl,LogDate)
+  select @exmsg, @extype, @exsrc,@exurl,getdate()
+  end
+
+  select * from ErrorLogger
+  

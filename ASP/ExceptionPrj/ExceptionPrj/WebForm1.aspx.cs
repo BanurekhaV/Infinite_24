@@ -15,7 +15,7 @@ namespace ExceptionPrj
           //  try
            // {
                 DataSet ds = new DataSet();
-                ds.ReadXml(Server.MapPath("~/Employees.xml"));
+                ds.ReadXml(Server.MapPath("~/Employee.xml"));
                 Gview1.DataSource = ds;
                 Gview1.DataBind();
           //  }

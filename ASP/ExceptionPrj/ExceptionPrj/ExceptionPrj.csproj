@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DataLog.aspx" />
     <Content Include="DefaultErrors.aspx" />
     <Content Include="Employee.xml" />
     <Content Include="Errors.aspx" />
@@ -77,6 +78,13 @@
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataLog.aspx.cs">
+      <DependentUpon>DataLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataLog.aspx.designer.cs">
+      <DependentUpon>DataLog.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DefaultErrors.aspx.cs">
       <DependentUpon>DefaultErrors.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -91,6 +99,7 @@
     <Compile Include="Errors.aspx.designer.cs">
       <DependentUpon>Errors.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ExceptionLogging.cs" />
     <Compile Include="GeneralErrors.aspx.cs">
       <DependentUpon>GeneralErrors.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
