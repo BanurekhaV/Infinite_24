@@ -1,0 +1,24 @@
+Error Handling :
+  1. try catch
+  2. Page level 
+  3. Application Level
+  4. Custom Errors  (Web.config)
+
+        We can handle certain Http error status codes using custom handlers as below
+
+<system.web>
+	  <trace enabled="true"/>
+	  <customErrors mode="On" defaultRedirect="GeneralErrors.aspx">
+		  <error statusCode="404" redirect="PageNotFound.aspx"/>
+		  <error statusCode="500" redirect="Errors.aspx"/>
+	  </customErrors>
+
+
+The order of execution error handlers are :
+
+  Page level
+  Application level
+  Custom level
+
+
+
