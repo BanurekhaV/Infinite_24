@@ -20,5 +20,15 @@ The order of execution error handlers are :
   Application level
   Custom level
 
+Difference between Response.Redirect  and Server.Transfer
 
+Whenever we redirect we, get a new page in response to the request terminating the old page. 
+
+In server.transfer, when we request another page, we donot make roundtrips, we get the same response but different content
+
+1. Response.redirect can be used for both .aspx as well as .html files, where as server.Transfer can be used only with .aspx pages
+
+2. Response.redirect can be used to redirect even to an external website (outside application), whereas server.transfer can be used only on sites running on the same server
+
+3. With server.tansfer, the previous page also exists in the server memory(along with the data), whereas in response.redirect the previous page is removed from the memory and the new page is loaded, which cannot access any data of the previous page.
 
