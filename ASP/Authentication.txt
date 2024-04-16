@@ -1,0 +1,37 @@
+Cross Page Posting (When one page is required to transfer to another page with data
+
+PostBack (posting of same page)
+
+When source page cross posts to the target page, the target page accesses the source page (which means the source page is reloaded in the memory with all the events except rendering) This reloaded version of the source page is used by the traget to access the information
+
+Validations :
+
+if the source page has any validators, the data can b epassed on to the target page, which can be used for further content rendering
+
+Eg : A web form collects some criteria based data for reporting viz. report type, startdt, enddt etc. and this data can be cross posted to the target, which generates the reprt based on the parameters passed in the previous page.
+
+
+Securing Web Applications :
+----------------------------
+
+Authentication : Who the user is? : The process of identufying the users
+
+Authorization : What rights the user has? What resources the user can access? I sthe process of granting access to those userd based on identity
+
+Together can secure our webapplications
+
+-Anonymous Authentication : allows users to access public areas of the website without any credentials
+
+-Windows Authentication : :Identifies and authorizes users based on the servers users list. Access to resources on the server are granted/denied accordingly (previleges on the account)
+Is best suited for intranet applications 
+
+-Form Based Authentication :  is used for internet web application, where the users need not be the members of their domain-based network. Eg. gmail, facebook, amazon
+
+-Role Based Authentication : User Roles are mapped to Forms/windows in order to gain access to resources
+
+-Passport Authentication : A method of authentication using 'claims' generated from other applications to authenticate self
+
+  Flow of Events :
+   User logs in, then passport.athenticate is called with some strategy, to authenticate with the user database
+   If succeeded, then it serializesUser with the user object This serializer creates a unique identifier for the user and stores it in the session of the user.
+   This ID is used for further transactions
