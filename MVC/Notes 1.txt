@@ -1,0 +1,96 @@
+ASP.Net MVC : is a very popular framework for developing web based application
+-ASP.net MVC is based on the Model View Controller Pattern, making application development robust,fast and secure
+-It is the next generation technology succeeding ASP.net Web Form
+-MVC has more benefits comparing the traditional .aspx web forms
+
+Features:
+1. MVC Pattern
+2. Lightweight,fast and secure
+3. Designs and codes are seperated
+4. Uses pure HTML controls(html helpers) and no server control
+5. Uses controller based routing
+6. Implements no View State
+7. Uses Razor Syntax for customization
+8. Uses Layouts instead of Master Pages
+9. It is an Open Source Technology
+
+Models: Is responsible for keeping data based operations and logic like connecting, retrieving, storing etc
+
+Views: Is responsible for serving web page or user interface to the client
+
+Controllers: Is responsible for all programming logic and anchors both Models and the views
+
+ASP.Net MVC Folder Structure:
+
+1. App_Data : This folder contains data files like local db, .mdf,xml files etc.
+
+2. App_Start : It contains class files which get executed when application starts. (BundleConfig.cs, RouteConfig.cs, Filterconfig.cs)
+
+3. Content : It contains static files like .css,images,icons etc
+
+4. Controllers : Contains class files that handle users request and response. All controller class names have to be suffixed with 'controller' name (HomeController)
+
+5. Models : Contains model classes that handles data an data related tasks
+
+6. Scripts: Contains scripts like Java,Vb,jquery scripts needed for the application
+
+7. Views : Contains HTML files. They contain seperate folders for each controller with the same name
+   The views are a combination of both csharp as well as html. hence the extension is .cshtml
+
+  b)Shared : Is under the View folder consisting of the master layout for the website and also a common error page that can be used by all controller
+
+ c) _ViewStart.cshtml : is used, to place all common UI logic across all the views.
+
+
+Controllers : Main part of MVC
+  - Is a mediator between client side request and server side response
+  - Are like bridges between Model and View
+  - Each browser request is ampped with the particular controller and each controller has several action methods to handle browser/client request
+  - The url is always mapped with a controller
+  - Controllers have to be suffixed with the controller key word
+
+Action Methods : are methods written inside a controller
+ - They are always public
+ - They cannot be overloaded
+ - They cannot be static
+ - Every controller has atleast one default action method called Index() 
+ - ActionResult is the base class of all the result types action methods. 
+
+Types of Action Methods
+
+1. ViewResult - Represents Html and Razor
+2. EmptyResult - Represents no results
+3. RedirectResult - Represents a redirection to a new url
+4. JsonResult - Represents Java Object Notation result that can be used in an Ajax application
+5. JavaScriptResult - Represents a java script
+6. contentResult - represents a text
+7. FileContentResult - downloadable file (binary)
+8. FilePathresult - downloadable file with path
+9. FileStreamResult - a downloadable file (with a filestream)
+
+
+Views: allows witing razor syntax a powerful and easier way of writing code directly on the view pages
+- It is a markup syntax that allows embedding program code along with html code
+- Uses '@{}' block to write C# code
+- All the inline Expressions like variables and functions starts with @
+- variables are declared using var keyword and all the code statements end with a ';'
+- string values are within double quotes  " "
+- comments in razor is as
+   @*
+     @{ 
+      /* multi line comments */
+     // single line comments
+      }
+   *@
+
+  -To access the model data in the view page we use @model 
+
+
+@model of the razor syntax binds a model object to the view
+@Model now becomes a property representation of the bound model and helps in accessing the properties of the model object
+
+Model is another collection representation of the bound object
+
+  
+ 
+

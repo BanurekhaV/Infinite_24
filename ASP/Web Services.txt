@@ -1,0 +1,11 @@
+Web Services : Is a software service that uses Xml for data interchange and SOAP protocol for communication with the servers that have some set of services
+
+- are language independent,platform independent,protocol independent
+
+Web services technology includes
+1. Xml - Data interchange
+2. SOAP - comm. between service and consumer
+3. WSDL - Web Service Description language
+4. UDDI - helps in searching for a particular service(registered) over the net 
+
+Webservices application has a .asmx extension
