@@ -20,9 +20,22 @@ namespace MVC_Day2.Controllers
             //return View(flowers);
             List<string> finalstn;
             finalstn = TempData["stores"] as List<string>;
-            return View(finalstn);
+             TempData.Keep();
+             return View(finalstn);
+           // return RedirectToAction("testTempData");
         }
+        [ActionName("GetData")]
+        public ActionResult testTempData()
+        {
+            List<string> DestStationary;
+            DestStationary = TempData["stores"] as List<string>;
+          //  return View(DestStationary);
 
+            //if we have different action method name and view name, then we can route as below
+            //or change the name of the view to the [ActionName] name
+            
+            return View("testTempData",DestStationary);
+        }
         //2. Passing data thru viewbag and viewdata
         public ActionResult OfficeRules()
         {

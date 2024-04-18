@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.34301.259
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC_EF_DB", "MVC_EF_DB\MVC_EF_DB.csproj", "{DAA6506A-3870-4B83-A3EE-2A375BEB8903}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DAA6506A-3870-4B83-A3EE-2A375BEB8903}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAA6506A-3870-4B83-A3EE-2A375BEB8903}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAA6506A-3870-4B83-A3EE-2A375BEB8903}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAA6506A-3870-4B83-A3EE-2A375BEB8903}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6B7F092D-74A0-4578-8B58-3A64AA23FED1}
+	EndGlobalSection
+EndGlobal
