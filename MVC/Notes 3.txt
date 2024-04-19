@@ -1,0 +1,17 @@
+Model Binding : Binding a model object/any object to the view
+
+MVC With EF :
+
+1. DB First Approach
+    
+HTTPGET : is a get request of a page from the server
+HTTPPOST : is a post from the view to the controller and then server
+HTTPPUT : is edit/update of view and then updations
+HTTPDELETE : is a delete of information/record
+
+
+Passing of data/information from view to the controller is 
+ 1. Object
+ 2. Forms Collection
+ 3. Parameter Collection
+ 4. Request Object
