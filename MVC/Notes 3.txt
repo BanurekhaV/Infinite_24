@@ -10,6 +10,8 @@ HTTPPUT : is edit/update of view and then updations
 HTTPDELETE : is a delete of information/record
 
 
+Multiple Table Data Retrieval
+
 Passing of data/information from view to the controller is 
  1. Object
  2. Forms Collection
