@@ -59,7 +59,7 @@ namespace MVC_EF_DB.Controllers
             return View(cat);
         }
 
-        [HttpPost,ActionName("Delete")]
+        [HttpPost, ActionName("Delete")]
         public ActionResult DeleteCategory(int id)
         {
             Category c = db.Categories.Find(id);
@@ -100,12 +100,13 @@ namespace MVC_EF_DB.Controllers
                                       orderby cat.CategoryName
                                       select cat.CategoryName).ToList();
 
-            //return View(sortedcat);
-            dynamic c1 = db.Categories.OrderBy(cat => cat.CategoryName).ToList();
-            //return View(c1);  // output not as expected
-            List<string> scat = c1 as List<string>;
+             return View(sortedcat);
 
-            return View(scat);
+            //dynamic c1 = db.Categories.OrderBy(cat => cat.CategoryName).ToList();
+            
+            
+            // return View(c1 as List<string>);
         }
+    
     }
 }

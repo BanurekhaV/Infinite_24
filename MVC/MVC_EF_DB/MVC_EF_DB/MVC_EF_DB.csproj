@@ -131,6 +131,8 @@
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MultitableController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -279,6 +281,9 @@
     <Content Include="Views\Category\Update.cshtml" />
     <Content Include="Views\Category\Details.cshtml" />
     <Content Include="Views\Category\GetCategoryByName.cshtml" />
+    <Content Include="Views\Multitable\MultiData.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\Products\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
