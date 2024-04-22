@@ -1,0 +1,46 @@
+HTML Helpers are methods that return HTML strings, whichare used in views. They are C# sharp methods. We can even have custom helpers
+
+Type of HTML Helpers
+
+1.Inline Html helper: are used on a sngle view of the same page. They are created using @helper tag
+
+Eg : @helper MyInlineHelper(string[] words)
+{
+<ol>
+ @foreach(string w in words)
+{
+  <li>@w</li>
+}
+}
+
+Built in Html Helper : 
+    1. Standard Html Helper : are mainly used for rendering typical html elements
+  eg : @Html.ActionLink() - to create links on the html page
+       @html.TextBox() - to create textbox
+       @html.BeginForm() - to start a form action etc..
+
+    2. Strongly typed Html Helper : these take lambda as a parameter that tells the helper which element of the model  to be used in the view
+  eg : @html.LabelFor()
+       @html.TextBoxFor()
+
+    3. Templated Html Helper : is used for data display and input. It generates html automatically as per the model property and for the complete model with a single tag. It is divided into 2 categories
+  1. Display Template
+  2. Editor Template
+
+ Eg : @html.Display()
+      @html.DisplayFor()
+      @html.DisplayForModel()  // single tag for the entire model
+      
+   @html.Editor()
+   @html.EditorFor()
+   @html.EditorForModel()   // single tag for the entire model
+
+
+Custom Helpers: Users ways of html and its views. Are of 2 types
+  1. Static helpers
+  2. Extension Helpers
+
+
+
+
+
