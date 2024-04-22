@@ -42,5 +42,15 @@ Custom Helpers: Users ways of html and its views. Are of 2 types
 
 
 
+Custom Validations : are validation class attributes that can be customised to suite the need of the application
+- All custom Validator classes have to be inheriting from the ValidatonAttribute Class
+
+
+EF - Code First : 
+
+Repository Pattern : A sw pattern that acts as an intermediary between the business logic and the data storage with consistent interface to perform crud
+
+
+
 
 
