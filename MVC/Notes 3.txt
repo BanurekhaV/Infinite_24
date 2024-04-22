@@ -4,6 +4,8 @@ MVC With EF :
 
 1. DB First Approach
     
+HHTP Verbs :
+
 HTTPGET : is a get request of a page from the server
 HTTPPOST : is a post from the view to the controller and then server
 HTTPPUT : is edit/update of view and then updations
@@ -12,8 +14,14 @@ HTTPDELETE : is a delete of information/record
 
 Multiple Table Data Retrieval
 
-Passing of data/information from view to the controller is 
+Passing of data/information from view to the controller can be done as below : 
  1. Object
  2. Forms Collection
  3. Parameter Collection
  4. Request Object
+
+
+View Model : Is a model that comprises of different properties from different Models under a single model
+  Why ? : In order to be able to Display Data to the user from different model properties
+
+Model Validations : Using Attributes
