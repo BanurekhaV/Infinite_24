@@ -7,6 +7,7 @@ using PartialViewsPrj.Models;
 
 namespace PartialViewsPrj.Controllers
 {
+    
     public class ProductController : Controller
     {
         List<Product> productList;
@@ -26,11 +27,13 @@ namespace PartialViewsPrj.Controllers
             };
         }
         // GET: Product
+        
         public ActionResult Index()
         {
             return View(productList);
         }
 
+       
         public ActionResult AnotherMethod()
         {
             return View(productList);
@@ -52,5 +55,7 @@ namespace PartialViewsPrj.Controllers
             };
             return PartialView("ProductDetails", prdLst);
         }
+
+        
     }
 }

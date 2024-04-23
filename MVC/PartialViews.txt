@@ -9,13 +9,70 @@ Partial Views : are also like regular views, which can be reused multiple times 
 Eg : Comments on Blogging Sites, Shipping & Billing address in a ecommerce site
 
 Calling partial Views :
-  1. Html.RenderPartial : It is a void method that writes the output to the response stream as a part of the same Http response 
+  1. Html.RenderPartial
+------------------------
+              - It is a void method that writes the output to the response stream as a part of the same Http response 
    - It is faster way to render partial views
    -Since it is a void method, we should be enclosing the call within {} and terminating the call with a ';'
 
   2. Html.Partial :is a method that returns a MVC IHtmlstring.
       - simple to use
 
-  3. Html.RenderAction
+  3. Html.RenderAction : is the best choice when we need to cach the partial view
+
   4. Html.Action
-  5. JQuery Load function
+     -----------
+   can return a partialviewresult, as an IHtmlstring. Works like the renderpartial
+
+  5. JQuery Load function : 
+
+Exceptions : Handling exceptions in MVC can be done on an larger scale of handlers
+
+  - try-catch-finally
+  - Overiding onException()
+  - Using [HandleError] attribute
+  - Setting up a global exception filter 
+  - Handle Application_Error() event
+  - Extending HandleError Attribute
+
+Filters : help in performing certain functionalities (caching,logging,authentication and authorization etc..)during/before/after an action/Exception/Result declaration
+
+Available types of Filters in ASP.net MVC framework
+1. Authentication Filter
+2. Authorization Filter
+3. Action Filter
+4. Result Filter
+5. Exception Filter (can be executed anytime)
+
+Built-in filters of the above type
+ ValidateInput
+Authorize
+ HandleError
+OutputCache
+
+We can also create custom filters
+
+Any filter can be applied at 3 different levels
+1. Global Level( applicable to all the controllers and actionmethods
+2. Controller level(applicable to all actionmethods of a particular)
+3. Action level(applicable to specific action methods)
+
+HandleError attribute is a class that can handle any unhandled exceptions of the application depending upon where we use it
+- We need to set the custom errors mode on in the web.config file to enable the handleerror attribute
+
+Limitations of HandleError : We cannot log the error anywhere
+ - We cannot handle exceptions raised outside the controller (invalid url)
+- We cannot display errors specific to specific situation.
+
+In order to overcome the above limitations, we need to go for custom handlers by creating custom exception filters
+
+steps for custom filters (exception)
+
+0. Inlcude System.Web.Mvc namespace
+1. Create a class inside the Model that implements IExceptionFilter or we can have a seperate folder to have all customfilters
+2. We can also inherit the customexceptionfilter class from FilterAttribute class, so that we can use our class as an attribute later 
+3. Write a logic for logging the exception/s that occur and also either direct the user to a common error page or specific error pages
+4. Then Register the custom filter in the filterconfig.cs
+5. Apply the cutsom filter on the controller/action/global level
+
+6. Run your application and observe that the exception is handled and also logged in a file.

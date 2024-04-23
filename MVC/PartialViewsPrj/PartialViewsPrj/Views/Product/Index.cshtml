@@ -3,7 +3,17 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Product List</h2>
+<div id="partialviews">
+
+</div>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script type="text/javascript">
+
+    $(document).ready(function(){
+     $("#partialviews").load('/Product/GetAllproducts');
+    });
+
+</script>
 
 @*@Html.Partial("ProductDetails",Model)*@
 
@@ -11,4 +21,6 @@
         
 }*@
 
-@{Html.RenderAction("GetAllproducts", "Product"); }
+@*@{Html.RenderAction("GetAllproducts", "Product"); }*@
+
+@*@Html.Action("GetAllproducts","Product")*@
