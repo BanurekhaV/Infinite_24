@@ -26,4 +26,34 @@ lname : XYZ
 
 Customer Name :Mr.ABCPQRXYZ
 
-Bundling and minification
+Bundling and minification : bundling of all scripts/styles into a collection, so that we can render all those needed as a single request. This can improve performance
+
+Minification : is a process of removing whitespace,comments or any extra details so that the data is minified and occupies less space.
+
+Asynchronous Controllers:
+
+1. Create a controller that inherits from AsyncController class
+2. Change the ActionResult to Task 
+3. Mark the Action Method as async
+4. Await the task
+
+Authentications:
+
+1. None - Allow Anonymous
+2. Windows Authentication : IIS authenticates users in one of the 3 ways(basic, digest,integrated windoes authentication). After authentication, ASP.Net uses this authentication to authorize access to resources to the users
+3. Form Authentication : Credential based authentication
+4. Passport Authentication : is a centralized authentication service(paid) from microsoft that offers single logon services
+
+
+Forms Authentication
+
+
+1. Namespace System.Web,Security to be included
+2. In web.config file under System.Web section add authentication as below :
+<system.web>
+	  <authentication mode="Forms">
+		  <forms loginUrl="Accounts/Login"></forms>
+	  </authentication>
+3. We need to use the FormsAuthentication.SetAuthCookie for the logged in user (basically store the user name temporarily)
+4. We need use the FormsAuthentication.Signout() for logout
+

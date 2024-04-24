@@ -1,0 +1,30 @@
+SQL Script for Forms Authentication
+
+
+create database MVC_DB
+use MVC_DB
+
+create table Employee
+(ID int primary key identity,
+EName varchar(40),
+Designation varchar(40),
+Salary int)
+
+create table Users
+(
+Id int primary key identity,
+UserName varchar(30),
+UserPassword varchar(30))
+
+create table RoleMaster
+(Id int primary key identity,
+RoleName varchar(50))
+
+--table for mapping users and role
+create table UserRoleMapping
+(
+Id int primary key,
+UserID int references Users(Id),
+RoleId int references RoleMaster(Id))
+
+insert into Users values('Banu','Banu@123')
