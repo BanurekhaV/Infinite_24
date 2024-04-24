@@ -39,6 +39,13 @@ namespace SecurityPrj.Controllers
             }
         }
 
+        public ActionResult SignUp()
+        {
+            return View();
+        }
+
+        [HttpPost]
+
         public ActionResult SignUp(User model)
         {
             using(MVC_DBEntities db = new MVC_DBEntities())
