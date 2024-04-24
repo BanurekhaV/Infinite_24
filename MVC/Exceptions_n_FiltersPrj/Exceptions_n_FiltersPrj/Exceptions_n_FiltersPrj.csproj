@@ -120,7 +120,10 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\OurFilterController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="CustomFilter\AdminFilter.cs" />
+    <Compile Include="CustomFilter\TrackerFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -165,10 +168,12 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\NullReference.cshtml" />
     <Content Include="Views\Shared\DivideByZero.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="ErrorLog\" />
+    <Folder Include="Views\ActFilter\" />
     <Folder Include="Views\MyException\" />
   </ItemGroup>
   <ItemGroup>
