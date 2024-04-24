@@ -1,0 +1,29 @@
+Action Filters: Are pre-procecessing or post-processing logic in the Asp.net MVC Pipeline
+
+-We can create custom action filters to manage any specific functionality before or after action methods calls, by inheriting from actionfilterattribute class
+-
+
+
+
+Model Binding : is a mechanism which converts the URL segment into method parameters
+-Acts like a bridge between http request and the action method
+
+Model binder uses a default modelbinder for mapping, and it follows below rule for mapping
+ 1. Request Form []- if request is a post request
+ 2. RouteData.Values[] - if value is in the route
+ 3. Request.QuerySyring[] - if the values are concatenated in the url (uname=?&pas=)
+ 4. Request.Files[] - if a file is being uploaded
+
+In real life scenario, there will be need for custom binding, where the UI controls names and the model properties names do not match
+
+- By implementing IModelBinder, we can do custom binding
+
+title : Mr
+fname : ABC
+mname : PQR
+lname : XYZ
+
+
+Customer Name :Mr.ABCPQRXYZ
+
+Bundling and minification

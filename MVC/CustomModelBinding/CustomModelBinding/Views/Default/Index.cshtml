@@ -1,0 +1,17 @@
+﻿@model CustomModelBinding.Models.CustomModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<h2>@ViewBag.Title</h2>
+<h2>@ViewBag.Date</h2>
+
+<form id="frmdefault" method="post">
+    Title : <input type="text" id="Title" name="Title"/>
+    Day : <input id="day" type="text" name="day"/>
+    Month : <input type="text" id="month" name="month"/>
+    Year : <input type="text" id="year" name="year"/>
+    <input id="submit" type="submit" value="Submit"/>
+</form>
