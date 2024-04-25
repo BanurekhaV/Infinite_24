@@ -78,4 +78,17 @@ Now we can specify which resource/actionmethod/page is accessible to which roles
 
 
 
+Atrribute Based Routing : More Control over conventional routing (URI patterns)
+ - Reduces the chance of errors (any modification to the routing can make the application inaccessible)
+ - Decople the controller name and action name from the route
+ - Can map 2 routes to a single action method
 
+
+
+https://localhost:44310/student/getallstudents
+https://localhost:44310/student/getstudentbyid?sid=2
+https://localhost:44310/student/getstudentcourse?sid=4
+
+ if we want the URI pattern like this student/1/courses , then it would be very difficult using conventional routing
+
+So we need to route using the routing attribute [Route]. For this we have to enable the MapMVCAttributeRoute() in the routeconfig.cs file
