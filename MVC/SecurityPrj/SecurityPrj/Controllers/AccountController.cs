@@ -55,7 +55,7 @@ namespace SecurityPrj.Controllers
             }
             return RedirectToAction("Login");
         }
-
+        
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
