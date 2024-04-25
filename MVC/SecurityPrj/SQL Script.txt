@@ -28,3 +28,10 @@ UserID int references Users(Id),
 RoleId int references RoleMaster(Id))
 
 insert into Users values('Banu','Banu@123')
+
+
+Index - all 4
+create = only admin, user
+details - guest
+edit - user
+delete - admin

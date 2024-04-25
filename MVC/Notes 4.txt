@@ -57,3 +57,25 @@ Forms Authentication
 3. We need to use the FormsAuthentication.SetAuthCookie for the logged in user (basically store the user name temporarily)
 4. We need use the FormsAuthentication.Signout() for logout
 
+
+Rolebased Authentication : Roles help in giving permissions to access a particular resource post authentication
+
+We need to implement the Roleprovider abstract class which is in the System.Web.Security namespace
+-While we may implement all the methods of the RoleProvider, there is a need to compulsorily implement the 
+'GetRolesforuser(string username)' method that returns an array of roles for a given user
+- AFter implemnetation, we need to make an entry in the web.config file under <system.web> section for the roleprovider and rolename as below :
+
+ <roleManager defaultProvider="UsersRoleProvider" enabled="true">
+		  <providers>
+			  <clear/>
+			  <add name="UsersRoleProvider" type="SecurityPrj.Models.UsersRoleProvider"/>
+		  </providers>
+	  </roleManager>
+
+- We are clearing all roles, and then adding role providers(more than one). We have to ensure that the type attribute is given a fully qualified roleprovider name (i.e namespace/folder/s/class name), while name can be any name. We need to give the name of the default provider by setting the value of the enabled to true.
+
+Now we can specify which resource/actionmethod/page is accessible to which roles
+
+
+
+
