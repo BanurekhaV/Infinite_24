@@ -1,0 +1,22 @@
+Consuming Webapi from a client application(MVC)
+
+1. Create an MVC Templated web Application
+2. Add required Models that represents the actual API model
+3. Add an empty mvc controller
+4. Add required action methods
+5. Include the Newtonsoft.Json package thru nuget, and also use the reference assembly
+6. Include System.Net.Http namesapce
+7. Add Microsoft.Aspnet.WebApi.Client package thru nuget
+8. Write the logic for the action methods to access web api methods and create corresponding views
+9. Test The client
+
+
+Authentication : 
+1. Bearer Token Authentication : Client will include a token(JWT- Json web token, oAuthtoken) in the request header, which is validated at the server
+2. Basic Authentication : username and password are passed with each request (in encoded base 64 format)
+3. API Key Authentication : Clients include API key in the request
+4. OAuth Token - a framework for securing APIs. works on client token basis
+5. Custom Authentication : implementing custom logic for authentication
+6. Windows authentication : based on windows credential
+
+
