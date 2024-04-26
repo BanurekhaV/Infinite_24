@@ -12,7 +12,7 @@ REST stands for Representational State Transfer, a architectural pattern for exc
 2. HttpPost : Adding a new Resource
 3. HttpPut : Updating all properties/data of the current resource
 4. HttpPatch : Updating few properties/data of the current resource
-5. HttpDelete : Either a soft delete that involves a patch verb where only a cilumn is updated
+5. HttpDelete : Either a soft delete that involves a patch verb where only a column is updated
                 Hard delete will remove the current resource permanently
 
 

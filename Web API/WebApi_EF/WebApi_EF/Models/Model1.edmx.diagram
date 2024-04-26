@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="dc05ec88b5214159a9e84194a5883c29" Name="Diagram1">
+        <EntityTypeShape EntityType="TrainingDBModel.DEPT" Width="1.5" PointX="5.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TrainingDBModel.EMP" Width="1.5" PointX="8" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="TrainingDBModel.EmpDummy" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TrainingDBModel.EmpDummy1" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TrainingDBModel.Product" Width="1.5" PointX="5.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TrainingDBModel.ProductSale" Width="1.5" PointX="8" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="TrainingDBModel.tblDepartment" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TrainingDBModel.tblEmployee" Width="1.5" PointX="3" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TrainingDBModel.dummy" Width="1.5" PointX="5.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TrainingDBModel.ErrorLogger" Width="1.5" PointX="7.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TrainingDBModel.table1" Width="1.5" PointX="9.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TrainingDBModel.table2" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="TrainingDBModel.FK__EMP__deptno__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="TrainingDBModel.FK__EmpDummy__EDepti__35BCFE0A" ManuallyRouted="false" />
+        <AssociationConnector Association="TrainingDBModel.FK__EmpDummy1__EDept__3A81B327" ManuallyRouted="false" />
+        <AssociationConnector Association="TrainingDBModel.FK__ProductSa__Produ__5FB337D6" ManuallyRouted="false" />
+        <AssociationConnector Association="TrainingDBModel.FK__tblEmploy__DeptI__267ABA7A" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

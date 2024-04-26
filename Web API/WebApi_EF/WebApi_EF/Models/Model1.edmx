@@ -1,0 +1,983 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TrainingDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'TrainingDB.dbo.casetable' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="casetable">
+          <Property Name="cid" Type="int" />
+          <Property Name="casename" Type="varchar" MaxLength="20" />
+        </EntityType>-->
+        <EntityType Name="DEPT">
+          <Key>
+            <PropertyRef Name="deptno" />
+          </Key>
+          <Property Name="deptno" Type="numeric" Precision="2" Scale="0" Nullable="false" />
+          <Property Name="dname" Type="varchar" MaxLength="15" />
+          <Property Name="loc" Type="varchar" MaxLength="15" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TrainingDB.dbo.dummy' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="dummy">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Dname" Type="varchar" MaxLength="20" />
+          <Property Name="Age" Type="int" />
+          <Property Name="City" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'TrainingDB.dbo.dummy_dummy' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="dummy_dummy">
+          <Property Name="did" Type="int" />
+          <Property Name="dname" Type="varchar" MaxLength="10" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'TrainingDB.dbo.dummy2' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="dummy2">
+          <Property Name="BonusId" Type="int" />
+          <Property Name="ID" Type="int" />
+          <Property Name="BonusAmt" Type="float" />
+        </EntityType>-->
+        <EntityType Name="EMP">
+          <Key>
+            <PropertyRef Name="empno" />
+          </Key>
+          <Property Name="empno" Type="numeric" Precision="4" Scale="0" Nullable="false" />
+          <Property Name="ename" Type="varchar" MaxLength="20" />
+          <Property Name="job" Type="varchar" MaxLength="20" />
+          <Property Name="mgr_id" Type="numeric" Precision="4" Scale="0" />
+          <Property Name="hiredate" Type="date" />
+          <Property Name="sal" Type="int" />
+          <Property Name="comm" Type="int" />
+          <Property Name="deptno" Type="numeric" Precision="2" Scale="0" />
+        </EntityType>
+        <EntityType Name="EmpDummy">
+          <Key>
+            <PropertyRef Name="Empno" />
+          </Key>
+          <Property Name="Empno" Type="int" Nullable="false" />
+          <Property Name="EName" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="EAge" Type="int" />
+          <Property Name="ECity" Type="varchar" MaxLength="25" />
+          <Property Name="EPhone" Type="varchar" MaxLength="10" />
+          <Property Name="EDeptid" Type="int" />
+        </EntityType>
+        <EntityType Name="EmpDummy1">
+          <Key>
+            <PropertyRef Name="EmpNo" />
+          </Key>
+          <Property Name="EmpNo" Type="int" Nullable="false" />
+          <Property Name="EName" Type="varchar" MaxLength="35" Nullable="false" />
+          <Property Name="EAge" Type="int" />
+          <Property Name="ECity" Type="varchar" MaxLength="25" />
+          <Property Name="Ephone" Type="varchar" MaxLength="10" />
+          <Property Name="EDeptid" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'TrainingDB.dbo.EmployeeAudit' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="EmployeeAudit">
+          <Property Name="Message" Type="varchar(max)" />
+          <Property Name="AuditDate" Type="date" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TrainingDB.dbo.ErrorLogger' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ErrorLogger">
+          <Key>
+            <PropertyRef Name="Logid" />
+          </Key>
+          <Property Name="Logid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ExceptionMsg" Type="varchar(max)" />
+          <Property Name="ExceptionType" Type="varchar" MaxLength="100" />
+          <Property Name="ExceptionSource" Type="varchar(max)" />
+          <Property Name="ExceptionUrl" Type="varchar" MaxLength="100" />
+          <Property Name="LogDate" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'TrainingDB.dbo.Marks' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Marks">
+          <Property Name="stdname" Type="varchar" MaxLength="20" />
+          <Property Name="cls_subject" Type="varchar" MaxLength="10" />
+          <Property Name="marks" Type="int" />
+        </EntityType>-->
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="Productname" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Price" Type="int" />
+          <Property Name="QuantityAvailable" Type="int" />
+        </EntityType>
+        <EntityType Name="ProductSales">
+          <Key>
+            <PropertyRef Name="SaleId" />
+          </Key>
+          <Property Name="SaleId" Type="int" Nullable="false" />
+          <Property Name="ProductId" Type="int" />
+          <Property Name="QuantitySold" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TrainingDB.dbo.table1' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="table1">
+          <Key>
+            <PropertyRef Name="TId" />
+          </Key>
+          <Property Name="TId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TName" Type="varchar" MaxLength="30" />
+          <Property Name="TGrade" Type="char" MaxLength="1" />
+          <Property Name="TPercentage" Type="int" />
+          <Property Name="newcol" Type="varchar" MaxLength="5" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TrainingDB.dbo.table2' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="table2">
+          <Key>
+            <PropertyRef Name="TId" />
+          </Key>
+          <Property Name="TId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TName" Type="varchar" MaxLength="30" />
+          <Property Name="TGrade" Type="char" MaxLength="1" />
+          <Property Name="TPercentage" Type="int" />
+        </EntityType>
+        <EntityType Name="tblDepartment">
+          <Key>
+            <PropertyRef Name="DeptId" />
+          </Key>
+          <Property Name="DeptId" Type="int" Nullable="false" />
+          <Property Name="DeptName" Type="varchar" MaxLength="20" />
+          <Property Name="DeptLocation" Type="varchar" MaxLength="30" />
+          <Property Name="Budget" Type="float" />
+        </EntityType>
+        <EntityType Name="tblEmployee">
+          <Key>
+            <PropertyRef Name="EmpId" />
+          </Key>
+          <Property Name="EmpId" Type="int" Nullable="false" />
+          <Property Name="EmpName" Type="varchar" MaxLength="30" />
+          <Property Name="Gender" Type="char" MaxLength="7" />
+          <Property Name="Salary" Type="float" />
+          <Property Name="DeptId" Type="int" />
+          <Property Name="Phone" Type="varchar" MaxLength="10" />
+          <Property Name="City" Type="varchar" MaxLength="25" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'TrainingDB.dbo.testEmp' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="testEmp">
+          <Property Name="eid" Type="int" />
+          <Property Name="ename" Type="varchar" MaxLength="20" />
+          <Property Name="salary" Type="float" />
+          <Property Name="AnnualSalary" Type="float" StoreGeneratedPattern="Computed" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'TrainingDB.dbo.testtable' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="testtable">
+          <Property Name="tid" Type="int" />
+          <Property Name="tname" Type="varchar" MaxLength="20" />
+          <Property Name="tcity" Type="varchar" MaxLength="20" />
+        </EntityType>-->
+        <Association Name="FK__EMP__deptno__403A8C7D">
+          <End Role="DEPT" Type="Self.DEPT" Multiplicity="0..1" />
+          <End Role="EMP" Type="Self.EMP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DEPT">
+              <PropertyRef Name="deptno" />
+            </Principal>
+            <Dependent Role="EMP">
+              <PropertyRef Name="deptno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EmpDummy__EDepti__35BCFE0A">
+          <End Role="tblDepartment" Type="Self.tblDepartment" Multiplicity="0..1" />
+          <End Role="EmpDummy" Type="Self.EmpDummy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDepartment">
+              <PropertyRef Name="DeptId" />
+            </Principal>
+            <Dependent Role="EmpDummy">
+              <PropertyRef Name="EDeptid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EmpDummy1__EDept__3A81B327">
+          <End Role="tblDepartment" Type="Self.tblDepartment" Multiplicity="0..1" />
+          <End Role="EmpDummy1" Type="Self.EmpDummy1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDepartment">
+              <PropertyRef Name="DeptId" />
+            </Principal>
+            <Dependent Role="EmpDummy1">
+              <PropertyRef Name="EDeptid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ProductSa__Produ__5FB337D6">
+          <End Role="Products" Type="Self.Products" Multiplicity="0..1" />
+          <End Role="ProductSales" Type="Self.ProductSales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="ProductSales">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblEmploy__DeptI__267ABA7A">
+          <End Role="tblDepartment" Type="Self.tblDepartment" Multiplicity="0..1" />
+          <End Role="tblEmployee" Type="Self.tblEmployee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDepartment">
+              <PropertyRef Name="DeptId" />
+            </Principal>
+            <Dependent Role="tblEmployee">
+              <PropertyRef Name="DeptId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="add2nos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
+          <Parameter Name="n1" Type="int" Mode="In" />
+          <Parameter Name="n2" Type="int" Mode="In" />
+        </Function>
+        <Function Name="EmpCount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="EmpIns" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="eid" Type="int" Mode="In" />
+          <Parameter Name="ename" Type="varchar" Mode="In" />
+          <Parameter Name="ph" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="ErrProc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="ExLog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="exmsg" Type="varchar(max)" Mode="In" />
+          <Parameter Name="extype" Type="varchar" Mode="In" />
+          <Parameter Name="exsrc" Type="varchar(max)" Mode="In" />
+          <Parameter Name="exurl" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="fn_Area" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="float">
+          <Parameter Name="length" Type="float" Mode="In" />
+          <Parameter Name="breadth" Type="float" Mode="In" />
+        </Function>
+        <Function Name="fn_deptwiseEmp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="deptid" Type="int" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="empid" Type="int" Nullable="false" />
+                <Property Name="empname" Type="varchar" MaxLength="30" />
+                <Property Name="Salary" Type="float" />
+                <Property Name="deptid" Type="int" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <Function Name="fn_Empdetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="empid" Type="int" Nullable="false" />
+                <Property Name="empname" Type="varchar" MaxLength="30" />
+                <Property Name="salary" Type="float" />
+                <Property Name="deptname" Type="varchar" MaxLength="20" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <Function Name="fn_findage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
+          <Parameter Name="dob" Type="date" Mode="In" />
+        </Function>
+        <Function Name="fn_findagerunning" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
+          <Parameter Name="dob" Type="date" Mode="In" />
+        </Function>
+        <Function Name="fnEmpdata" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="nvarchar">
+          <Parameter Name="ename" Type="varchar" Mode="In" />
+          <Parameter Name="gender" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="getEmpSalary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ename" Type="varchar" Mode="In" />
+          <Parameter Name="sal" Type="float" Mode="InOut" />
+        </Function>
+        <Function Name="GetEmpSalnDept" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ename" Type="varchar" Mode="In" />
+          <Parameter Name="sal" Type="float" Mode="InOut" />
+          <Parameter Name="deptid" Type="int" Mode="InOut" />
+        </Function>
+        <Function Name="getGendept" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="deptno" Type="int" Mode="In" />
+          <Parameter Name="gen" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="getname" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="eid" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getSal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="eid" Type="int" Mode="In" />
+        </Function>
+        <Function Name="prcsecond" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="prwish" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Sales" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="pid" Type="int" Mode="In" />
+          <Parameter Name="qty_to_sell" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spGetProductByName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ProductName" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="spGetProducts" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="TaxCalculator" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="eid" Type="int" Mode="In" />
+          <Parameter Name="annualsal" Type="float" Mode="InOut" />
+        </Function>
+        <Function Name="UpdDept" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="updsal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="increment" Type="int" Mode="In" />
+          <Parameter Name="eid" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="TrainingDBModelStoreContainer">
+          <EntitySet Name="DEPT" EntityType="Self.DEPT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EMP" EntityType="Self.EMP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmpDummy" EntityType="Self.EmpDummy" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmpDummy1" EntityType="Self.EmpDummy1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductSales" EntityType="Self.ProductSales" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblDepartment" EntityType="Self.tblDepartment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblEmployee" EntityType="Self.tblEmployee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="dummy" EntityType="Self.dummy" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [dummy].[Id] AS [Id], 
+    [dummy].[Dname] AS [Dname], 
+    [dummy].[Age] AS [Age], 
+    [dummy].[City] AS [City]
+    FROM [dbo].[dummy] AS [dummy]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ErrorLogger" EntityType="Self.ErrorLogger" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ErrorLogger].[Logid] AS [Logid], 
+    [ErrorLogger].[ExceptionMsg] AS [ExceptionMsg], 
+    [ErrorLogger].[ExceptionType] AS [ExceptionType], 
+    [ErrorLogger].[ExceptionSource] AS [ExceptionSource], 
+    [ErrorLogger].[ExceptionUrl] AS [ExceptionUrl], 
+    [ErrorLogger].[LogDate] AS [LogDate]
+    FROM [dbo].[ErrorLogger] AS [ErrorLogger]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="table1" EntityType="Self.table1" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [table1].[TId] AS [TId], 
+    [table1].[TName] AS [TName], 
+    [table1].[TGrade] AS [TGrade], 
+    [table1].[TPercentage] AS [TPercentage], 
+    [table1].[newcol] AS [newcol]
+    FROM [dbo].[table1] AS [table1]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="table2" EntityType="Self.table2" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [table2].[TId] AS [TId], 
+    [table2].[TName] AS [TName], 
+    [table2].[TGrade] AS [TGrade], 
+    [table2].[TPercentage] AS [TPercentage]
+    FROM [dbo].[table2] AS [table2]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__EMP__deptno__403A8C7D" Association="Self.FK__EMP__deptno__403A8C7D">
+            <End Role="DEPT" EntitySet="DEPT" />
+            <End Role="EMP" EntitySet="EMP" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EmpDummy__EDepti__35BCFE0A" Association="Self.FK__EmpDummy__EDepti__35BCFE0A">
+            <End Role="tblDepartment" EntitySet="tblDepartment" />
+            <End Role="EmpDummy" EntitySet="EmpDummy" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EmpDummy1__EDept__3A81B327" Association="Self.FK__EmpDummy1__EDept__3A81B327">
+            <End Role="tblDepartment" EntitySet="tblDepartment" />
+            <End Role="EmpDummy1" EntitySet="EmpDummy1" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ProductSa__Produ__5FB337D6" Association="Self.FK__ProductSa__Produ__5FB337D6">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="ProductSales" EntitySet="ProductSales" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblEmploy__DeptI__267ABA7A" Association="Self.FK__tblEmploy__DeptI__267ABA7A">
+            <End Role="tblDepartment" EntitySet="tblDepartment" />
+            <End Role="tblEmployee" EntitySet="tblEmployee" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TrainingDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <ComplexType Name="fn_deptwiseEmp_Result">
+          <Property Name="empid" Type="Int32" Nullable="false" />
+          <Property Name="empname" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Salary" Type="Double" />
+          <Property Name="deptid" Type="Int32" />
+        </ComplexType>
+        <ComplexType Name="fn_Empdetails_Result">
+          <Property Name="empid" Type="Int32" Nullable="false" />
+          <Property Name="empname" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="salary" Type="Double" />
+          <Property Name="deptname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </ComplexType>
+        <EntityType Name="DEPT">
+          <Key>
+            <PropertyRef Name="deptno" />
+          </Key>
+          <Property Name="deptno" Type="Decimal" Precision="2" Scale="0" Nullable="false" />
+          <Property Name="dname" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="loc" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="EMPs" Relationship="Self.FK__EMP__deptno__403A8C7D" FromRole="DEPT" ToRole="EMP" />
+        </EntityType>
+        <EntityType Name="EMP">
+          <Key>
+            <PropertyRef Name="empno" />
+          </Key>
+          <Property Name="empno" Type="Decimal" Precision="4" Scale="0" Nullable="false" />
+          <Property Name="ename" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="job" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="mgr_id" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="hiredate" Type="DateTime" Precision="0" />
+          <Property Name="sal" Type="Int32" />
+          <Property Name="comm" Type="Int32" />
+          <Property Name="deptno" Type="Decimal" Precision="2" Scale="0" />
+          <NavigationProperty Name="DEPT" Relationship="Self.FK__EMP__deptno__403A8C7D" FromRole="EMP" ToRole="DEPT" />
+        </EntityType>
+        <EntityType Name="EmpDummy">
+          <Key>
+            <PropertyRef Name="Empno" />
+          </Key>
+          <Property Name="Empno" Type="Int32" Nullable="false" />
+          <Property Name="EName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EAge" Type="Int32" />
+          <Property Name="ECity" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="EPhone" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="EDeptid" Type="Int32" />
+          <NavigationProperty Name="tblDepartment" Relationship="Self.FK__EmpDummy__EDepti__35BCFE0A" FromRole="EmpDummy" ToRole="tblDepartment" />
+        </EntityType>
+        <EntityType Name="EmpDummy1">
+          <Key>
+            <PropertyRef Name="EmpNo" />
+          </Key>
+          <Property Name="EmpNo" Type="Int32" Nullable="false" />
+          <Property Name="EName" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EAge" Type="Int32" />
+          <Property Name="ECity" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Ephone" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="EDeptid" Type="Int32" />
+          <NavigationProperty Name="tblDepartment" Relationship="Self.FK__EmpDummy1__EDept__3A81B327" FromRole="EmpDummy1" ToRole="tblDepartment" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <Property Name="Productname" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Price" Type="Int32" />
+          <Property Name="QuantityAvailable" Type="Int32" />
+          <NavigationProperty Name="ProductSales" Relationship="Self.FK__ProductSa__Produ__5FB337D6" FromRole="Products" ToRole="ProductSales" />
+        </EntityType>
+        <EntityType Name="ProductSale">
+          <Key>
+            <PropertyRef Name="SaleId" />
+          </Key>
+          <Property Name="SaleId" Type="Int32" Nullable="false" />
+          <Property Name="ProductId" Type="Int32" />
+          <Property Name="QuantitySold" Type="Int32" />
+          <NavigationProperty Name="Product" Relationship="Self.FK__ProductSa__Produ__5FB337D6" FromRole="ProductSales" ToRole="Products" />
+        </EntityType>
+        <EntityType Name="tblDepartment">
+          <Key>
+            <PropertyRef Name="DeptId" />
+          </Key>
+          <Property Name="DeptId" Type="Int32" Nullable="false" />
+          <Property Name="DeptName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DeptLocation" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Budget" Type="Double" />
+          <NavigationProperty Name="EmpDummies" Relationship="Self.FK__EmpDummy__EDepti__35BCFE0A" FromRole="tblDepartment" ToRole="EmpDummy" />
+          <NavigationProperty Name="EmpDummy1" Relationship="Self.FK__EmpDummy1__EDept__3A81B327" FromRole="tblDepartment" ToRole="EmpDummy1" />
+          <NavigationProperty Name="tblEmployees" Relationship="Self.FK__tblEmploy__DeptI__267ABA7A" FromRole="tblDepartment" ToRole="tblEmployee" />
+        </EntityType>
+        <EntityType Name="tblEmployee">
+          <Key>
+            <PropertyRef Name="EmpId" />
+          </Key>
+          <Property Name="EmpId" Type="Int32" Nullable="false" />
+          <Property Name="EmpName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Gender" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
+          <Property Name="Salary" Type="Double" />
+          <Property Name="DeptId" Type="Int32" />
+          <Property Name="Phone" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tblDepartment" Relationship="Self.FK__tblEmploy__DeptI__267ABA7A" FromRole="tblEmployee" ToRole="tblDepartment" />
+        </EntityType>
+        <EntityType Name="dummy">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Dname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Age" Type="Int32" />
+          <Property Name="City" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ErrorLogger">
+          <Key>
+            <PropertyRef Name="Logid" />
+          </Key>
+          <Property Name="Logid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ExceptionMsg" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ExceptionType" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ExceptionSource" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ExceptionUrl" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="LogDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="table1">
+          <Key>
+            <PropertyRef Name="TId" />
+          </Key>
+          <Property Name="TId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="TGrade" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="TPercentage" Type="Int32" />
+          <Property Name="newcol" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="table2">
+          <Key>
+            <PropertyRef Name="TId" />
+          </Key>
+          <Property Name="TId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="TGrade" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="TPercentage" Type="Int32" />
+        </EntityType>
+        <Association Name="FK__EMP__deptno__403A8C7D">
+          <End Role="DEPT" Type="Self.DEPT" Multiplicity="0..1" />
+          <End Role="EMP" Type="Self.EMP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DEPT">
+              <PropertyRef Name="deptno" />
+            </Principal>
+            <Dependent Role="EMP">
+              <PropertyRef Name="deptno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EmpDummy__EDepti__35BCFE0A">
+          <End Role="tblDepartment" Type="Self.tblDepartment" Multiplicity="0..1" />
+          <End Role="EmpDummy" Type="Self.EmpDummy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDepartment">
+              <PropertyRef Name="DeptId" />
+            </Principal>
+            <Dependent Role="EmpDummy">
+              <PropertyRef Name="EDeptid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EmpDummy1__EDept__3A81B327">
+          <End Role="tblDepartment" Type="Self.tblDepartment" Multiplicity="0..1" />
+          <End Role="EmpDummy1" Type="Self.EmpDummy1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDepartment">
+              <PropertyRef Name="DeptId" />
+            </Principal>
+            <Dependent Role="EmpDummy1">
+              <PropertyRef Name="EDeptid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ProductSa__Produ__5FB337D6">
+          <End Role="Products" Type="Self.Product" Multiplicity="0..1" />
+          <End Role="ProductSales" Type="Self.ProductSale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="ProductSales">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblEmploy__DeptI__267ABA7A">
+          <End Role="tblDepartment" Type="Self.tblDepartment" Multiplicity="0..1" />
+          <End Role="tblEmployee" Type="Self.tblEmployee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDepartment">
+              <PropertyRef Name="DeptId" />
+            </Principal>
+            <Dependent Role="tblEmployee">
+              <PropertyRef Name="DeptId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TrainingDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="DEPTs" EntityType="Self.DEPT" />
+          <EntitySet Name="EMPs" EntityType="Self.EMP" />
+          <EntitySet Name="EmpDummies" EntityType="Self.EmpDummy" />
+          <EntitySet Name="EmpDummy1" EntityType="Self.EmpDummy1" />
+          <EntitySet Name="Products" EntityType="Self.Product" />
+          <EntitySet Name="ProductSales" EntityType="Self.ProductSale" />
+          <EntitySet Name="tblDepartments" EntityType="Self.tblDepartment" />
+          <EntitySet Name="tblEmployees" EntityType="Self.tblEmployee" />
+          <EntitySet Name="dummies" EntityType="Self.dummy" />
+          <EntitySet Name="ErrorLoggers" EntityType="Self.ErrorLogger" />
+          <EntitySet Name="table1" EntityType="Self.table1" />
+          <EntitySet Name="table2" EntityType="Self.table2" />
+          <AssociationSet Name="FK__EMP__deptno__403A8C7D" Association="Self.FK__EMP__deptno__403A8C7D">
+            <End Role="DEPT" EntitySet="DEPTs" />
+            <End Role="EMP" EntitySet="EMPs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EmpDummy__EDepti__35BCFE0A" Association="Self.FK__EmpDummy__EDepti__35BCFE0A">
+            <End Role="tblDepartment" EntitySet="tblDepartments" />
+            <End Role="EmpDummy" EntitySet="EmpDummies" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EmpDummy1__EDept__3A81B327" Association="Self.FK__EmpDummy1__EDept__3A81B327">
+            <End Role="tblDepartment" EntitySet="tblDepartments" />
+            <End Role="EmpDummy1" EntitySet="EmpDummy1" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ProductSa__Produ__5FB337D6" Association="Self.FK__ProductSa__Produ__5FB337D6">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="ProductSales" EntitySet="ProductSales" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblEmploy__DeptI__267ABA7A" Association="Self.FK__tblEmploy__DeptI__267ABA7A">
+            <End Role="tblDepartment" EntitySet="tblDepartments" />
+            <End Role="tblEmployee" EntitySet="tblEmployees" />
+          </AssociationSet>
+          <FunctionImport Name="fn_deptwiseEmp" IsComposable="true" ReturnType="Collection(TrainingDBModel.fn_deptwiseEmp_Result)">
+            <Parameter Name="deptid" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="fn_Empdetails" IsComposable="true" ReturnType="Collection(TrainingDBModel.fn_Empdetails_Result)" />
+          <FunctionImport Name="EmpCount">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="EmpIns">
+            <Parameter Name="eid" Mode="In" Type="Int32" />
+            <Parameter Name="ename" Mode="In" Type="String" />
+            <Parameter Name="ph" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="ErrProc" ReturnType="Collection(Double)" />
+          <FunctionImport Name="ExLog">
+            <Parameter Name="exmsg" Mode="In" Type="String" />
+            <Parameter Name="extype" Mode="In" Type="String" />
+            <Parameter Name="exsrc" Mode="In" Type="String" />
+            <Parameter Name="exurl" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="getEmpSalary">
+            <Parameter Name="ename" Mode="In" Type="String" />
+            <Parameter Name="sal" Mode="InOut" Type="Double" />
+          </FunctionImport>
+          <FunctionImport Name="GetEmpSalnDept">
+            <Parameter Name="ename" Mode="In" Type="String" />
+            <Parameter Name="sal" Mode="InOut" Type="Double" />
+            <Parameter Name="deptid" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="getGendept" ReturnType="Collection(TrainingDBModel.getGendept_Result)">
+            <Parameter Name="deptno" Mode="In" Type="Int32" />
+            <Parameter Name="gen" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="getname" ReturnType="Collection(String)">
+            <Parameter Name="eid" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="getSal" ReturnType="Collection(TrainingDBModel.getSal_Result)">
+            <Parameter Name="eid" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="prcsecond" ReturnType="Collection(TrainingDBModel.prcsecond_Result)" />
+          <FunctionImport Name="prwish" ReturnType="Collection(String)" />
+          <FunctionImport Name="Sales">
+            <Parameter Name="pid" Mode="In" Type="Int32" />
+            <Parameter Name="qty_to_sell" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spGetProductByName" ReturnType="Collection(TrainingDBModel.spGetProductByName_Result)">
+            <Parameter Name="ProductName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spGetProducts" ReturnType="Collection(TrainingDBModel.spGetProducts_Result)" />
+          <FunctionImport Name="TaxCalculator">
+            <Parameter Name="eid" Mode="In" Type="Int32" />
+            <Parameter Name="annualsal" Mode="InOut" Type="Double" />
+          </FunctionImport>
+          <FunctionImport Name="UpdDept" />
+          <FunctionImport Name="updsal">
+            <Parameter Name="increment" Mode="In" Type="Int32" />
+            <Parameter Name="eid" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="getGendept_Result">
+          <Property Type="Int32" Name="EmpId" Nullable="false" />
+          <Property Type="String" Name="EmpName" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Gender" Nullable="true" MaxLength="7" />
+          <Property Type="Double" Name="Salary" Nullable="true" />
+          <Property Type="Int32" Name="DeptId" Nullable="true" />
+          <Property Type="String" Name="Phone" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="City" Nullable="true" MaxLength="25" />
+        </ComplexType>
+        <ComplexType Name="getSal_Result">
+          <Property Type="String" Name="Empname" Nullable="true" MaxLength="30" />
+          <Property Type="Double" Name="Salary" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="prcsecond_Result">
+          <Property Type="Int32" Name="EmpId" Nullable="false" />
+          <Property Type="String" Name="EmpName" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Gender" Nullable="true" MaxLength="7" />
+          <Property Type="Double" Name="Salary" Nullable="true" />
+          <Property Type="Int32" Name="DeptId" Nullable="true" />
+          <Property Type="String" Name="Phone" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="City" Nullable="true" MaxLength="25" />
+        </ComplexType>
+        <ComplexType Name="spGetProductByName_Result">
+          <Property Type="Int32" Name="productId" Nullable="false" />
+          <Property Type="String" Name="productName" Nullable="false" MaxLength="30" />
+          <Property Type="Int32" Name="Price" Nullable="true" />
+          <Property Type="Int32" Name="QuantityAvailable" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="spGetProducts_Result">
+          <Property Type="Int32" Name="ProductID" Nullable="false" />
+          <Property Type="String" Name="ProductName" Nullable="false" MaxLength="30" />
+          <Property Type="Int32" Name="Price" Nullable="true" />
+          <Property Type="Int32" Name="QuantityAvailable" Nullable="true" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TrainingDBModelStoreContainer" CdmEntityContainer="TrainingDBEntities">
+          <EntitySetMapping Name="DEPTs">
+            <EntityTypeMapping TypeName="TrainingDBModel.DEPT">
+              <MappingFragment StoreEntitySet="DEPT">
+                <ScalarProperty Name="deptno" ColumnName="deptno" />
+                <ScalarProperty Name="dname" ColumnName="dname" />
+                <ScalarProperty Name="loc" ColumnName="loc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EMPs">
+            <EntityTypeMapping TypeName="TrainingDBModel.EMP">
+              <MappingFragment StoreEntitySet="EMP">
+                <ScalarProperty Name="empno" ColumnName="empno" />
+                <ScalarProperty Name="ename" ColumnName="ename" />
+                <ScalarProperty Name="job" ColumnName="job" />
+                <ScalarProperty Name="mgr_id" ColumnName="mgr_id" />
+                <ScalarProperty Name="hiredate" ColumnName="hiredate" />
+                <ScalarProperty Name="sal" ColumnName="sal" />
+                <ScalarProperty Name="comm" ColumnName="comm" />
+                <ScalarProperty Name="deptno" ColumnName="deptno" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmpDummies">
+            <EntityTypeMapping TypeName="TrainingDBModel.EmpDummy">
+              <MappingFragment StoreEntitySet="EmpDummy">
+                <ScalarProperty Name="Empno" ColumnName="Empno" />
+                <ScalarProperty Name="EName" ColumnName="EName" />
+                <ScalarProperty Name="EAge" ColumnName="EAge" />
+                <ScalarProperty Name="ECity" ColumnName="ECity" />
+                <ScalarProperty Name="EPhone" ColumnName="EPhone" />
+                <ScalarProperty Name="EDeptid" ColumnName="EDeptid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmpDummy1">
+            <EntityTypeMapping TypeName="TrainingDBModel.EmpDummy1">
+              <MappingFragment StoreEntitySet="EmpDummy1">
+                <ScalarProperty Name="EmpNo" ColumnName="EmpNo" />
+                <ScalarProperty Name="EName" ColumnName="EName" />
+                <ScalarProperty Name="EAge" ColumnName="EAge" />
+                <ScalarProperty Name="ECity" ColumnName="ECity" />
+                <ScalarProperty Name="Ephone" ColumnName="Ephone" />
+                <ScalarProperty Name="EDeptid" ColumnName="EDeptid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="TrainingDBModel.Product">
+              <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="Productname" ColumnName="Productname" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="QuantityAvailable" ColumnName="QuantityAvailable" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductSales">
+            <EntityTypeMapping TypeName="TrainingDBModel.ProductSale">
+              <MappingFragment StoreEntitySet="ProductSales">
+                <ScalarProperty Name="SaleId" ColumnName="SaleId" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="QuantitySold" ColumnName="QuantitySold" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblDepartments">
+            <EntityTypeMapping TypeName="TrainingDBModel.tblDepartment">
+              <MappingFragment StoreEntitySet="tblDepartment">
+                <ScalarProperty Name="DeptId" ColumnName="DeptId" />
+                <ScalarProperty Name="DeptName" ColumnName="DeptName" />
+                <ScalarProperty Name="DeptLocation" ColumnName="DeptLocation" />
+                <ScalarProperty Name="Budget" ColumnName="Budget" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblEmployees">
+            <EntityTypeMapping TypeName="TrainingDBModel.tblEmployee">
+              <MappingFragment StoreEntitySet="tblEmployee">
+                <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+                <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Salary" ColumnName="Salary" />
+                <ScalarProperty Name="DeptId" ColumnName="DeptId" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="City" ColumnName="City" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dummies">
+            <EntityTypeMapping TypeName="TrainingDBModel.dummy">
+              <MappingFragment StoreEntitySet="dummy">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Dname" ColumnName="Dname" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="City" ColumnName="City" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ErrorLoggers">
+            <EntityTypeMapping TypeName="TrainingDBModel.ErrorLogger">
+              <MappingFragment StoreEntitySet="ErrorLogger">
+                <ScalarProperty Name="Logid" ColumnName="Logid" />
+                <ScalarProperty Name="ExceptionMsg" ColumnName="ExceptionMsg" />
+                <ScalarProperty Name="ExceptionType" ColumnName="ExceptionType" />
+                <ScalarProperty Name="ExceptionSource" ColumnName="ExceptionSource" />
+                <ScalarProperty Name="ExceptionUrl" ColumnName="ExceptionUrl" />
+                <ScalarProperty Name="LogDate" ColumnName="LogDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="table1">
+            <EntityTypeMapping TypeName="TrainingDBModel.table1">
+              <MappingFragment StoreEntitySet="table1">
+                <ScalarProperty Name="TId" ColumnName="TId" />
+                <ScalarProperty Name="TName" ColumnName="TName" />
+                <ScalarProperty Name="TGrade" ColumnName="TGrade" />
+                <ScalarProperty Name="TPercentage" ColumnName="TPercentage" />
+                <ScalarProperty Name="newcol" ColumnName="newcol" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="table2">
+            <EntityTypeMapping TypeName="TrainingDBModel.table2">
+              <MappingFragment StoreEntitySet="table2">
+                <ScalarProperty Name="TId" ColumnName="TId" />
+                <ScalarProperty Name="TName" ColumnName="TName" />
+                <ScalarProperty Name="TGrade" ColumnName="TGrade" />
+                <ScalarProperty Name="TPercentage" ColumnName="TPercentage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionName="TrainingDBModel.Store.fn_deptwiseEmp" FunctionImportName="fn_deptwiseEmp">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TrainingDBModel.fn_deptwiseEmp_Result">
+                <ScalarProperty Name="empid" ColumnName="empid" />
+                <ScalarProperty Name="empname" ColumnName="empname" />
+                <ScalarProperty Name="Salary" ColumnName="Salary" />
+                <ScalarProperty Name="deptid" ColumnName="deptid" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionName="TrainingDBModel.Store.fn_Empdetails" FunctionImportName="fn_Empdetails">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TrainingDBModel.fn_Empdetails_Result">
+                <ScalarProperty Name="empid" ColumnName="empid" />
+                <ScalarProperty Name="empname" ColumnName="empname" />
+                <ScalarProperty Name="salary" ColumnName="salary" />
+                <ScalarProperty Name="deptname" ColumnName="deptname" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="EmpCount" FunctionName="TrainingDBModel.Store.EmpCount" />
+          <FunctionImportMapping FunctionImportName="EmpIns" FunctionName="TrainingDBModel.Store.EmpIns" />
+          <FunctionImportMapping FunctionImportName="ErrProc" FunctionName="TrainingDBModel.Store.ErrProc" />
+          <FunctionImportMapping FunctionImportName="ExLog" FunctionName="TrainingDBModel.Store.ExLog" />
+          <FunctionImportMapping FunctionImportName="getEmpSalary" FunctionName="TrainingDBModel.Store.getEmpSalary" />
+          <FunctionImportMapping FunctionImportName="GetEmpSalnDept" FunctionName="TrainingDBModel.Store.GetEmpSalnDept" />
+          <FunctionImportMapping FunctionImportName="getGendept" FunctionName="TrainingDBModel.Store.getGendept">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TrainingDBModel.getGendept_Result">
+                <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+                <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Salary" ColumnName="Salary" />
+                <ScalarProperty Name="DeptId" ColumnName="DeptId" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="City" ColumnName="City" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getname" FunctionName="TrainingDBModel.Store.getname" />
+          <FunctionImportMapping FunctionImportName="getSal" FunctionName="TrainingDBModel.Store.getSal">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TrainingDBModel.getSal_Result">
+                <ScalarProperty Name="Empname" ColumnName="Empname" />
+                <ScalarProperty Name="Salary" ColumnName="Salary" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="prcsecond" FunctionName="TrainingDBModel.Store.prcsecond">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TrainingDBModel.prcsecond_Result">
+                <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+                <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Salary" ColumnName="Salary" />
+                <ScalarProperty Name="DeptId" ColumnName="DeptId" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="City" ColumnName="City" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="prwish" FunctionName="TrainingDBModel.Store.prwish" />
+          <FunctionImportMapping FunctionImportName="Sales" FunctionName="TrainingDBModel.Store.Sales" />
+          <FunctionImportMapping FunctionImportName="spGetProductByName" FunctionName="TrainingDBModel.Store.spGetProductByName">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TrainingDBModel.spGetProductByName_Result">
+                <ScalarProperty Name="productId" ColumnName="productId" />
+                <ScalarProperty Name="productName" ColumnName="productName" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="QuantityAvailable" ColumnName="QuantityAvailable" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spGetProducts" FunctionName="TrainingDBModel.Store.spGetProducts">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TrainingDBModel.spGetProducts_Result">
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="QuantityAvailable" ColumnName="QuantityAvailable" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="TaxCalculator" FunctionName="TrainingDBModel.Store.TaxCalculator" />
+          <FunctionImportMapping FunctionImportName="UpdDept" FunctionName="TrainingDBModel.Store.UpdDept" />
+          <FunctionImportMapping FunctionImportName="updsal" FunctionName="TrainingDBModel.Store.updsal" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
