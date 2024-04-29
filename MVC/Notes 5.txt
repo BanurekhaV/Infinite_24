@@ -1,0 +1,22 @@
+Session State : It is the attribute of the controllere class, which can be used to control and manage the session behaviour
+- In order to implement session state, use System.WebSessionState {}/namespace
+
+The following are the behaviour of the session state
+  - Default : where the sessionstate checks for the session when user request comes to the controller
+  - Disabled : No session checks are done
+  - Required : Every request of the user is checked
+  - ReadOnly : Session state cannot be updated / modified
+
+JSON Post with Ajax
+
+AJAX : Is a client side scripting lang to communicate to and from the server/database without the need for postback or a complete page refresh. Hence it speeds up the process of response time
+
+- Usage of AJAX
+   - callbacks
+   - Aysnchronous calls
+   - Improve speed, performance and usability of a web application
+
+Implement AJAX in asp.net :
+  1. Update Panel
+  2. Jquery ( being open source software that wrap java script functions is a bigger advancement)
+
