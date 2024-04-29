@@ -1,0 +1,18 @@
+MSBI : Microsoft Business Intelligence
+
+SSIS  :Sql Integration Services ( is an Extract, Transform and Load (ETL) tool)
+SSAS : SQl Analytical Services
+SSRS : Sql server Reporting Services
+
+SSIS Components : 
+Control Flow : (for storing containers and tasks)
+Data Flow (Source,destination and transformations)
+Event handler (for managing messages and emails)
+Package (provides all in one view)
+Parameters ( for user interaction)
+
+Extraction : Collection of Data from different sources
+
+Transformation : A different form as compared to the source to suit business needa
+
+Loading Loaded Data goes into the WareHouse)
