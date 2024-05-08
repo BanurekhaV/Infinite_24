@@ -1,0 +1,3 @@
+CustId,Name,Shortname
+1,megadooth,indrajit
+2,Banurekha,banu
