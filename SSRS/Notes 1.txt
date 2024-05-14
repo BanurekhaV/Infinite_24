@@ -1,0 +1,32 @@
+SSRS : SQL Server Reporting Services. It is a tool by Microsoft that comes along with sql server. Can be used to format reports thru the data
+
+Data Visualization : is a technique that helps 1. identifying the areas that need attention, 2. Impact /influence factors, Predicting profit/revenue/sales, Decision making made easy
+
+Why SSRS:
+ 1. It is free of cost
+ 2. Consists of 3 services as a bundle
+      SSAS
+      SSIS
+      SSRS
+ 3. Mobile Support : Reports can be published on an URL that can be acccessed even using a mobile
+ 4. Advanced Analytics
+
+Architecture of SSRS :
+
+1. 3 types of users of the reporting services
+   1. Report User : are those who work with the data in terms of the SSAS and SSIS. Post this they can view the data as a report using SSRS
+   2. Report Designer : Professionals who design varieties of report with the existing data
+   3. Report Manager : are people who view the report and give feedback
+
+2. Life Cycle of reporting
+    Authoring : the author of the report defines the layout, source,filters,expressions etc from the data source. Collectively known as rdl(report Definition Lang)
+    Management : invloves actvities for publishing reports and managing the webservices related to it. Security Models are created for access purpose
+    Delivery : report made available to the client (on-demand basis, or pre-scheduled). Also can be automated with subscription features
+
+There are 6 data regions (types of reports)
+  1. Tablix(table)
+  2. Matrix(group/summary report)
+  3. Sub Reports (report within report)
+  4. Charts
+  5. Drill Through
+  6. Drill Down

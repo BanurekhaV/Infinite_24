@@ -4,6 +4,8 @@ SSIS  :Sql Integration Services ( is an Extract, Transform and Load (ETL) tool)
 SSAS : SQl Analytical Services
 SSRS : Sql server Reporting Services
 
+Is a platform for developing enterprise level data integration and data transformation solutions. Involves managing databases, copy files, download data, archive data, load data into warehouse,cleanse and analyze data
+
 SSIS Components : 
 Control Flow : (for storing containers and tasks)
 Data Flow (Source,destination and transformations)
@@ -13,6 +15,16 @@ Parameters ( for user interaction)
 
 Extraction : Collection of Data from different sources
 
-Transformation : A different form as compared to the source to suit business needa
+Transformation : A different form as compared to the source to suit business needs
 
 Loading Loaded Data goes into the WareHouse)
+
+Features of SSIS :
+- Data Cleansing and profiling for a better quality of data
+- Smooth data Integration from disparete sources
+- Enriched environment with graphical tools/wizards
+- API's for object modelling
+- Data mining query and transformation lookup
+
+eg : let us move some data from a flat file onto a database
+     then let us copy the data from one database to another
