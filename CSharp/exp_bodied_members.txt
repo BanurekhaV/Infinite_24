@@ -1,0 +1,243 @@
+xpression-bodied members provide a minimal and concise syntax to define properties and methods. It helps to eliminate boilerplate code and helps writing code that is more readable. The expression-bodied syntax can be used when a member’s body consists only of one expression. It uses the =>(fat arrow) operator to define the body of the method or property and allows getting rid of curly braces and the return keyword. The feature was first introduced in C# 6.
+
+Expression-bodied Methods
+In C#, a method is a collection of statements that perform a given task and return the result to the caller. Often times, methods end up containing only a single statement. For example, consider the following code:
+
+int GetRectangleArea(int length, int breadth) 
+{
+    return length * breadth;
+} 
+The above method only consists of a single return statement. Using expression-bodied syntax, the above method can be rewritten as follows:
+
+int GetRectangleArea(int length, int breadth) => length * breadth;
+Notice, the absence of the curly braces and the return statement. Instead of curly braces, the => operator has been used. The expression that follows after the return statement is written right after the => operator.
+
+Syntax
+
+[access-modifier] [qualifiers] return-type MethodName([parameters]) => expression;
+
+Example
+
+The following example defines a Boolean method called IsEven() that returns true if the number passed to it is even, otherwise, the method returns false. The IsEven() method uses expression-bodied syntax.
+
+
+// C# program to illustrate expression bodied method
+using System;
+ 
+class GFG{
+     
+// Returns true if number is even
+// else returns false
+public static bool IsEven(int number) => number % 2 == 0;
+ 
+// Driver code
+public static void Main()
+{
+    int n = 10;
+     
+    if (IsEven(n))
+    {
+          Console.WriteLine("{0} is even", n);
+    }
+    else
+    {
+        Console.WriteLine("{0} is odd", n);
+    }
+}
+}
+Output
+10 is even
+Expression-bodied Void Methods 
+Void methods are those methods that do not contain a return statement and consist only of a single statement can also use expression-bodied syntax. For instance, the following method:
+
+void PrintName(string name)
+{
+    Console.WriteLine($"The name is {name}");
+}
+can be written with expression-bodied syntax as follows:
+
+void PrintName(string name) => Console.WriteLine($"The name is {name}"); 
+Expression-bodied Properties
+Property accessors also can have only one statement. With expression-bodied properties, such property definitions can be simplified.
+
+1. Read-only Properties
+
+Read-only properties are properties that only have a get acce
+
+
+
+
+Syntax
+
+[access-modifier] [qualifiers] return-type MethodName([parameters]) => expression;
+
+Example
+
+The following example defines a Boolean method called IsEven() that returns true if the number passed to it is even, otherwise, the method returns false. The IsEven() method uses expression-bodied syntax.
+
+
+// C# program to illustrate expression bodied method
+using System;
+ 
+class GFG{
+     
+// Returns true if number is even
+// else returns false
+public static bool IsEven(int number) => number % 2 == 0;
+ 
+// Driver code
+public static void Main()
+{
+    int n = 10;
+     
+    if (IsEven(n))
+    {
+          Console.WriteLine("{0} is even", n);
+    }
+    else
+    {
+        Console.WriteLine("{0} is odd", n);
+    }
+}
+}
+Output
+10 is even
+Expression-bodied Void Methods 
+Void methods are those methods that do not contain a return statement and consist only of a single statement can also use expression-bodied syntax. For instance, the following method:
+
+void PrintName(string name)
+{
+    Console.WriteLine($"The name is {name}");
+}
+can be written with expression-bodied syntax as follows:
+
+void PrintName(string name) => Console.WriteLine($"The name is {name}"); 
+Expression-bodied Properties
+Property accessors also can have only one statement. With expression-bodied properties, such property definitions can be simplified.
+
+1. Read-only Properties
+
+Read-only properties are properties that only have a get accessor, like the following:
+
+public int Name 
+{ 
+    get 
+    {
+        return "Geeks For Geeks";
+    }
+}  
+Using expression-bodied syntax, the property can be defined as follows:
+
+public int Name => "Geeks For Geeks";
+Syntax
+
+[access-modifier] [qualifier] type PropertyName => expression;
+
+Example
+
+The following example defines a class called Square with a constructor that accepts the length of the side of the square. Once the side is set in the constructor, it cannot be modified because the public Side property is read-only. Also, the side field is private and cannot be accessed from outside the class.
+
+
+// C# program to illustrate expression bodied properties
+using System;
+ 
+public class Square
+{
+    private int side;
+   
+    public Square(int side)
+    {
+        this.side = side;
+    }
+     
+    public int Side => side;
+}
+ 
+class GFG{
+ 
+// Driver code
+public static void Main()
+{
+    var square = new Square(4);
+    Console.WriteLine($"Side is {square.Side}");
+}
+}
+Output
+Side is 4
+2. Non-Read only Properties
+
+Since C# 7, non-read-only properties can also have expression-bodied get and set accessors. In the following Person class, the Name property defines both get and set accessors each with only one statement:
+
+public class Person
+{
+    private string name;
+    
+    public string Name
+    {
+        get 
+        {
+            return name;
+        }
+        set 
+        {
+           name = value;
+        }
+    }
+}
+This can be simplified by using expression-bodied accessors:
+
+public class Person
+{
+    private string name;
+    
+    public string Name
+    {
+        get => name;
+        set => name = value;
+    }
+}
+Syntax
+
+[access-modifier] [qualifiers] [type] PropertyName
+
+{
+
+    get => expression;
+
+    set => expression;
+
+}
+
+Example
+
+The code below defines a Square class like the above example but here, the Side property also has a set accessor. Also, an object initializer has been used instead of a constructor to provide the initial value for the Side property:
+
+
+// C# program to illustrate expression bodied properties
+using System;
+ 
+public class Square
+{
+    private int side;
+   
+    public int Side
+    {
+        get => side;
+        set => side = value;
+    }
+}
+ 
+class GFG{
+ 
+// Driver code   
+public static void Main()
+{
+    var square = new Square{Side = 4};
+    Console.WriteLine($"Side is {square.Side}");
+    square.Side = 10;
+      Console.WriteLine($"Side is now {square.Side}");
+}
+}
+Output
+Side is 4
+Side is now 10
